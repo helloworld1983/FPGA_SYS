@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.3 (64-bit)
+# SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
+# IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
+# Start of session at: Thu Dec 03 12:18:18 2015
+# Process ID: 1188
+# Current directory: C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/vga_fifo_synth_1
+# Command line: vivado.exe -log vga_fifo.vds -mode batch -messageDb vivado.pb -notrace -source vga_fifo.tcl
+# Log file: C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/vga_fifo_synth_1/vga_fifo.vds
+# Journal file: C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/vga_fifo_synth_1\vivado.jou
+#-----------------------------------------------------------
+source vga_fifo.tcl -notrace
