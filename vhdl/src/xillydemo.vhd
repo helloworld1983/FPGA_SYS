@@ -194,6 +194,17 @@ architecture sample_arch of xillydemo is
       user_w_smb_data : IN std_logic_vector(7 DOWNTO 0);
       user_w_smb_open : IN std_logic);
   end component;
+  
+  -------------------------------------------------
+  -- Add Controllor
+  -------------------------------------------------
+  component CONTROLLOR_VHDL
+    port (
+	CLK : in std_logic := '0';
+    TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
+    PARSER_OK : out std_logic := '0');
+  end component;
+  
 
 -- Synplicity black box declaration
   attribute syn_black_box : boolean;
@@ -237,6 +248,11 @@ architecture sample_arch of xillydemo is
   signal user_r_read_8_rden :  std_logic;
   signal user_r_read_8_empty :  std_logic;
   signal user_r_read_8_data :  std_logic_vector(7 DOWNTO 0);
+  ------------------------------------------------------------
+  signal user_r_read_8_data_test :  std_logic_vector(7 DOWNTO 0);
+  signal parser_ok : std_logic;
+  signal a : character := 'a';
+  ------------------------------------------------------------  
   signal user_r_read_8_eof :  std_logic;
   signal user_r_read_8_open :  std_logic;
   signal user_w_write_32_wren :  std_logic;
@@ -335,7 +351,9 @@ begin
       -- FPGA to CPU signals:
       user_r_read_8_rden => user_r_read_8_rden,
       user_r_read_8_empty => user_r_read_8_empty,
-      user_r_read_8_data => user_r_read_8_data,
+      --------------------------------------------
+      user_r_read_8_data => user_r_read_8_data_test,
+      --------------------------------------------
       user_r_read_8_eof => user_r_read_8_eof,
       user_r_read_8_open => user_r_read_8_open,
 
@@ -513,6 +531,17 @@ begin
       empty      => user_r_read_8_empty
       );
 
+    ---------------------------------------------------
+    controllor : CONTROLLOR_VHDL
+    port map (
+    CLK => bus_clk,
+    TEXT_INPUT_STREAM => user_r_read_8_data,
+    PARSER_OK => parser_ok
+    );
+    
+    user_r_read_8_data_test <= std_logic_vector(to_unsigned(natural(character'pos(a)),8)) when (user_r_read_8_data /= "00000000" and parser_ok = '1')  else "00000000";
+    ----------------------------------------------------
+    
     reset_8 <= not (user_w_write_8_open or user_r_read_8_open);
 
     user_r_read_8_eof <= '0';

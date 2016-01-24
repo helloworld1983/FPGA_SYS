@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date         : Thu Dec 03 12:31:02 2015
+| Date         : Thu Jan 21 17:50:49 2016
 | Host         : maicuong running 64-bit major release  (build 9200)
 | Command      : report_drc
 ------------------------------------------------------------------------------------
@@ -149,126 +149,126 @@ XDCH-2#1 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_blue[0]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#2 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_blue[1]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#3 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_blue[2]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#4 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_blue[3]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#5 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_blue[4]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#6 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_green[0]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#7 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_green[1]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#8 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_green[2]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#9 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_green[3]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#10 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_green[4]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#11 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_green[5]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#12 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_red[0]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#13 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_red[1]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#14 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_red[2]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#15 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_red[3]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#16 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga4_red[4]' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#17 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga_hsync' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 XDCH-2#18 Warning
 Same min and max delay values on IO port  
 The same output delay of 5.500 ns has been defined on port 'vga_vsync' for both max and min. Make sure this reflects the design intent.
 set_output_delay 5.500 [get_ports vga*]
-C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vivado-essentials/xillydemo.xdc (Line: 15)
+C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc (Line: 15)
 Related violations: <none>
 
 

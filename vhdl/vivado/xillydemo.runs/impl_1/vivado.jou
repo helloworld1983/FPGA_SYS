@@ -2,11 +2,11 @@
 # Vivado v2015.3 (64-bit)
 # SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
 # IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
-# Start of session at: Thu Dec 03 12:30:05 2015
-# Process ID: 3008
-# Current directory: C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/impl_1
+# Start of session at: Thu Jan 21 17:52:51 2016
+# Process ID: 5240
+# Current directory: C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/impl_1
 # Command line: vivado.exe -log xillydemo.vdi -applog -messageDb vivado.pb -mode batch -source xillydemo.tcl -notrace
-# Log file: C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/impl_1/xillydemo.vdi
-# Journal file: C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/impl_1\vivado.jou
+# Log file: C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/impl_1/xillydemo.vdi
+# Journal file: C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source xillydemo.tcl -notrace

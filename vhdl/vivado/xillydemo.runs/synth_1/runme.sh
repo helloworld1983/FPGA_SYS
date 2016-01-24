@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD=C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/vhdl/vivado/xillydemo.runs/synth_1
+HD_PWD=C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1
 cd "$HD_PWD"
 
 HD_LOG=runme.log

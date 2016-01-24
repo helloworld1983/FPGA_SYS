@@ -1,0 +1,5 @@
+Vivado Simulator 2015.3
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.3/bin/unwrapped/win64.o/xelab.exe -wto 2ce1a81c78e54c319e111027cf41f906 --debug typical --relax --mt 2 -L fifo_generator_v13_0_0 -L xil_defaultlib -L lib_cdc_v1_0_2 -L proc_sys_reset_v5_0_8 -L generic_baseblocks_v2_1_0 -L axi_infrastructure_v1_1_0 -L axi_register_slice_v2_1_6 -L axi_data_fifo_v2_1_5 -L axi_crossbar_v2_1_7 -L axi_protocol_converter_v2_1_6 -L unisims_ver -L unimacro_ver -L secureip --snapshot unknown_behav xil_defaultlib.unknown xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+ERROR: [XSIM 43-3225] Cannot find design unit xil_defaultlib.unknown in library work located at xsim.dir/work.
