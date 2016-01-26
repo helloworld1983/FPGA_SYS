@@ -2,8 +2,8 @@
 # Vivado v2015.3 (64-bit)
 # SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
 # IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
-# Start of session at: Tue Jan 26 14:55:58 2016
-# Process ID: 3900
+# Start of session at: Tue Jan 26 18:57:17 2016
+# Process ID: 1516
 # Current directory: C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1
 # Command line: vivado.exe -log xillydemo.vds -mode batch -messageDb vivado.pb -notrace -source xillydemo.tcl
 # Log file: C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/xillydemo.vds
@@ -13,7 +13,7 @@ source xillydemo.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado-ip'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.3/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 265.348 ; gain = 78.152
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 265.602 ; gain = 78.410
 Command: synth_design -top xillydemo -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -21,7 +21,7 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 WARNING: [Synth 8-992] S_AXI_GP0_ACLK_temp is already implicitly declared earlier [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2701]
 WARNING: [Synth 8-992] S_AXI_GP1_ACLK_temp is already implicitly declared earlier [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2702]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 349.426 ; gain = 178.227
+Starting RTL Elaboration : Time (s): cpu = 00:00:22 ; elapsed = 00:00:27 . Memory (MB): peak = 349.488 ; gain = 178.039
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'xillydemo' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:36]
 INFO: [Synth 8-3491] module 'xillybus' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillybus.v:3' bound to instance 'xillybus_ins' of component 'xillybus' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:325]
@@ -1233,37 +1233,40 @@ INFO: [Synth 8-637] synthesizing blackbox instance 'fifo_32' of component 'fifo_
 INFO: [Synth 8-637] synthesizing blackbox instance 'fifo_8' of component 'fifo_8x2048' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:523]
 INFO: [Synth 8-3491] module 'CONTROLLOR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:5' bound to instance 'controllor' of component 'CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:536]
 INFO: [Synth 8-638] synthesizing module 'CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:14]
-INFO: [Synth 8-3491] module 'FILE_INPUT_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd:5' bound to instance 'FILE_INPUT' of component 'FILE_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:214]
+INFO: [Synth 8-3491] module 'FILE_INPUT_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd:5' bound to instance 'FILE_INPUT' of component 'FILE_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:228]
 INFO: [Synth 8-638] synthesizing module 'FILE_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd:24]
 INFO: [Synth 8-256] done synthesizing module 'FILE_INPUT_VHDL' (59#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd:24]
-INFO: [Synth 8-3491] module 'TEXT_INPUT_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:5' bound to instance 'TEXT_INPUT' of component 'TEXT_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:232]
-INFO: [Synth 8-638] synthesizing module 'TEXT_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'TEXT_INPUT_VHDL' (60#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:15]
-INFO: [Synth 8-3491] module 'STATE_CONTROLLOR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:5' bound to instance 'STATE_CONTROLLOR' of component 'STATE_CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:241]
+INFO: [Synth 8-3491] module 'TEXT_INPUT_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:10' bound to instance 'TEXT_INPUT' of component 'TEXT_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:246]
+INFO: [Synth 8-638] synthesizing module 'TEXT_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:23]
+INFO: [Synth 8-3491] module 'MEMORY_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/new/MEMORY_VHDL.vhd:6' bound to instance 'MEMORY' of component 'MEMORY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'MEMORY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/new/MEMORY_VHDL.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'MEMORY_VHDL' (60#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/new/MEMORY_VHDL.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'TEXT_INPUT_VHDL' (61#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:23]
+INFO: [Synth 8-3491] module 'STATE_CONTROLLOR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:5' bound to instance 'STATE_CONTROLLOR' of component 'STATE_CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:259]
 INFO: [Synth 8-638] synthesizing module 'STATE_CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:20]
-INFO: [Synth 8-256] done synthesizing module 'STATE_CONTROLLOR_VHDL' (61#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:20]
-INFO: [Synth 8-3491] module 'BYTE_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:5' bound to instance 'BYTE' of component 'BYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:255]
-INFO: [Synth 8-638] synthesizing module 'BYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'BYTE_VHDL' (62#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:15]
-INFO: [Synth 8-3491] module 'SET_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:5' bound to instance 'SET' of component 'SET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:264]
-INFO: [Synth 8-638] synthesizing module 'SET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'SET_VHDL' (63#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:17]
-INFO: [Synth 8-3491] module 'RSET_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:5' bound to instance 'RSET' of component 'RSET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:274]
-INFO: [Synth 8-638] synthesizing module 'RSET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'RSET_VHDL' (64#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:17]
-INFO: [Synth 8-3491] module 'OBYTE_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:5' bound to instance 'OBYTE' of component 'OBYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:284]
-INFO: [Synth 8-638] synthesizing module 'OBYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'OBYTE_VHDL' (65#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:14]
-INFO: [Synth 8-3491] module 'STR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:5' bound to instance 'STR' of component 'STR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:291]
+INFO: [Synth 8-256] done synthesizing module 'STATE_CONTROLLOR_VHDL' (62#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:20]
+INFO: [Synth 8-3491] module 'BYTE_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:6' bound to instance 'BYTE' of component 'BYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:273]
+INFO: [Synth 8-638] synthesizing module 'BYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'BYTE_VHDL' (63#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:16]
+INFO: [Synth 8-3491] module 'SET_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:6' bound to instance 'SET' of component 'SET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:282]
+INFO: [Synth 8-638] synthesizing module 'SET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'SET_VHDL' (64#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:18]
+INFO: [Synth 8-3491] module 'RSET_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:6' bound to instance 'RSET' of component 'RSET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:292]
+INFO: [Synth 8-638] synthesizing module 'RSET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'RSET_VHDL' (65#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:18]
+INFO: [Synth 8-3491] module 'OBYTE_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:6' bound to instance 'OBYTE' of component 'OBYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:302]
+INFO: [Synth 8-638] synthesizing module 'OBYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'OBYTE_VHDL' (66#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:15]
+INFO: [Synth 8-3491] module 'STR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:5' bound to instance 'STR' of component 'STR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:309]
 INFO: [Synth 8-638] synthesizing module 'STR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'STR_VHDL' (66#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:15]
-INFO: [Synth 8-3491] module 'NANY_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:5' bound to instance 'NANY' of component 'NANY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:299]
+INFO: [Synth 8-256] done synthesizing module 'STR_VHDL' (67#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:15]
+INFO: [Synth 8-3491] module 'NANY_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:5' bound to instance 'NANY' of component 'NANY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:317]
 INFO: [Synth 8-638] synthesizing module 'NANY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'NANY_VHDL' (67#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:14]
-INFO: [Synth 8-256] done synthesizing module 'CONTROLLOR_VHDL' (68#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'NANY_VHDL' (68#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'CONTROLLOR_VHDL' (69#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:14]
 INFO: [Synth 8-3491] module 'i2s_audio' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/i2s_audio.v:2' bound to instance 'audio_ins' of component 'i2s_audio' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:551]
 INFO: [Synth 8-638] synthesizing module 'i2s_audio' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/i2s_audio.v:2]
-INFO: [Synth 8-638] synthesizing module 'fifo_32x512' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/realtime/fifo_32x512_stub.vhdl:19]
+INFO: [Synth 8-638] synthesizing module 'fifo_32x512' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/realtime/fifo_32x512_stub.vhdl:19]
 INFO: [Synth 8-638] synthesizing module 'PLLE2_ADV' [C:/Xilinx/Vivado/2015.3/scripts/rt/data/unisim_comp.v:32700]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT bound to: 36 - type: integer 
@@ -1296,8 +1299,8 @@ INFO: [Synth 8-638] synthesizing module 'PLLE2_ADV' [C:/Xilinx/Vivado/2015.3/scr
 	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
 	Parameter REF_JITTER2 bound to: 0.010000 - type: float 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-256] done synthesizing module 'PLLE2_ADV' (69#1) [C:/Xilinx/Vivado/2015.3/scripts/rt/data/unisim_comp.v:32700]
-INFO: [Synth 8-256] done synthesizing module 'i2s_audio' (70#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/i2s_audio.v:2]
+INFO: [Synth 8-256] done synthesizing module 'PLLE2_ADV' (70#1) [C:/Xilinx/Vivado/2015.3/scripts/rt/data/unisim_comp.v:32700]
+INFO: [Synth 8-256] done synthesizing module 'i2s_audio' (71#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/i2s_audio.v:2]
 INFO: [Synth 8-3491] module 'smbus' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/smbus.v:1' bound to instance 'smbus_ins' of component 'smbus' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:574]
 INFO: [Synth 8-638] synthesizing module 'smbus' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/smbus.v:1]
 	Parameter clk_freq bound to: 150 - type: integer 
@@ -1313,14 +1316,14 @@ INFO: [Synth 8-638] synthesizing module 'smbus' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl
 	Parameter st_stop0 bound to: 9 - type: integer 
 	Parameter st_stop1 bound to: 10 - type: integer 
 	Parameter st_stop2 bound to: 11 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'fifo_8x2048' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/realtime/fifo_8x2048_stub.vhdl:19]
-INFO: [Synth 8-256] done synthesizing module 'smbus' (71#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/smbus.v:1]
+INFO: [Synth 8-638] synthesizing module 'fifo_8x2048' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/realtime/fifo_8x2048_stub.vhdl:19]
+INFO: [Synth 8-256] done synthesizing module 'smbus' (72#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/smbus.v:1]
 WARNING: [Synth 8-3848] Net PS_SRSTB in module/entity xillydemo does not have driver. [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:304]
 WARNING: [Synth 8-3848] Net PS_CLK in module/entity xillydemo does not have driver. [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:302]
 WARNING: [Synth 8-3848] Net PS_PORB in module/entity xillydemo does not have driver. [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:303]
-INFO: [Synth 8-256] done synthesizing module 'xillydemo' (72#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'xillydemo' (73#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:36]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:22 ; elapsed = 00:01:28 . Memory (MB): peak = 505.961 ; gain = 334.762
+Finished RTL Elaboration : Time (s): cpu = 00:01:32 ; elapsed = 00:01:38 . Memory (MB): peak = 505.008 ; gain = 333.559
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1333,7 +1336,7 @@ WARNING: [Synth 8-3295] tying undriven pin xillybus_ins:PS_SRSTB to constant 0 [
 WARNING: [Synth 8-3295] tying undriven pin xillybus_ins:PS_CLK to constant 0 [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:325]
 WARNING: [Synth 8-3295] tying undriven pin xillybus_ins:PS_PORB to constant 0 [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:325]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:23 ; elapsed = 00:01:29 . Memory (MB): peak = 505.961 ; gain = 334.762
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:34 ; elapsed = 00:01:40 . Memory (MB): peak = 505.008 ; gain = 333.559
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1342,16 +1345,16 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_2/fifo_32x512_in_context.xdc] for cell 'fifo_32'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_2/fifo_32x512_in_context.xdc] for cell 'fifo_32'
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/playback_fifo'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/playback_fifo'
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/record_fifo'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/record_fifo'
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'fifo_8'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'fifo_8'
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'smbus_ins/fifo'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-3900-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'smbus_ins/fifo'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_2/fifo_32x512_in_context.xdc] for cell 'fifo_32'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_2/fifo_32x512_in_context.xdc] for cell 'fifo_32'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/playback_fifo'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/playback_fifo'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/record_fifo'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/record_fifo'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'fifo_8'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'fifo_8'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'smbus_ins/fifo'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-1516-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'smbus_ins/fifo'
 Parsing XDC File [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc] for cell 'xillybus_ins/system_i/vivado_system_i/processing_system7_0/inst'
 INFO: [Netlist 29-160] Cannot set property 'iostandard', because the property does not exist for objects of type 'pin'. [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc:30]
 Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
@@ -1583,16 +1586,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDR => FDRE: 12 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 762.355 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 761.047 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 762.355 ; gain = 591.156
+Finished Constraint Validation : Time (s): cpu = 00:02:04 ; elapsed = 00:02:10 . Memory (MB): peak = 761.047 ; gain = 589.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 762.355 ; gain = 591.156
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:04 ; elapsed = 00:02:10 . Memory (MB): peak = 761.047 ; gain = 589.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1609,7 +1612,7 @@ Applied set_property DONT_TOUCH = true for xillybus_ins/system_i/vivado_system_i
 Applied set_property DONT_TOUCH = true for xillybus_ins/system_i/vivado_system_i/xillyvga_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for xillybus_ins/system_i/vivado_system_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:52 ; elapsed = 00:01:58 . Memory (MB): peak = 762.355 ; gain = 591.156
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:04 ; elapsed = 00:02:10 . Memory (MB): peak = 761.047 ; gain = 589.598
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "address_offset" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-4471] merging register 'gen_axilite.s_axi_wready_i_reg' into 'gen_axilite.s_axi_awready_i_reg' [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/axi_crossbar_v2_1_7/hdl/verilog/axi_crossbar_v2_1_decerr_slave.v:136]
@@ -1831,8 +1834,8 @@ INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instan
 INFO: [Synth 8-5587] ROM size for "cmd_read_no" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5546] ROM "cmd_read_no" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "cmd_read_no" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "match_reg" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "fail_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "input_finish" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "txt_sample" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "fifo_wr_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "write_when_done" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'smbus'
@@ -1861,16 +1864,16 @@ INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address si
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'smbus'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:05 ; elapsed = 00:02:12 . Memory (MB): peak = 762.355 ; gain = 591.156
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:18 ; elapsed = 00:02:26 . Memory (MB): peak = 761.047 ; gain = 589.598
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+---------------------+------------+----------+
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
-|1     |FILE_INPUT_VHDL__GB0 |           1|     46048|
-|2     |FILE_INPUT_VHDL__GB1 |           1|     12723|
-|3     |CONTROLLOR_VHDL__GC0 |           1|      5066|
+|1     |FILE_INPUT_VHDL__GB0 |           1|     45235|
+|2     |FILE_INPUT_VHDL__GB1 |           1|     13536|
+|3     |CONTROLLOR_VHDL__GC0 |           1|      1990|
 |4     |xillydemo__GC0       |           1|      5353|
 +------+---------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -1878,11 +1881,11 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   2 Input     31 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input     31 Bit       Adders := 1     
 	   2 Input     12 Bit       Adders := 6     
 	   2 Input     10 Bit       Adders := 2     
-	   2 Input      9 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 3     
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 4     
 	   2 Input      5 Bit       Adders := 8     
@@ -1894,22 +1897,23 @@ Detailed RTL Component Info :
 	               64 Bit    Registers := 1     
 	               47 Bit    Registers := 2     
 	               36 Bit    Registers := 2     
-	               32 Bit    Registers := 43    
-	               31 Bit    Registers := 80    
+	               32 Bit    Registers := 44    
+	               31 Bit    Registers := 79    
 	               21 Bit    Registers := 1     
 	               20 Bit    Registers := 1     
 	               15 Bit    Registers := 1     
 	               14 Bit    Registers := 2     
 	               12 Bit    Registers := 7     
-	                9 Bit    Registers := 2     
-	                8 Bit    Registers := 61    
+	                9 Bit    Registers := 4     
+	                8 Bit    Registers := 59    
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 5     
 	                4 Bit    Registers := 7     
 	                3 Bit    Registers := 5     
 	                2 Bit    Registers := 13    
-	                1 Bit    Registers := 104   
+	                1 Bit    Registers := 107   
 +---RAMs : 
+	               4K Bit         RAMs := 1     
 	              256 Bit         RAMs := 5     
 +---Muxes : 
 	   2 Input     66 Bit        Muxes := 4     
@@ -1921,7 +1925,7 @@ Detailed RTL Component Info :
 	  12 Input     32 Bit        Muxes := 1     
 	  16 Input     32 Bit        Muxes := 1     
 	  12 Input     31 Bit        Muxes := 1     
-	   2 Input     31 Bit        Muxes := 4     
+	   2 Input     31 Bit        Muxes := 3     
 	   4 Input     31 Bit        Muxes := 1     
 	   2 Input     21 Bit        Muxes := 1     
 	   2 Input     20 Bit        Muxes := 1     
@@ -1929,19 +1933,17 @@ Detailed RTL Component Info :
 	   2 Input     15 Bit        Muxes := 2     
 	   2 Input     14 Bit        Muxes := 2     
 	   2 Input     12 Bit        Muxes := 4     
-	   2 Input      9 Bit        Muxes := 4     
-	  10 Input      8 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 5     
+	  10 Input      8 Bit        Muxes := 2     
 	  42 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 4     
 	  12 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
 	   4 Input      7 Bit        Muxes := 1     
 	   8 Input      7 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 3     
-	  12 Input      7 Bit        Muxes := 72    
+	 125 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 2     
 	  11 Input      6 Bit        Muxes := 1     
-	 125 Input      6 Bit        Muxes := 1     
-	  12 Input      6 Bit        Muxes := 15    
 	  16 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 5     
 	   3 Input      5 Bit        Muxes := 1     
@@ -1955,7 +1957,7 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 8     
 	   4 Input      2 Bit        Muxes := 1     
 	   5 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 136   
+	   2 Input      1 Bit        Muxes := 133   
 	   4 Input      1 Bit        Muxes := 33    
 	   6 Input      1 Bit        Muxes := 4     
 	   3 Input      1 Bit        Muxes := 1     
@@ -2000,9 +2002,9 @@ Detailed RTL Component Info :
 	   4 Input      7 Bit        Muxes := 1     
 	   8 Input      7 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 3     
+	 125 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	  11 Input      6 Bit        Muxes := 1     
-	 125 Input      6 Bit        Muxes := 1     
 	  16 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 1     
 	   3 Input      5 Bit        Muxes := 1     
@@ -2010,19 +2012,23 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 42    
 	   4 Input      1 Bit        Muxes := 33    
 	   6 Input      1 Bit        Muxes := 4     
+Module MEMORY_VHDL 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
 Module TEXT_INPUT_VHDL 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     31 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
 +---Registers : 
-	               31 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
+	               32 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input     31 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 3     
-	  12 Input      7 Bit        Muxes := 72    
-	  12 Input      6 Bit        Muxes := 15    
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module STATE_CONTROLLOR_VHDL 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -2057,12 +2063,15 @@ Module NANY_VHDL
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
 Module CONTROLLOR_VHDL 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
++---Muxes : 
+	  10 Input      8 Bit        Muxes := 1     
 Module xlnx_axi_wrshim_unwrap__1 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -2401,34 +2410,42 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:02:06 ; elapsed = 00:02:13 . Memory (MB): peak = 762.355 ; gain = 591.156
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:02:20 ; elapsed = 00:02:28 . Memory (MB): peak = 761.047 ; gain = 589.598
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3936] Found unconnected internal register 'STATE_CONTROLLOR/trg_array_reg' and it is trimmed from '21' to '20' bits. [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:32]
-INFO: [Synth 8-5546] ROM "NANY/fail_reg" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "NANY/match_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "TEXT_INPUT/input_finish" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/axi_register_slice_v2_1_6/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:121]
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/axi_register_slice_v2_1_6/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:121]
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg' and it is trimmed from '36' to '35' bits. [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/axi_register_slice_v2_1_6/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:121]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:02:24 ; elapsed = 00:02:32 . Memory (MB): peak = 762.355 ; gain = 591.156
+Finished Cross Boundary Optimization : Time (s): cpu = 00:02:38 ; elapsed = 00:02:47 . Memory (MB): peak = 761.047 ; gain = 589.598
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:02:24 ; elapsed = 00:02:32 . Memory (MB): peak = 762.355 ; gain = 591.156
+Finished Parallel Reinference  : Time (s): cpu = 00:02:38 ; elapsed = 00:02:47 . Memory (MB): peak = 761.047 ; gain = 589.598
 
 Report RTL Partitions: 
 +------+---------------------+------------+----------+
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
-|1     |FILE_INPUT_VHDL__GB0 |           1|     39700|
-|2     |FILE_INPUT_VHDL__GB1 |           1|     10507|
-|3     |CONTROLLOR_VHDL__GC0 |           1|      4758|
+|1     |FILE_INPUT_VHDL__GB0 |           1|     38887|
+|2     |FILE_INPUT_VHDL__GB1 |           1|     11320|
+|3     |CONTROLLOR_VHDL__GC0 |           1|      1640|
 |4     |xillydemo__GC0       |           1|      5509|
 +------+---------------------+------------+----------+
+Optimized 1 bits of RAM "TEXT_INPUT/MEMORY/RAM_reg" due to constant propagation. Old ram width 8 bits, new ram width 7 bits
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
+Block RAM:
++---------------------+---------------------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+|Module Name          | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG | RAMB18 | RAMB36 | Hierarchical Name | 
++---------------------+---------------------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+|CONTROLLOR_VHDL__GC0 | TEXT_INPUT/MEMORY/RAM_reg | 512 x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A  | 1      | 0      | extram__7         | 
++---------------------+---------------------------+------------------------+---+---+------------------------+---+---+---------+--------+--------+-------------------+
+
+Note: The table above shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
 Distributed RAM: 
 +---------------+----------------+-----------+----------------------+----------------+-------------------+
 |Module Name    | RTL Object     | Inference | Size (Depth x Width) | Primitives     | Hierarchical Name | 
@@ -2650,17 +2667,17 @@ INFO: [Synth 8-3886] merging instance 'FILE_INPUTi_0/\call_stack_reg[19][27] ' (
 INFO: [Synth 8-3886] merging instance 'FILE_INPUTi_0/\call_stack_reg[18][27] ' (FDE) to 'FILE_INPUTi_0/\call_stack_reg[18][7] '
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:02:53 ; elapsed = 00:03:02 . Memory (MB): peak = 762.355 ; gain = 591.156
+Finished Area Optimization : Time (s): cpu = 00:03:06 ; elapsed = 00:03:17 . Memory (MB): peak = 761.047 ; gain = 589.598
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:02:53 ; elapsed = 00:03:02 . Memory (MB): peak = 762.355 ; gain = 591.156
+Finished Parallel Area Optimization  : Time (s): cpu = 00:03:06 ; elapsed = 00:03:17 . Memory (MB): peak = 761.047 ; gain = 589.598
 
 Report RTL Partitions: 
 +------+---------------------+------------+----------+
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
-|1     |FILE_INPUT_VHDL__GB0 |           1|      3620|
+|1     |FILE_INPUT_VHDL__GB0 |           1|      3660|
 |2     |FILE_INPUT_VHDL__GB1 |           1|        39|
-|3     |CONTROLLOR_VHDL__GC0 |           1|      1127|
+|3     |CONTROLLOR_VHDL__GC0 |           1|       520|
 |4     |xillydemo__GC0       |           1|      4431|
 +------+---------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -2670,22 +2687,23 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:09 ; elapsed = 00:03:19 . Memory (MB): peak = 924.988 ; gain = 753.789
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:22 ; elapsed = 00:03:33 . Memory (MB): peak = 919.363 ; gain = 747.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:17 ; elapsed = 00:03:27 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Timing Optimization : Time (s): cpu = 00:03:23 ; elapsed = 00:03:34 . Memory (MB): peak = 942.047 ; gain = 770.598
 ---------------------------------------------------------------------------------
-Finished Parallel Timing Optimization  : Time (s): cpu = 00:03:17 ; elapsed = 00:03:27 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Parallel Timing Optimization  : Time (s): cpu = 00:03:23 ; elapsed = 00:03:34 . Memory (MB): peak = 942.047 ; gain = 770.598
 
 Report RTL Partitions: 
 +------+---------------------+------------+----------+
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
-|1     |FILE_INPUT_VHDL__GB1 |           1|        39|
-|2     |xillydemo__GC0       |           1|      4431|
-|3     |xillydemo_GT0        |           1|      4747|
+|1     |FILE_INPUT_VHDL__GB0 |           1|      3660|
+|2     |FILE_INPUT_VHDL__GB1 |           1|        39|
+|3     |CONTROLLOR_VHDL__GC0 |           1|       520|
+|4     |xillydemo__GC0       |           1|      4431|
 +------+---------------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:03:17 ; elapsed = 00:03:27 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:03:23 ; elapsed = 00:03:34 . Memory (MB): peak = 942.047 ; gain = 770.598
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
@@ -2719,8 +2737,9 @@ INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/G
 INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6 ) is unused and will be removed from module vivado_system_rst_processing_system7_0_100M_0.
 INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5 ) is unused and will be removed from module vivado_system_rst_processing_system7_0_100M_0.
 INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6 ) is unused and will be removed from module vivado_system_rst_processing_system7_0_100M_0.
+INFO: [Synth 8-4480] The timing for the instance \controllor/TEXT_INPUT/MEMORY/RAM_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:22 ; elapsed = 00:03:32 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Technology Mapping : Time (s): cpu = 00:03:29 ; elapsed = 00:03:40 . Memory (MB): peak = 954.301 ; gain = 782.852
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2772,7 +2791,7 @@ INFO: [Synth 8-4163] Replicating register \audio_ins/audio_bclk_reg_reg  to hand
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:25 ; elapsed = 00:03:34 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished IO Insertion : Time (s): cpu = 00:03:32 ; elapsed = 00:03:42 . Memory (MB): peak = 954.301 ; gain = 782.852
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2785,7 +2804,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:25 ; elapsed = 00:03:35 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:32 ; elapsed = 00:03:42 . Memory (MB): peak = 954.301 ; gain = 782.852
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2797,25 +2816,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:26 ; elapsed = 00:03:35 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:32 ; elapsed = 00:03:43 . Memory (MB): peak = 954.301 ; gain = 782.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:26 ; elapsed = 00:03:36 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:33 ; elapsed = 00:03:43 . Memory (MB): peak = 954.301 ; gain = 782.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:26 ; elapsed = 00:03:36 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:33 ; elapsed = 00:03:44 . Memory (MB): peak = 954.301 ; gain = 782.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:26 ; elapsed = 00:03:36 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:33 ; elapsed = 00:03:44 . Memory (MB): peak = 954.301 ; gain = 782.852
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2863,108 +2882,110 @@ Report Cell Usage:
 |8     |xillyvga_core      |     1|
 |9     |BIBUF              |   130|
 |10    |BUFG               |     1|
-|11    |CARRY4             |   120|
-|12    |LUT1               |   385|
-|13    |LUT2               |   217|
-|14    |LUT3               |   446|
-|15    |LUT4               |   240|
-|16    |LUT5               |   387|
-|17    |LUT6               |   754|
-|18    |MUXF7              |    38|
+|11    |CARRY4             |   107|
+|12    |LUT1               |   339|
+|13    |LUT2               |   226|
+|14    |LUT3               |   398|
+|15    |LUT4               |   236|
+|16    |LUT5               |   378|
+|17    |LUT6               |   748|
+|18    |MUXF7              |    26|
 |19    |PLLE2_ADV          |     1|
 |20    |PS7                |     1|
 |21    |RAM32X1S           |    40|
-|22    |SRL16              |     1|
-|23    |SRL16E             |    22|
-|24    |SRLC32E            |    47|
-|25    |FDCE               |    18|
-|26    |FDR                |     8|
-|27    |FDRE               |  1731|
-|28    |FDSE               |    71|
-|29    |IBUF               |     6|
-|30    |IOBUF              |    57|
-|31    |OBUF               |    34|
-|32    |OBUFT              |     1|
+|22    |RAMB18E1           |     1|
+|23    |SRL16              |     1|
+|24    |SRL16E             |    22|
+|25    |SRLC32E            |    47|
+|26    |FDCE               |    18|
+|27    |FDR                |     8|
+|28    |FDRE               |  1706|
+|29    |FDSE               |    71|
+|30    |IBUF               |     6|
+|31    |IOBUF              |    57|
+|32    |OBUF               |    34|
+|33    |OBUFT              |     1|
 +------+-------------------+------+
 
 Report Instance Areas: 
 +------+-------------------------------------------------------+--------------------------------------------------------------+------+
 |      |Instance                                               |Module                                                        |Cells |
 +------+-------------------------------------------------------+--------------------------------------------------------------+------+
-|1     |top                                                    |                                                              |  5541|
+|1     |top                                                    |                                                              |  5388|
 |2     |  audio_ins                                            |i2s_audio                                                     |   162|
-|3     |  controllor                                           |CONTROLLOR_VHDL                                               |  2411|
-|4     |    BYTE                                               |BYTE_VHDL                                                     |     7|
-|5     |    FILE_INPUT                                         |FILE_INPUT_VHDL                                               |  1752|
+|3     |  controllor                                           |CONTROLLOR_VHDL                                               |  2258|
+|4     |    BYTE                                               |BYTE_VHDL                                                     |     4|
+|5     |    FILE_INPUT                                         |FILE_INPUT_VHDL                                               |  1746|
 |6     |    NANY                                               |NANY_VHDL                                                     |     4|
 |7     |    OBYTE                                              |OBYTE_VHDL                                                    |     1|
-|8     |    RSET                                               |RSET_VHDL                                                     |     3|
+|8     |    RSET                                               |RSET_VHDL                                                     |     2|
 |9     |    SET                                                |SET_VHDL                                                      |     4|
-|10    |    STATE_CONTROLLOR                                   |STATE_CONTROLLOR_VHDL                                         |    26|
-|11    |    STR                                                |STR_VHDL                                                      |   108|
-|12    |    TEXT_INPUT                                         |TEXT_INPUT_VHDL                                               |   367|
-|13    |  smbus_ins                                            |smbus                                                         |   125|
-|14    |  xillybus_ins                                         |xillybus                                                      |  2620|
-|15    |    system_i                                           |system                                                        |  2261|
-|16    |      vivado_system_i                                  |vivado_system                                                 |  2260|
-|17    |        processing_system7_0                           |vivado_system_processing_system7_0_0                          |   282|
-|18    |          inst                                         |processing_system7_v5_5_processing_system7                    |   282|
-|19    |            xlnx_axi_wrshim_unwrap_inst_gp0            |xlnx_axi_wrshim_unwrap                                        |    18|
-|20    |            xlnx_axi_wrshim_unwrap_inst_gp1            |xlnx_axi_wrshim_unwrap_5                                      |    18|
-|21    |        processing_system7_0_axi_periph                |vivado_system_processing_system7_0_axi_periph_0               |  1580|
-|22    |          xbar                                         |vivado_system_xbar_0                                          |   305|
-|23    |            inst                                       |axi_crossbar_v2_1_7_axi_crossbar                              |   305|
-|24    |              \gen_sasd.crossbar_sasd_0                |axi_crossbar_v2_1_7_crossbar_sasd                             |   305|
-|25    |                addr_arbiter_inst                      |axi_crossbar_v2_1_7_addr_arbiter_sasd                         |   128|
-|26    |                \gen_decerr.decerr_slave_inst          |axi_crossbar_v2_1_7_decerr_slave                              |    11|
-|27    |                reg_slice_r                            |axi_register_slice_v2_1_6_axic_register_slice__parameterized8 |   148|
-|28    |                splitter_ar                            |axi_crossbar_v2_1_7_splitter__parameterized0                  |     2|
-|29    |                splitter_aw                            |axi_crossbar_v2_1_7_splitter                                  |     7|
-|30    |          s00_couplers                                 |s00_couplers_imp_WHIN6P                                       |  1275|
-|31    |            auto_pc                                    |vivado_system_auto_pc_0                                       |  1275|
-|32    |              inst                                     |axi_protocol_converter_v2_1_6_axi_protocol_converter          |  1275|
-|33    |                \gen_axilite.gen_b2s_conv.axilite_b2s  |axi_protocol_converter_v2_1_6_b2s                             |  1275|
-|34    |                  \RD.ar_channel_0                     |axi_protocol_converter_v2_1_6_b2s_ar_channel                  |   197|
-|35    |                    ar_cmd_fsm_0                       |axi_protocol_converter_v2_1_6_b2s_rd_cmd_fsm                  |    35|
-|36    |                    cmd_translator_0                   |axi_protocol_converter_v2_1_6_b2s_cmd_translator_2            |   150|
-|37    |                      incr_cmd_0                       |axi_protocol_converter_v2_1_6_b2s_incr_cmd_3                  |    56|
-|38    |                      wrap_cmd_0                       |axi_protocol_converter_v2_1_6_b2s_wrap_cmd_4                  |    89|
-|39    |                  \RD.r_channel_0                      |axi_protocol_converter_v2_1_6_b2s_r_channel                   |   180|
-|40    |                    rd_data_fifo_0                     |axi_protocol_converter_v2_1_6_b2s_simple_fifo__parameterized1 |   115|
-|41    |                    transaction_fifo_0                 |axi_protocol_converter_v2_1_6_b2s_simple_fifo__parameterized2 |    51|
-|42    |                  SI_REG                               |axi_register_slice_v2_1_6_axi_register_slice                  |   615|
-|43    |                    ar_pipe                            |axi_register_slice_v2_1_6_axic_register_slice                 |   208|
-|44    |                    aw_pipe                            |axi_register_slice_v2_1_6_axic_register_slice_1               |   208|
-|45    |                    b_pipe                             |axi_register_slice_v2_1_6_axic_register_slice__parameterized1 |    50|
-|46    |                    r_pipe                             |axi_register_slice_v2_1_6_axic_register_slice__parameterized2 |   149|
-|47    |                  \WR.aw_channel_0                     |axi_protocol_converter_v2_1_6_b2s_aw_channel                  |   201|
-|48    |                    aw_cmd_fsm_0                       |axi_protocol_converter_v2_1_6_b2s_wr_cmd_fsm                  |    38|
-|49    |                    cmd_translator_0                   |axi_protocol_converter_v2_1_6_b2s_cmd_translator              |   147|
-|50    |                      incr_cmd_0                       |axi_protocol_converter_v2_1_6_b2s_incr_cmd                    |    54|
-|51    |                      wrap_cmd_0                       |axi_protocol_converter_v2_1_6_b2s_wrap_cmd                    |    89|
-|52    |                  \WR.b_channel_0                      |axi_protocol_converter_v2_1_6_b2s_b_channel                   |    81|
-|53    |                    bid_fifo_0                         |axi_protocol_converter_v2_1_6_b2s_simple_fifo                 |    46|
-|54    |                    bresp_fifo_0                       |axi_protocol_converter_v2_1_6_b2s_simple_fifo__parameterized0 |    10|
-|55    |        rst_processing_system7_0_100M                  |vivado_system_rst_processing_system7_0_100M_0                 |    68|
-|56    |          U0                                           |proc_sys_reset                                                |    68|
-|57    |            EXT_LPF                                    |lpf                                                           |    23|
-|58    |              \ACTIVE_LOW_AUX.ACT_LO_AUX               |cdc_sync                                                      |     5|
-|59    |              \ACTIVE_LOW_EXT.ACT_LO_EXT               |cdc_sync_0                                                    |     5|
-|60    |            SEQ                                        |sequence_psr                                                  |    40|
-|61    |              SEQ_COUNTER                              |upcnt_n                                                       |    14|
-|62    |        xillybus_ip_0                                  |vivado_system_xillybus_ip_0_0                                 |     2|
-|63    |          inst                                         |xillybus_ip                                                   |     2|
-|64    |        xillybus_lite_0                                |vivado_system_xillybus_lite_0_0                               |   113|
-|65    |        xillyvga_0                                     |vivado_system_xillyvga_0_0                                    |   215|
-|66    |          inst                                         |xillyvga                                                      |   215|
-|67    |        xlconcat_0                                     |vivado_system_xlconcat_0_0                                    |     0|
+|10    |    STATE_CONTROLLOR                                   |STATE_CONTROLLOR_VHDL                                         |    29|
+|11    |    STR                                                |STR_VHDL                                                      |   110|
+|12    |    TEXT_INPUT                                         |TEXT_INPUT_VHDL                                               |   206|
+|13    |      MEMORY                                           |MEMORY_VHDL                                                   |    57|
+|14    |  smbus_ins                                            |smbus                                                         |   125|
+|15    |  xillybus_ins                                         |xillybus                                                      |  2620|
+|16    |    system_i                                           |system                                                        |  2261|
+|17    |      vivado_system_i                                  |vivado_system                                                 |  2260|
+|18    |        processing_system7_0                           |vivado_system_processing_system7_0_0                          |   282|
+|19    |          inst                                         |processing_system7_v5_5_processing_system7                    |   282|
+|20    |            xlnx_axi_wrshim_unwrap_inst_gp0            |xlnx_axi_wrshim_unwrap                                        |    18|
+|21    |            xlnx_axi_wrshim_unwrap_inst_gp1            |xlnx_axi_wrshim_unwrap_5                                      |    18|
+|22    |        processing_system7_0_axi_periph                |vivado_system_processing_system7_0_axi_periph_0               |  1580|
+|23    |          xbar                                         |vivado_system_xbar_0                                          |   305|
+|24    |            inst                                       |axi_crossbar_v2_1_7_axi_crossbar                              |   305|
+|25    |              \gen_sasd.crossbar_sasd_0                |axi_crossbar_v2_1_7_crossbar_sasd                             |   305|
+|26    |                addr_arbiter_inst                      |axi_crossbar_v2_1_7_addr_arbiter_sasd                         |   128|
+|27    |                \gen_decerr.decerr_slave_inst          |axi_crossbar_v2_1_7_decerr_slave                              |    11|
+|28    |                reg_slice_r                            |axi_register_slice_v2_1_6_axic_register_slice__parameterized8 |   148|
+|29    |                splitter_ar                            |axi_crossbar_v2_1_7_splitter__parameterized0                  |     2|
+|30    |                splitter_aw                            |axi_crossbar_v2_1_7_splitter                                  |     7|
+|31    |          s00_couplers                                 |s00_couplers_imp_WHIN6P                                       |  1275|
+|32    |            auto_pc                                    |vivado_system_auto_pc_0                                       |  1275|
+|33    |              inst                                     |axi_protocol_converter_v2_1_6_axi_protocol_converter          |  1275|
+|34    |                \gen_axilite.gen_b2s_conv.axilite_b2s  |axi_protocol_converter_v2_1_6_b2s                             |  1275|
+|35    |                  \RD.ar_channel_0                     |axi_protocol_converter_v2_1_6_b2s_ar_channel                  |   197|
+|36    |                    ar_cmd_fsm_0                       |axi_protocol_converter_v2_1_6_b2s_rd_cmd_fsm                  |    35|
+|37    |                    cmd_translator_0                   |axi_protocol_converter_v2_1_6_b2s_cmd_translator_2            |   150|
+|38    |                      incr_cmd_0                       |axi_protocol_converter_v2_1_6_b2s_incr_cmd_3                  |    56|
+|39    |                      wrap_cmd_0                       |axi_protocol_converter_v2_1_6_b2s_wrap_cmd_4                  |    89|
+|40    |                  \RD.r_channel_0                      |axi_protocol_converter_v2_1_6_b2s_r_channel                   |   180|
+|41    |                    rd_data_fifo_0                     |axi_protocol_converter_v2_1_6_b2s_simple_fifo__parameterized1 |   115|
+|42    |                    transaction_fifo_0                 |axi_protocol_converter_v2_1_6_b2s_simple_fifo__parameterized2 |    51|
+|43    |                  SI_REG                               |axi_register_slice_v2_1_6_axi_register_slice                  |   615|
+|44    |                    ar_pipe                            |axi_register_slice_v2_1_6_axic_register_slice                 |   208|
+|45    |                    aw_pipe                            |axi_register_slice_v2_1_6_axic_register_slice_1               |   208|
+|46    |                    b_pipe                             |axi_register_slice_v2_1_6_axic_register_slice__parameterized1 |    50|
+|47    |                    r_pipe                             |axi_register_slice_v2_1_6_axic_register_slice__parameterized2 |   149|
+|48    |                  \WR.aw_channel_0                     |axi_protocol_converter_v2_1_6_b2s_aw_channel                  |   201|
+|49    |                    aw_cmd_fsm_0                       |axi_protocol_converter_v2_1_6_b2s_wr_cmd_fsm                  |    38|
+|50    |                    cmd_translator_0                   |axi_protocol_converter_v2_1_6_b2s_cmd_translator              |   147|
+|51    |                      incr_cmd_0                       |axi_protocol_converter_v2_1_6_b2s_incr_cmd                    |    54|
+|52    |                      wrap_cmd_0                       |axi_protocol_converter_v2_1_6_b2s_wrap_cmd                    |    89|
+|53    |                  \WR.b_channel_0                      |axi_protocol_converter_v2_1_6_b2s_b_channel                   |    81|
+|54    |                    bid_fifo_0                         |axi_protocol_converter_v2_1_6_b2s_simple_fifo                 |    46|
+|55    |                    bresp_fifo_0                       |axi_protocol_converter_v2_1_6_b2s_simple_fifo__parameterized0 |    10|
+|56    |        rst_processing_system7_0_100M                  |vivado_system_rst_processing_system7_0_100M_0                 |    68|
+|57    |          U0                                           |proc_sys_reset                                                |    68|
+|58    |            EXT_LPF                                    |lpf                                                           |    23|
+|59    |              \ACTIVE_LOW_AUX.ACT_LO_AUX               |cdc_sync                                                      |     5|
+|60    |              \ACTIVE_LOW_EXT.ACT_LO_EXT               |cdc_sync_0                                                    |     5|
+|61    |            SEQ                                        |sequence_psr                                                  |    40|
+|62    |              SEQ_COUNTER                              |upcnt_n                                                       |    14|
+|63    |        xillybus_ip_0                                  |vivado_system_xillybus_ip_0_0                                 |     2|
+|64    |          inst                                         |xillybus_ip                                                   |     2|
+|65    |        xillybus_lite_0                                |vivado_system_xillybus_lite_0_0                               |   113|
+|66    |        xillyvga_0                                     |vivado_system_xillyvga_0_0                                    |   215|
+|67    |          inst                                         |xillyvga                                                      |   215|
+|68    |        xlconcat_0                                     |vivado_system_xlconcat_0_0                                    |     0|
 +------+-------------------------------------------------------+--------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:26 ; elapsed = 00:03:36 . Memory (MB): peak = 984.254 ; gain = 813.055
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:33 ; elapsed = 00:03:44 . Memory (MB): peak = 954.301 ; gain = 782.852
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:39 ; elapsed = 00:02:55 . Memory (MB): peak = 984.254 ; gain = 459.047
-Synthesis Optimization Complete : Time (s): cpu = 00:03:26 ; elapsed = 00:03:36 . Memory (MB): peak = 984.254 ; gain = 813.055
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:35 ; elapsed = 00:03:01 . Memory (MB): peak = 954.301 ; gain = 429.438
+Synthesis Optimization Complete : Time (s): cpu = 00:03:33 ; elapsed = 00:03:44 . Memory (MB): peak = 954.301 ; gain = 782.852
 INFO: [Project 1-571] Translating synthesized netlist
 Reading core file 'C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/cores/xillybus_core.ngc' for (cell view 'xillybus_core', library 'work')
 Parsing EDIF File [./.ngc2edfcache/xillybus_core_ngc_6acb8b29.edif]
@@ -2976,11 +2997,11 @@ Reading core file 'C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/cores/xillyvga_core
 Parsing EDIF File [./.ngc2edfcache/xillyvga_core_ngc_6acb8b29.edif]
 Finished Parsing EDIF File [./.ngc2edfcache/xillyvga_core_ngc_6acb8b29.edif]
 WARNING: [Netlist 29-345] The value of SIM_DEVICE on instance 'xillybus_ins/system_i/vivado_system_i/xillyvga_0/inst/xillyvga_core_ins/vga_clk_ins/dvi_clk_buf' of type 'BUFR' is 'VIRTEX4'; it is being changed to match the current FPGA architecture, '7SERIES'. For functional simulation to match hardware behavior, the value of SIM_DEVICE should be changed in the source netlist. 
-INFO: [Netlist 29-17] Analyzing 4945 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 4933 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-479] Netlist was created with Xilinx ngc2edif P_INT.20150901
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 2 inverter(s) to 34 load pin(s).
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 46 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3490 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 237 instances
@@ -2999,8 +3020,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   SRLC16E => SRL16E: 6 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-849 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+852 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:28 ; elapsed = 00:03:35 . Memory (MB): peak = 984.254 ; gain = 718.906
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 984.254 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 26 14:59:46 2016...
+synth_design: Time (s): cpu = 00:03:35 ; elapsed = 00:03:42 . Memory (MB): peak = 954.301 ; gain = 688.699
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.156 . Memory (MB): peak = 954.301 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jan 26 19:01:14 2016...

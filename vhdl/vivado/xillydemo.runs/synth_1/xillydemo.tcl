@@ -58,6 +58,7 @@ read_vhdl -library xil_defaultlib {
   C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd
   C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd
   C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd
+  C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/new/MEMORY_VHDL.vhd
 }
 set_property edif_extra_search_paths C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/cores [current_fileset]
 read_xdc C:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc

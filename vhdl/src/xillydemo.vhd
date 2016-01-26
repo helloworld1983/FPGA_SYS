@@ -201,7 +201,7 @@ architecture sample_arch of xillydemo is
   component CONTROLLOR_VHDL
     port (
 	CLK : in std_logic := '0';
-    TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
+    INPUT_STREAM : in std_logic_vector(7 downto 0);
     --RDEN : in std_logic;
     PARSER_OK : out std_logic := '0');
   end component;
@@ -536,7 +536,7 @@ begin
     controllor : CONTROLLOR_VHDL
     port map (
     CLK => bus_clk,
-    TEXT_INPUT_STREAM => user_r_read_8_data,
+    INPUT_STREAM => user_r_read_8_data,
     --RDEN => user_r_read_8_rden,
     PARSER_OK => parser_ok
     );

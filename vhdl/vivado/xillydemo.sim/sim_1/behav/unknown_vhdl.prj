@@ -28,6 +28,7 @@ vhdl xil_defaultlib  "../../../xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_
 vhdl xil_defaultlib  "../../../xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd"
 vhdl xil_defaultlib  "../../../xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd"
 vhdl xil_defaultlib  "../../../xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd"
+vhdl xil_defaultlib  "../../../xillydemo.srcs/sources_1/new/MEMORY_VHDL.vhd"
 
 # Do not sort compile order
 nosort

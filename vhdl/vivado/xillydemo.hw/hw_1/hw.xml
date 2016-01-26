@@ -5,5 +5,11 @@
 
 <hwsession version="1" minor="1">
   <device name="xc7z010_1" gui_info=""/>
+  <ObjectList object_type="hw_device" gui_info="">
+    <Object name="xc7z010_1" gui_info="">
+      <Properties Property="PROBES.FILE" value=""/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="C:/FPGAPrj/VIVADO/VIVADO/CONTROLLOR.runs/impl_1/CONTROLLOR_VHDL.bit"/>
+    </Object>
+  </ObjectList>
   <probeset name="hw project" active="false"/>
 </hwsession>
