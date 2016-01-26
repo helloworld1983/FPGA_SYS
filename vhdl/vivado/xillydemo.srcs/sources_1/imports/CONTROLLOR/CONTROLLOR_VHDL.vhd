@@ -12,9 +12,8 @@ entity CONTROLLOR_VHDL is
 end CONTROLLOR_VHDL;
 
 architecture Behavioral of CONTROLLOR_VHDL is
-    
-    signal parser_error : std_logic := '0';
-    
+    signal parser_error : std_logic;
+
     -----------------------------------------
     -- Loading command
     -----------------------------------------
@@ -25,7 +24,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 		TRG : in std_logic ;
 		RDY_IN : in std_logic ;
 		FAIL : in std_logic ;
-		TEXT_IN : in std_logic_vector(7 downto 0);
+		TEXT_IN : in character := ' ';
 		ID : out integer;
 		BYTE_TEXT : out character ;
 		SET_TEXT_START : out character ;
@@ -46,11 +45,8 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	    READ_TRG : in std_logic ;
 		TRG : in std_logic ;
 		RDY : in std_logic ;
-		TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
-	   RDEN : in std_logic ;
-		RUN : out std_logic := '0';
-		CHAR_OUT : out std_logic_vector(7 downto 0)) ;
-		--STR_OUT : buffer string(1 to 2));
+		CHAR_OUT : out character ;
+		STR_OUT : buffer string(1 to 2));
 	end component;
 	
 	------------------------------------------------
@@ -78,7 +74,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 		port(
 		CLK : in std_logic ;
 		TRG_ONE : in std_logic ;
-		TEXT_IN : in std_logic_vector(7 downto 0) ;
+		TEXT_IN : in character ;
 		NEZ_IN : in character ;
 		FAIL : out std_logic ;
 		RDY_ONE : out std_logic);
@@ -94,7 +90,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 		NEZ_IN_START : in character ;
 		NEZ_IN_END : in character ;
 		OPTION : in integer ;
-		TEXT_IN : in std_logic_vector(7 downto 0) ;
+		TEXT_IN : in character;
 		FAIL : out std_logic ;
 		RDY_ONE : out std_logic);
 	end component;
@@ -110,7 +106,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 		NEZ_IN_START : in character := 'a';
 		NEZ_IN_END : in character := 'z';
 		OPTION : in integer ;
-		TEXT_IN : in std_logic_vector(7 downto 0) ;
+		TEXT_IN : in character ;
 		CONTINUE_RDY : out std_logic ;
 		RDY_ONE : out std_logic := '0');
 	end component;
@@ -122,7 +118,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 		port(
 		CLK : in std_logic ;
 		TRG_ONE : in std_logic ;
-		TEXT_IN : in std_logic_vector(7 downto 0) ;
+		TEXT_IN : in character := 'a';
 		NEZ_IN : in character := 'a';
 		RDY_ONE : out std_logic := '0');
 	end component;
@@ -147,7 +143,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 		port(
 		CLK : in std_logic ;
 		TRG_ONE : in std_logic ;
-		TEXT_IN : in std_logic_vector(7 downto 0) ;
+		TEXT_IN : in character := '1';
 		FAIL : out std_logic := '0' ;
 		RDY_ONE : out std_logic := '0');
 	end component;
@@ -160,7 +156,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	signal set_option_sig : integer := 0;	
 	signal obyte_text_reg : character := ' ';
 
-	signal text_in_reg : std_logic_vector(7 downto 0) ;
+	signal text_in_reg : character := ' ' ;
 	signal next_rdy_array : std_logic_vector(ARRAY_WIDTH downto 0) := (others => '0') ;
 	signal next_rdy : std_logic := '0';
 	signal id_reg : integer := 0 ;
@@ -172,13 +168,6 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	signal next_trg : std_logic := '0' ;
 	signal next_text_rdy_reg : std_logic := '0' ;	
 	signal start,start1,start2 : std_logic := '0' ;
-	
-	--Test
-    signal text_input_stream_test : std_logic_vector(7 downto 0);
-    signal count_text_stream : integer := 0;
-    type text_sample is array(1 to 9) of std_logic_vector(7 downto 0); 
-    signal txt_sample : text_sample := ("01111011","00100010","01000001","00100010","00111010","00111001","01111101","00000011","00000000");
-    ------
 		
 	--next_rdy_function
 	function next_rdy_function(n:std_logic_vector) return std_logic is
@@ -197,9 +186,6 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	signal string_text_reg, string_nez_reg : string(1 to 2) := "  ";
 	signal state_next : std_logic := '0';
 	--signal clk_sig : std_logic := '0';
-	signal fin : boolean := false;
-	signal rden : std_logic := '0';
-	
 	
 	--attribute mark_debug : string;
     --attribute mark_debug of end_parser_ok: signal is "true";
@@ -249,12 +235,8 @@ begin
 		READ_TRG => start1,
 		TRG => START,
 		RDY => next_text_rdy_reg,
-		TEXT_INPUT_STREAM => text_input_stream_test,
-		RDEN => rden,
-		RUN => start,
-		CHAR_OUT => text_in_reg
-		--STR_OUT => string_text_reg
-		);
+		CHAR_OUT => text_in_reg,
+		STR_OUT => string_text_reg);
 
 	STATE_CONTROLLOR : STATE_CONTROLLOR_VHDL 
 	port map (
@@ -328,57 +310,18 @@ begin
 	       count_start <= count_start + 1;
 	       end if;
 	       
-	       --if(count_start = 2) then
-	           --start1 <= '1';
-	       --elsif(count_start = 4) then
-	          --- start <= '1' ;
-	       --elsif(count_start = 6) then
-	           --start2 <= '1';
-	       --else
-	           --start1 <= '0';	       
-	           --start <= '0';
-	       --end if;
+	       if(count_start = 2) then
+	           start1 <= '1';
+	       elsif(count_start = 4) then
+	           start <= '1' ;
+	       elsif(count_start = 6) then
+	           start2 <= '1';
+	       else
+	           start1 <= '0';	       
+	           start <= '0';
+	       end if;
            
 		end if;
 	end process;
-	
-	process(CLK)
-    begin
-        if(CLK'event and CLK = '1') then
-            if(count_text_stream >= 1 and count_text_stream <= 8) then
-                --if(not fin) then
-                text_input_stream_test <= txt_sample(count_text_stream);
-                --end if;
-                --count_text_stream <= count_text_stream + 1;
-            --else
-                --text_input_stream <= "UUUUUUUU";
-            end if;
-            
-            --if(count_text_stream = 9) then
-                --count_text_stream <= 1;
-                --fin <= true;
-            --end if;
-        end if;
-    end process;
-    
-    process(CLK)
-    begin
-        if(CLK'event and CLK = '0') then
-            if(count_text_stream <= 8) then
-                count_text_stream <= count_text_stream + 1;
-            end if;
-        end if;
-    end process;
-	 
-    process(CLK)
-    begin
-        if(CLK'event and CLK = '0') then
-            if(count_text_stream <= 8) then
-                rden <= '1';
-				else 
-					rden <= '0';
-            end if;
-        end if;
-    end process;
 
 end Behavioral;

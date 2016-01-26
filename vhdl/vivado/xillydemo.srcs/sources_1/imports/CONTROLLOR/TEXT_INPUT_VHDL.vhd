@@ -1,176 +1,171 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-use ieee.std_logic_arith.all;
 use STD.textio.all;
-use ieee.std_logic_textio.all;
-LIBRARY UNISIM;
-USE UNISIM.Vcomponents.ALL;
 
 entity TEXT_INPUT_VHDL is
 	port(
-	CLK : in std_logic ;
+	CLK : in std_logic := '0';
 	READ_TRG : in std_logic ;
-	TRG : in std_logic ;
-	RDY : in std_logic ;
-	TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
-	RDEN : in std_logic;
-	RUN : out std_logic := '0';
-	CHAR_OUT : out std_logic_vector(7 downto 0)) ;
-	--STR_OUT : buffer string(1 to 2) );
+	TRG : in std_logic := '0';
+	RDY : in std_logic := '0';
+	CHAR_OUT : out character := ' ';
+	STR_OUT : buffer string(1 to 2) := "  " );
 end TEXT_INPUT_VHDL;
 
 architecture Behavioral of TEXT_INPUT_VHDL is
 	signal string_line_no : natural := 1;
-	constant ETX : std_logic_vector(7 downto 0) := "00000011";
-	constant CHAR_NUM : integer := 500;
-	type string_array is array(1 to CHAR_NUM) of std_logic_vector(7 downto 0);
-	signal str_array : string_array := (others => "00000000");
-	signal run_sig : std_logic := '0';
-	--signal in_num, out_num : natural := 1;
-	--signal c,c_read: std_logic_vector(7 downto 0);
-	signal input_end: boolean := false;
-	signal count_text_stream : integer := 0;
-	
-	component MEMORY_VHDL
-	    port (
-		 CLK : in std_logic;
-		 DIN : in std_logic_vector(7 downto 0); 
-       DOUT : out std_logic_vector(7 downto 0);
-       WR : in std_logic;
-       ADDR_IN : in std_logic_vector(8 downto 0));
-	end component;
-	
-   --component RAMB4_S8
-      --port (DI     : in STD_LOGIC_VECTOR (7 downto 0);
-            --EN     : in STD_LOGIC;
-            --WE     : in STD_LOGIC;
-            --RST    : in STD_LOGIC;
-            --CLK    : in STD_LOGIC;
-            --ADDR   : in STD_LOGIC_VECTOR (8 downto 0);
-            --DO     : out STD_LOGIC_VECTOR (7 downto 0)
-      --); 
-   -- end component;
-	
-	signal addr_in : std_logic_vector(8 downto 0);
-	signal in_num, out_num:         natural := 1;
-	
-	
-	signal ram_we_sig : std_logic := '1';
-	signal ram_rst_sig : std_logic := '0';
-	signal input_finish : boolean := false;
-	--signal count_text_stream : natural := 1;
-	signal dout : std_logic_vector(7 downto 0);
-	
-begin
-		--char_out <= c_read;
-		--count_out <= in_num;
-		RUN <= run_sig;
-		CHAR_OUT <= dout;
-		
-        process (CLK)
-           --variable c,c_read: std_logic_vector(7 downto 0);     
-           --variable next_sig : std_logic := '0';
+	--signal char_no : natural := 1;
+	--signal text_in_reg : character := ' ' ;
+	--signal count_out_reg : integer := 1;
+	--file in_file : text;
+	constant STRING_WIDTH : integer := 30;
+	constant LINE_NUMBER : integer := 12;
+	type string_array is array(1 to LINE_NUMBER) of string(1 to STRING_WIDTH);
+	signal res_string_array : string_array := (('{',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('"','I','m','a','g','e','"',':','{',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('"','W','i','t','h','"',':','8','0','0',',',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('"','H','e','i','g','h','t','"',':','6','0','0',',',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('"','T','i','t','l','e','"',':','"','V','i','e','w','f','r','o','m','1','5','t','h','F','l','o','o','r','"',',',LF,' '),
+	                                           ('"','T','h','u','m','b','n','a','i','l','"',':','{',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('"','H','e','i','g','h','t','"',':','1','2','5',',',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('"','W','i','t','h','"',':','1','0','0',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('}',',',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('"','A','n','i','m','a','t','e','d','"',':','f','a','l','s','e',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('}',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '),
+	                                           ('}',LF,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '));
+    --signal str_line_no_var,char_no_var : integer := 1;
+    --signal next_sig:         boolean := false;
 
-           --variable end_sig : boolean := false;
-			  --variable str_array : string_array := (others => "00000000");
+begin
+        process (CLK)
+           --file text_input : text is in "C:\FPGAPrj\CONTROLLOR\text_input.txt";
+           --variable l:         line;
+           variable c,c_read:         character;
+           --variable is_string: boolean;
+           --variable str : string(1 to 100) := (others => ' ');     
+           variable next_sig : std_logic := '0';
+           variable j,n:         natural := 1;
+           variable end_sig : boolean := false;
         begin
         if(CLK'event and CLK = '1') then
-				--if (TEXT_INPUT_STREAM /= ETX and TEXT_INPUT_STREAM /= "UUUUUUUU") then
-					--str_array(in_num) <= TEXT_INPUT_STREAM;
-					--in_num := in_num + 1;
-				--elsif (TEXT_INPUT_STREAM = ETX and not input_end) then
-					--str_array(in_num) <= TEXT_INPUT_STREAM;
-					--run_sig <= '1';
-					--input_end <= true;
-				--else
-					--run_sig <= '0';
-				--end if;
-					
+          --if not endfile(text_input) then    
+                        --if(TRG = '1' or RDY = '1') then
+                        --if(TRG = '1' or next_sig = '1') then
+                      --readline(text_input, l);
+                            --j := 1;
+                            --for i in str'range loop
+                                --str(i) := ' ';
+                           --end loop;  
+                              --for i in str'range loop
+                            --read(l, c, is_string);
+                            --if is_string then 
+                                --if(c /= ' ') then
+                                --str(j) := c;
+                                --j := j + 1;
+                                --end if;
+                                --test(i) <= c;
+                                --test <= str(256);
+                            --else 
+                            --str(j) := LF;
+                            --exit;
+                            --end if;
+                        
+                        --end loop;
+                      
+                      --next_sig := '0';
+                      --n := 1;
+                      --end if;
+                      --else
+                        --for i in str'range loop
+                            --    str(i) := ' ';
+                           --end loop;
+                        --str(1) := ESC;
+                        --next_sig := '0';
+                      --n := 1;
+                      --end_sig := true;
+                      --end if;
+                     -- clear the contents of the result string
+                     --for i in text_string_array(j)'range loop
+                         --text_string_array(j)(i) := ' ';
+                     --end loop;   
+                     -- read all characters of the line, up to the length  
+                     -- of the results string
+                      --wait until CLK = '1'; 
+                      --next_sig := true;
+                      --while next_sig ;
+                     --for i in text_string_array(j)'range loop
+                        --wait until CLK = '1';
+                      --if(next_sig = '1') then
+                        --next_sig <= '0';
+                      --end if;
                     if((TRG = '1' or RDY = '1')) then
-                        if(out_num > 0 and out_num < CHAR_NUM) then
-                        --c_read := str_array(out_num);
-                        out_num <= out_num + 1;
+                    --trg_sig <= next_sig or CLK;
+                    
+                    --if (TRG = '1' or RDY = '1') then
+                     --while(c = ' ') loop
+                     --if (next_sig) then
+                     
+                     --wait until (TRG = '1' or RDY = '1') ;
+                     
+                     --for i in 1 to 100 loop
+                    --read(l, c_read, is_string);
+                       --num <= i ;
+                        if(n > 0 and n <STRING_WIDTH) then
+                        --if(not(c_read = LF and end_sig)) then 
+                        c_read :=res_string_array(j)(n);
+                        --end if;
+                        n := n + 1;
                         end if;
- 
-                        --char_out <= c_read;
-                        --STR_OUT <= STR_OUT(2) & c_read;
-
-                    end if;
+                        
+                        --if(c_read = LF)
+                        
+                       --exit when (c_read /= ' ');
+                     --if(c = ' ') then next;
+                     --else
+                     --next_sig := false;
+                     
+                     --end if;
+                     --end loop;
+                     
+                        if(c_read = LF) then
+                            if(j > 0 and j < LINE_NUMBER) then
+                                j := j + 1;
+                            end if;
+                            n := 1;
+                        end if;
+                     
+                     --n := i ;
+                    --if is_string then 
+                        --text_string_array(j)(i) := c;
+                        --res_string_array(j)(i) <= c;
+                        --if(c_read = LF and end_sig) then
+                        --char_out <= ESC;
+                        --else
+                        char_out <= c_read;
+                       -- end if;
+                        --str_out_sig(1) := str_out_sig(2);
+                        --str_out_sig(2) := c;
+                        STR_OUT <= STR_OUT(2) & c_read;
+                        --RDY <= '0';
+                        --CONTINUE <= '0';
+                        --next_sig <= '0';
+                    --else 
+                     --next_sig <= '1';
+                     --char_out <= LF;
+                     --str_out <= str_out(2)&LF;
+                     --next_sig := '1';
+                    --end if;
+                   --end if;
+                        
+                        
+                    --end if;
+                     --end loop;
+                        
+                        --if(j < LINE_NUMBER) then
+                        --j := j+1;
+                        end if;
         end if;
     end process;
-	 
-	 --addr_in <= CONV_std_logic_vector(out_num,9);
-	 MEMORY : MEMORY_VHDL
-	    port map(
-		 CLK => CLK,
-		 DIN => text_input_stream,
-         DOUT => dout,
-         WR => ram_we_sig,
-         ADDR_IN => addr_in );
-		 
-	--MEM : RAMB4_S8
-		--port map(
-		--ADDR => addr_in,
-		--DI => text_input_stream,
-		--CLK => CLK,
-		--EN => '1',
-		--RST => '0',
-		--WE => ram_we_sig,
-		--DO => dout);
-		
-	
-	process(CLK)
-	begin
-		if(CLK'event and CLK = '1') then
-			if(text_input_stream = "00000011") then
-				input_finish <= true;
-			end if;
-		end if;
-	end process;
-
-	ram_rst_sig <= '0' when input_finish else '1';
-	ram_we_sig <= '0' when input_finish else '1';
-	
-	process(CLK)
-	begin
-		if(CLK'event and CLK = '1') then
-			if(input_finish) then
-				addr_in <= CONV_std_logic_vector(out_num,9);
-			else
-				addr_in <= CONV_std_logic_vector((count_text_stream+2),9);
-			end if;
-		end if;
-	end process;
-	
-	process(CLK) 
-	begin
-		if(CLK'event and CLK = '0') then
-			if(RDEN = '1') then
-				count_text_stream <= count_text_stream + 1;
-			end if;
-		end if;
-	end process;
-	
-	--process(CLK)
-	--begin
-		--if(CLK'event and CLK = '1') then
-			--if(text_input_stream /= dout) then	
-				--count_text_stream <= count_text_stream + 1;
-			--end if;
-		--end if;
-	--end process;
-	
-	process(CLK)
-	begin
-		if(CLK'event and CLK = '1') then
-			if(input_finish and not input_end) then	
-				run_sig <= '1';
-				input_end <= true;
-			else 
-				run_sig <= '0';
-			end if;
-		end if;
-	end process;
     
-end Behavioral;
+    
+    end Behavioral;
