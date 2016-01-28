@@ -8,6 +8,7 @@ entity MEMORY_VHDL is
            DIN : in std_logic_vector(7 downto 0) := "00000000";
            DOUT : out std_logic_vector(7 downto 0);
            WR : in std_logic;
+           DOEN : in std_logic;
            ADDR_IN : in std_logic_vector(8 downto 0));
 end MEMORY_VHDL;
 
@@ -24,5 +25,5 @@ begin
       ADDR_REG <= ADDR_IN; 
     end if; 
   end process;
-  DOUT <= RAM(CONV_INTEGER(ADDR_REG));
+  DOUT <= RAM(CONV_INTEGER(ADDR_REG)) when DOEN = '1' else "00000000";
 end RTL;

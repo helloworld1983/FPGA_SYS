@@ -55,7 +55,6 @@ set_msg_config  -ruleid {7}  -id {Netlist 29-160}  -string {{vivado_system_proce
 start_step init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   set_property design_mode GateLvl [current_fileset]
   set_property webtalk.parent_dir C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.cache/wt [current_project]
   set_property parent.project_path C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.xpr [current_project]

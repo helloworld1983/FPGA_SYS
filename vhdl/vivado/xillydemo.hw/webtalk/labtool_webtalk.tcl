@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.hw/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Tue Jan 26 01:07:53 2016" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Thu Jan 28 17:06:51 2016" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "Vivado v2015.3 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "1368829" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,13 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "903c64c5-9302-4149-b535-7193d14dbe02" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "17b1626e-1ed7-4de2-8b6a-4189aa276b82" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "5" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "7" -context "software_version_and_target_device"
+webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
+webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
+webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-3317U CPU @ 1.70GHz" -context "user_environment"
+webtalk_add_data -client project -key cpu_speed -value "1696 MHz" -context "user_environment"
+webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
+webtalk_add_data -client project -key system_ram -value "4.000 GB" -context "user_environment"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-3317U CPU @ 1.70GHz" -context "user_environment"
@@ -24,5 +30,6 @@ webtalk_add_data -client project -key system_ram -value "4.000 GB" -context "use
 webtalk_register_client -client labtool
 webtalk_add_data -client labtool -key pgmcnt -value "00:00:00" -context "labtool\\usage"
 webtalk_add_data -client labtool -key cable -value "" -context "labtool\\usage"
-webtalk_transmit -clientid 3730914663 -regid "211101165_1777512702_210617328_901" -xml C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.hw/webtalk/usage_statistics_ext_labtool.xml -html C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.hw/webtalk/usage_statistics_ext_labtool.html -wdm C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.hw/webtalk/usage_statistics_ext_labtool.wdm -intro "<H3>LABTOOL Usage Report</H3><BR>"
+webtalk_add_data -client labtool -key cable -value "" -context "labtool\\usage"
+webtalk_transmit -clientid 3816636179 -regid "211101165_1777512702_210617328_901" -xml C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.hw/webtalk/usage_statistics_ext_labtool.xml -html C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.hw/webtalk/usage_statistics_ext_labtool.html -wdm C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.hw/webtalk/usage_statistics_ext_labtool.wdm -intro "<H3>LABTOOL Usage Report</H3><BR>"
 webtalk_terminate

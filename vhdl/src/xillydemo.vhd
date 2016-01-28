@@ -202,7 +202,7 @@ architecture sample_arch of xillydemo is
     port (
 	CLK : in std_logic := '0';
     INPUT_STREAM : in std_logic_vector(7 downto 0);
-    --RDEN : in std_logic;
+    RDEN : in std_logic;
     PARSER_OK : out std_logic := '0');
   end component;
   
@@ -263,6 +263,9 @@ architecture sample_arch of xillydemo is
   signal user_w_write_8_wren :  std_logic;
   signal user_w_write_8_full :  std_logic;
   signal user_w_write_8_data :  std_logic_vector(7 DOWNTO 0);
+  --------------------------------------------------------------
+  signal user_w_write_8_data_test :  std_logic_vector(7 DOWNTO 0);
+  --------------------------------------------------------------
   signal user_w_write_8_open :  std_logic;
   signal user_r_audio_rden :  std_logic;
   signal user_r_audio_empty :  std_logic;
@@ -536,11 +539,12 @@ begin
     controllor : CONTROLLOR_VHDL
     port map (
     CLK => bus_clk,
-    INPUT_STREAM => user_r_read_8_data,
-    --RDEN => user_r_read_8_rden,
+    INPUT_STREAM => user_w_write_8_data,
+    RDEN => user_w_write_8_wren,
     PARSER_OK => parser_ok
     );
     
+    --user_w_write_8_data_test <= std_logic_vector(to_unsigned(natural(character'pos(a)),8)) when (user_w_write_8_data /= "00000000" and parser_ok = '1')  else "00000000";
     user_r_read_8_data_test <= std_logic_vector(to_unsigned(natural(character'pos(a)),8)) when (user_r_read_8_data /= "00000000" and parser_ok = '1')  else "00000000";
     ----------------------------------------------------
     
