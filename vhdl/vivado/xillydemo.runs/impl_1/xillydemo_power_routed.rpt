@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date             : Thu Jan 28 19:19:47 2016
+| Date             : Fri Jan 29 18:05:02 2016
 | Host             : maicuong running 64-bit major release  (build 9200)
 | Command          : 
 | Design           : xillydemo
@@ -30,13 +30,13 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 2.258 |
-| Dynamic (W)              | 2.117 |
+| Total On-Chip Power (W)  | 2.259 |
+| Dynamic (W)              | 2.118 |
 | Device Static (W)        | 0.141 |
 | Total Off-Chip Power (W) | 0.008 |
 | Effective TJA (C/W)      | 11.5  |
-| Max Ambient (C)          | 59.1  |
-| Junction Temperature (C) | 50.9  |
+| Max Ambient (C)          | 59.0  |
+| Junction Temperature (C) | 51.0  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -51,15 +51,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.023 |       10 |       --- |             --- |
-| Slice Logic              |     0.012 |    13148 |       --- |             --- |
-|   LUT as Logic           |     0.010 |     5423 |     17600 |           30.81 |
+| Slice Logic              |     0.012 |    13153 |       --- |             --- |
+|   LUT as Logic           |     0.011 |     5420 |     17600 |           30.80 |
 |   CARRY4                 |    <0.001 |      388 |      4400 |            8.82 |
-|   Register               |    <0.001 |     5659 |     35200 |           16.08 |
+|   Register               |    <0.001 |     5667 |     35200 |           16.10 |
 |   LUT as Distributed RAM |    <0.001 |      270 |      6000 |            4.50 |
 |   F7/F8 Muxes            |    <0.001 |       83 |     17600 |            0.47 |
 |   LUT as Shift Register  |    <0.001 |       70 |      6000 |            1.17 |
 |   Others                 |     0.000 |      626 |       --- |             --- |
-| Signals                  |     0.020 |     9909 |       --- |             --- |
+| Signals                  |     0.020 |     9916 |       --- |             --- |
 | Block RAM                |     0.008 |        5 |        60 |            8.33 |
 | MMCM                     |     0.105 |        1 |         2 |           50.00 |
 | PLL                      |     0.102 |        1 |         2 |           50.00 |
@@ -434,11 +434,11 @@ Table of Contents
 |         xillyvga_0                                            |     0.299 |
 |           inst                                                |     0.299 |
 |             xillyvga_core_ins                                 |     0.299 |
-|               vga_fifo_wrapper_ins/vga_fifo                   |     0.001 |
-|                 U0                                            |     0.001 |
-|                   inst_fifo_gen                               |     0.001 |
-|                     gconvfifo.rf                              |     0.001 |
-|                       grf.rf                                  |     0.001 |
+|               vga_fifo_wrapper_ins/vga_fifo                   |     0.002 |
+|                 U0                                            |     0.002 |
+|                   inst_fifo_gen                               |     0.002 |
+|                     gconvfifo.rf                              |     0.002 |
+|                       grf.rf                                  |     0.002 |
 |                         gntv_or_sync_fifo.gcx.clkx            |    <0.001 |
 |                           gsync_stage[1].rd_stg_inst          |    <0.001 |
 |                           gsync_stage[1].wr_stg_inst          |    <0.001 |

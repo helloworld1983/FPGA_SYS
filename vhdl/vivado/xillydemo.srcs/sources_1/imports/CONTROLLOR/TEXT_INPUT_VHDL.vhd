@@ -29,7 +29,7 @@ architecture Behavioral of TEXT_INPUT_VHDL is
 	signal run_sig : std_logic := '0';
 	--signal in_num, out_num : natural := 1;
 	--signal c,c_read: std_logic_vector(7 downto 0);
-	signal input_end: boolean := false;
+	signal start_done: boolean := false;
 	signal count_text_stream : integer := 0;
 	
 	component MEMORY_VHDL
@@ -39,7 +39,8 @@ architecture Behavioral of TEXT_INPUT_VHDL is
        DOUT : out std_logic_vector(7 downto 0);
        WR : in std_logic;
        DOEN : in std_logic;
-       ADDR_IN : in std_logic_vector(8 downto 0));
+       ADDR_IN_WR : in std_logic_vector(8 downto 0);
+		 ADDR_IN_RD : in std_logic_vector(8 downto 0));
 	end component;
 	
    --component RAMB4_S8
@@ -53,13 +54,13 @@ architecture Behavioral of TEXT_INPUT_VHDL is
       --); 
    -- end component;
 	
-	signal addr_in : std_logic_vector(8 downto 0);
+	signal addr_in_rd, addr_in_wr : std_logic_vector(8 downto 0);
 	signal in_num, out_num:         natural := 0;
 	
 	
 	signal ram_we_sig : std_logic := '1';
 	signal ram_doen_sig : std_logic := '0';
-	signal input_finish : boolean := false;
+	signal start_to_parse : boolean := false;
 	--signal count_text_stream : natural := 1;
 	signal dout : std_logic_vector(7 downto 0);
 	
@@ -107,9 +108,10 @@ begin
 		 CLK => CLK,
 		 DIN => text_input_stream,
          DOUT => dout,
-         WR => ram_we_sig,
+         WR => RDEN,
          DOEN => ram_doen_sig,
-         ADDR_IN => addr_in );
+         ADDR_IN_WR => addr_in_wr,
+			ADDR_IN_RD => addr_in_rd);
 		 
 	--MEM : RAMB4_S8
 		--port map(
@@ -125,8 +127,8 @@ begin
 	process(CLK)
 	begin
 		if(CLK'event and CLK = '1') then
-			if(text_input_stream = "00101111") then
-				input_finish <= true;
+			if(RDEN = '1') then
+				start_to_parse <= true;
 			end if;
 		end if;
 	end process;
@@ -134,20 +136,20 @@ begin
 	process(CLK)
 	begin
 		if(CLK'event and CLK = '0') then
-			if(input_finish) then
+			if(start_to_parse) then
 				ram_doen_sig <= '1';
 			end if;
 		end if;
 	end process;
 	
-    process(CLK)
-    begin
-        if(CLK'event and CLK = '0') then
-            if(input_finish) then
-                ram_we_sig <= '0';
-            end if;
-        end if;
-    end process;
+    --process(CLK)
+    --begin
+        --if(CLK'event and CLK = '0') then
+            --if(input_finish) then
+                --ram_we_sig <= '0';
+            --end if;
+        --end if;
+    --end process;
     
 	--ram_doen_sig <= '1' when input_finish else '0';
 	--ram_we_sig <= '0' when input_finish else '1';
@@ -155,11 +157,14 @@ begin
 	process(CLK)
 	begin
 		if(CLK'event and CLK = '0') then
-			if(input_finish) then
-				addr_in <= CONV_std_logic_vector(out_num,9);
-			else
-				addr_in <= CONV_std_logic_vector((count_text_stream+1),9);
-			end if;
+				addr_in_rd <= CONV_std_logic_vector(out_num,9);
+		end if;
+	end process;
+	
+	process(CLK)
+	begin
+		if(CLK'event and CLK = '0') then
+			addr_in_wr <= CONV_std_logic_vector((count_text_stream+1),9);
 		end if;
 	end process;
 	
@@ -184,9 +189,9 @@ begin
 	process(CLK)
 	begin
 		if(CLK'event and CLK = '1') then
-			if(input_finish and not input_end) then	
+			if(start_to_parse and not start_done) then	
 				run_sig <= '1';
-				input_end <= true;
+				start_done <= true;
 			else 
 				run_sig <= '0';
 			end if;
