@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date             : Fri Jan 29 18:05:02 2016
+| Date             : Fri Jan 29 20:49:48 2016
 | Host             : maicuong running 64-bit major release  (build 9200)
 | Command          : 
 | Design           : xillydemo
@@ -30,13 +30,13 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 2.259 |
-| Dynamic (W)              | 2.118 |
+| Total On-Chip Power (W)  | 2.258 |
+| Dynamic (W)              | 2.117 |
 | Device Static (W)        | 0.141 |
 | Total Off-Chip Power (W) | 0.008 |
 | Effective TJA (C/W)      | 11.5  |
-| Max Ambient (C)          | 59.0  |
-| Junction Temperature (C) | 51.0  |
+| Max Ambient (C)          | 59.1  |
+| Junction Temperature (C) | 50.9  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -51,22 +51,22 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.023 |       10 |       --- |             --- |
-| Slice Logic              |     0.012 |    13153 |       --- |             --- |
-|   LUT as Logic           |     0.011 |     5420 |     17600 |           30.80 |
+| Slice Logic              |     0.012 |    13155 |       --- |             --- |
+|   LUT as Logic           |     0.010 |     5416 |     17600 |           30.77 |
 |   CARRY4                 |    <0.001 |      388 |      4400 |            8.82 |
 |   Register               |    <0.001 |     5667 |     35200 |           16.10 |
 |   LUT as Distributed RAM |    <0.001 |      270 |      6000 |            4.50 |
 |   F7/F8 Muxes            |    <0.001 |       83 |     17600 |            0.47 |
 |   LUT as Shift Register  |    <0.001 |       70 |      6000 |            1.17 |
 |   Others                 |     0.000 |      626 |       --- |             --- |
-| Signals                  |     0.020 |     9916 |       --- |             --- |
+| Signals                  |     0.020 |     9921 |       --- |             --- |
 | Block RAM                |     0.008 |        5 |        60 |            8.33 |
 | MMCM                     |     0.105 |        1 |         2 |           50.00 |
 | PLL                      |     0.102 |        1 |         2 |           50.00 |
 | I/O                      |     0.323 |       98 |       100 |           98.00 |
 | PS7                      |     1.516 |        1 |       --- |             --- |
 | Static Power             |     0.141 |          |           |                 |
-| Total                    |     2.250 |          |           |                 |
+| Total                    |     2.249 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.083 |       0.074 |      0.009 |
+| Vccint    |       1.000 |     0.083 |       0.073 |      0.009 |
 | Vccaux    |       1.800 |     0.127 |       0.115 |      0.012 |
 | Vcco33    |       3.300 |     0.098 |       0.097 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -159,7 +159,7 @@ Table of Contents
 +---------------------------------------------------------------+-----------+
 | Name                                                          | Power (W) |
 +---------------------------------------------------------------+-----------+
-| xillydemo                                                     |     2.109 |
+| xillydemo                                                     |     2.108 |
 |   PS_GPIO_IOBUF[0]_inst                                       |     0.002 |
 |   PS_GPIO_IOBUF[10]_inst                                      |     0.002 |
 |   PS_GPIO_IOBUF[11]_inst                                      |     0.002 |
@@ -380,9 +380,9 @@ Table of Contents
 |                       valid.cstr                              |    <0.001 |
 |                         ramloop[0].ram.r                      |    <0.001 |
 |                           prim_noinit.ram                     |    <0.001 |
-|   xillybus_ins                                                |     1.851 |
+|   xillybus_ins                                                |     1.850 |
 |     system_i                                                  |     1.826 |
-|       vivado_system_i                                         |     1.826 |
+|       vivado_system_i                                         |     1.825 |
 |         processing_system7_0                                  |     1.521 |
 |           inst                                                |     1.521 |
 |             xlnx_axi_wrshim_unwrap_inst_gp0                   |     0.000 |

@@ -64,6 +64,8 @@ architecture Behavioral of TEXT_INPUT_VHDL is
 	--signal count_text_stream : natural := 1;
 	signal dout : std_logic_vector(7 downto 0);
 	
+	signal rden_sig : std_logic := '0';
+	
 begin
 		--char_out <= c_read;
 		--count_out <= in_num;
@@ -108,26 +110,18 @@ begin
 		 CLK => CLK,
 		 DIN => text_input_stream,
          DOUT => dout,
-         WR => RDEN,
+         WR => rden_sig,
          DOEN => ram_doen_sig,
          ADDR_IN_WR => addr_in_wr,
 			ADDR_IN_RD => addr_in_rd);
 		 
-	--MEM : RAMB4_S8
-		--port map(
-		--ADDR => addr_in,
-		--DI => text_input_stream,
-		--CLK => CLK,
-		--EN => '1',
-		--RST => '0',
-		--WE => ram_we_sig,
-		--DO => dout);
+    rden_sig <= '1' when (RDEN = '1' and text_input_stream /= "00100000") else '0';
 		
 	
 	process(CLK)
 	begin
 		if(CLK'event and CLK = '1') then
-			if(RDEN = '1') then
+			if(RDEN = '1' and text_input_stream /= "00100000") then
 				start_to_parse <= true;
 			end if;
 		end if;
@@ -171,7 +165,7 @@ begin
 	process(CLK) 
 	begin
 		if(CLK'event and CLK = '1') then
-			if(RDEN = '1') then
+			if(RDEN = '1'and text_input_stream /= "00100000") then
 				count_text_stream <= count_text_stream + 1;
 			end if;
 		end if;

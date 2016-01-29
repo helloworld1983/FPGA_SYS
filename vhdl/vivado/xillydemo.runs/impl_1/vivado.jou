@@ -2,8 +2,8 @@
 # Vivado v2015.3 (64-bit)
 # SW Build 1368829 on Mon Sep 28 20:06:43 MDT 2015
 # IP Build 1367837 on Mon Sep 28 08:56:14 MDT 2015
-# Start of session at: Fri Jan 29 18:01:50 2016
-# Process ID: 4904
+# Start of session at: Fri Jan 29 20:47:02 2016
+# Process ID: 4204
 # Current directory: C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/impl_1
 # Command line: vivado.exe -log xillydemo.vdi -applog -messageDb vivado.pb -mode batch -source xillydemo.tcl -notrace
 # Log file: C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/impl_1/xillydemo.vdi
