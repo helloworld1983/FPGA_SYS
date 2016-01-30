@@ -7,6 +7,7 @@ entity FILE_INPUT_VHDL is
         port(
         CLK : in std_logic := '0';
         READ_TRG : in std_logic := '0';
+        CONTINUE : in std_logic;
         TRG : in std_logic := '0';
         RDY_IN : in std_logic := '0';
         FAIL : in std_logic := '0' ;
@@ -110,6 +111,8 @@ architecture behave of FILE_INPUT_VHDL is
     signal rdy_array : std_logic_vector(1 to 20) := (others => '0');
 	signal next_accept : boolean := false;
 	signal alt_top : natural := 1;
+	
+	signal continue_sig : std_logic := '0';
 	
 begin
   process(CLK)
@@ -327,10 +330,18 @@ begin
            end case;
         end if;
     end process;
-          
+    
+    
+    process(CLK)
+    begin
+        if(CLK'event and CLK='1') then
+            continue_sig <= CONTINUE;
+        end if;
+    end process;
+        
           
     ID <= command_array(cmd_read_no).id;
-    NEXT_RDY <= next_rdy_function(rdy_array);
+    NEXT_RDY <= next_rdy_function(rdy_array) or continue_sig;
     PARSER_OK <= '1' when parser_ok_sig else '0';
     END_FAIL <= '1' when fail_sig else '0';
   

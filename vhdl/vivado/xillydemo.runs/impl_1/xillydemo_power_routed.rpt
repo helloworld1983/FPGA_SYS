@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date             : Sat Jan 30 18:10:53 2016
+| Date             : Sat Jan 30 21:32:55 2016
 | Host             : maicuong running 64-bit major release  (build 9200)
 | Command          : 
 | Design           : xillydemo
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 2.258 |
+| Total On-Chip Power (W)  | 2.257 |
 | Dynamic (W)              | 2.116 |
 | Device Static (W)        | 0.141 |
 | Total Off-Chip Power (W) | 0.008 |
@@ -50,20 +50,20 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.022 |       10 |       --- |             --- |
-| Slice Logic              |     0.012 |    13220 |       --- |             --- |
-|   LUT as Logic           |     0.010 |     5433 |     17600 |           30.87 |
+| Clocks                   |     0.021 |       10 |       --- |             --- |
+| Slice Logic              |     0.011 |    13216 |       --- |             --- |
+|   LUT as Logic           |     0.010 |     5436 |     17600 |           30.89 |
 |   CARRY4                 |    <0.001 |      401 |      4400 |            9.11 |
-|   Register               |    <0.001 |     5675 |     35200 |           16.12 |
+|   Register               |    <0.001 |     5676 |     35200 |           16.13 |
 |   LUT as Distributed RAM |    <0.001 |      270 |      6000 |            4.50 |
-|   F7/F8 Muxes            |    <0.001 |       78 |     17600 |            0.44 |
+|   F7/F8 Muxes            |    <0.001 |       83 |     17600 |            0.47 |
 |   LUT as Shift Register  |    <0.001 |       70 |      6000 |            1.17 |
 |   Others                 |     0.000 |      626 |       --- |             --- |
-| Signals                  |     0.020 |     9975 |       --- |             --- |
+| Signals                  |     0.019 |     9989 |       --- |             --- |
 | Block RAM                |     0.008 |        5 |        60 |            8.33 |
 | MMCM                     |     0.105 |        1 |         2 |           50.00 |
 | PLL                      |     0.102 |        1 |         2 |           50.00 |
-| I/O                      |     0.323 |       98 |       100 |           98.00 |
+| I/O                      |     0.325 |       98 |       100 |           98.00 |
 | PS7                      |     1.516 |        1 |       --- |             --- |
 | Static Power             |     0.141 |          |           |                 |
 | Total                    |     2.249 |          |           |                 |
@@ -76,9 +76,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.082 |       0.073 |      0.009 |
+| Vccint    |       1.000 |     0.080 |       0.070 |      0.009 |
 | Vccaux    |       1.800 |     0.127 |       0.115 |      0.012 |
-| Vcco33    |       3.300 |     0.098 |       0.097 |      0.001 |
+| Vcco33    |       3.300 |     0.099 |       0.098 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -159,7 +159,7 @@ Table of Contents
 +---------------------------------------------------------------+-----------+
 | Name                                                          | Power (W) |
 +---------------------------------------------------------------+-----------+
-| xillydemo                                                     |     2.108 |
+| xillydemo                                                     |     2.107 |
 |   PS_GPIO_IOBUF[0]_inst                                       |     0.002 |
 |   PS_GPIO_IOBUF[10]_inst                                      |     0.002 |
 |   PS_GPIO_IOBUF[11]_inst                                      |     0.002 |
@@ -261,9 +261,9 @@ Table of Contents
 |                       valid.cstr                              |    <0.001 |
 |                         ramloop[0].ram.r                      |    <0.001 |
 |                           prim_noinit.ram                     |    <0.001 |
-|   controllor                                                  |     0.009 |
+|   controllor                                                  |     0.007 |
 |     BYTE                                                      |    <0.001 |
-|     FILE_INPUT                                                |     0.006 |
+|     FILE_INPUT                                                |     0.004 |
 |     NANY                                                      |    <0.001 |
 |     OBYTE                                                     |    <0.001 |
 |     RSET                                                      |    <0.001 |
@@ -431,9 +431,9 @@ Table of Contents
 |           inst                                                |    <0.001 |
 |         xillybus_lite_0                                       |    <0.001 |
 |           U0                                                  |    <0.001 |
-|         xillyvga_0                                            |     0.298 |
-|           inst                                                |     0.298 |
-|             xillyvga_core_ins                                 |     0.298 |
+|         xillyvga_0                                            |     0.299 |
+|           inst                                                |     0.299 |
+|             xillyvga_core_ins                                 |     0.299 |
 |               vga_fifo_wrapper_ins/vga_fifo                   |     0.001 |
 |                 U0                                            |     0.001 |
 |                   inst_fifo_gen                               |     0.001 |
@@ -464,7 +464,7 @@ Table of Contents
 |                                     prim_noinit.ram           |    <0.001 |
 |                         rstblk                                |    <0.001 |
 |         xlconcat_0                                            |     0.000 |
-|     xillybus_core_ins                                         |     0.025 |
+|     xillybus_core_ins                                         |     0.024 |
 |       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram1  |    <0.001 |
 |       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram2  |    <0.001 |
 |       axi4_send_dma_ins/xillybus_wr_fifo/ram0/Mram_fifo_ram3  |    <0.001 |

@@ -23,6 +23,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 		CLK : in std_logic;
 		READ_TRG : in std_logic := '0';
 		TRG : in std_logic ;
+	    CONTINUE : in std_logic;
 		RDY_IN : in std_logic ;
 		FAIL : in std_logic ;
 		TEXT_IN : in std_logic_vector(7 downto 0);
@@ -222,7 +223,7 @@ begin
 	next_rdy <= (next_rdy_function(next_rdy_array));
 	fail_reg <= next_rdy_function(fail_reg_array) ;
 	next_text_rdy_reg <= next_rdy_array(1) or next_rdy_array(3) or continue_sig;
-	state_next <= nosignal_rdy or continue_sig;
+	state_next <= nosignal_rdy;
 	PARSER_OK <= end_parser_ok;
 	--PARSER_OK <= start2;
 	PARSER_ERROR <= end_fail;
@@ -233,6 +234,7 @@ begin
 	    CLK => CLK,
 	    READ_TRG => start1,
 	    TRG => START,
+	    CONTINUE => continue_sig,
 		RDY_IN => next_rdy,
 		FAIL => fail_reg,
 		ID => id_reg,
