@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date             : Fri Jan 29 20:49:48 2016
+| Date             : Sat Jan 30 18:10:53 2016
 | Host             : maicuong running 64-bit major release  (build 9200)
 | Command          : 
 | Design           : xillydemo
@@ -31,7 +31,7 @@ Table of Contents
 
 +--------------------------+-------+
 | Total On-Chip Power (W)  | 2.258 |
-| Dynamic (W)              | 2.117 |
+| Dynamic (W)              | 2.116 |
 | Device Static (W)        | 0.141 |
 | Total Off-Chip Power (W) | 0.008 |
 | Effective TJA (C/W)      | 11.5  |
@@ -50,16 +50,16 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.023 |       10 |       --- |             --- |
-| Slice Logic              |     0.012 |    13155 |       --- |             --- |
-|   LUT as Logic           |     0.010 |     5416 |     17600 |           30.77 |
-|   CARRY4                 |    <0.001 |      388 |      4400 |            8.82 |
-|   Register               |    <0.001 |     5667 |     35200 |           16.10 |
+| Clocks                   |     0.022 |       10 |       --- |             --- |
+| Slice Logic              |     0.012 |    13220 |       --- |             --- |
+|   LUT as Logic           |     0.010 |     5433 |     17600 |           30.87 |
+|   CARRY4                 |    <0.001 |      401 |      4400 |            9.11 |
+|   Register               |    <0.001 |     5675 |     35200 |           16.12 |
 |   LUT as Distributed RAM |    <0.001 |      270 |      6000 |            4.50 |
-|   F7/F8 Muxes            |    <0.001 |       83 |     17600 |            0.47 |
+|   F7/F8 Muxes            |    <0.001 |       78 |     17600 |            0.44 |
 |   LUT as Shift Register  |    <0.001 |       70 |      6000 |            1.17 |
 |   Others                 |     0.000 |      626 |       --- |             --- |
-| Signals                  |     0.020 |     9921 |       --- |             --- |
+| Signals                  |     0.020 |     9975 |       --- |             --- |
 | Block RAM                |     0.008 |        5 |        60 |            8.33 |
 | MMCM                     |     0.105 |        1 |         2 |           50.00 |
 | PLL                      |     0.102 |        1 |         2 |           50.00 |
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.083 |       0.073 |      0.009 |
+| Vccint    |       1.000 |     0.082 |       0.073 |      0.009 |
 | Vccaux    |       1.800 |     0.127 |       0.115 |      0.012 |
 | Vcco33    |       3.300 |     0.098 |       0.097 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -270,7 +270,7 @@ Table of Contents
 |     SET                                                       |    <0.001 |
 |     STATE_CONTROLLOR                                          |    <0.001 |
 |     STR                                                       |    <0.001 |
-|     TEXT_INPUT                                                |     0.002 |
+|     TEXT_INPUT                                                |     0.003 |
 |       MEMORY                                                  |     0.002 |
 |   demoarray_reg_0_31_0_0                                      |    <0.001 |
 |   demoarray_reg_0_31_1_1                                      |    <0.001 |
@@ -381,7 +381,7 @@ Table of Contents
 |                         ramloop[0].ram.r                      |    <0.001 |
 |                           prim_noinit.ram                     |    <0.001 |
 |   xillybus_ins                                                |     1.850 |
-|     system_i                                                  |     1.826 |
+|     system_i                                                  |     1.825 |
 |       vivado_system_i                                         |     1.825 |
 |         processing_system7_0                                  |     1.521 |
 |           inst                                                |     1.521 |
@@ -431,14 +431,14 @@ Table of Contents
 |           inst                                                |    <0.001 |
 |         xillybus_lite_0                                       |    <0.001 |
 |           U0                                                  |    <0.001 |
-|         xillyvga_0                                            |     0.299 |
-|           inst                                                |     0.299 |
-|             xillyvga_core_ins                                 |     0.299 |
-|               vga_fifo_wrapper_ins/vga_fifo                   |     0.002 |
-|                 U0                                            |     0.002 |
-|                   inst_fifo_gen                               |     0.002 |
-|                     gconvfifo.rf                              |     0.002 |
-|                       grf.rf                                  |     0.002 |
+|         xillyvga_0                                            |     0.298 |
+|           inst                                                |     0.298 |
+|             xillyvga_core_ins                                 |     0.298 |
+|               vga_fifo_wrapper_ins/vga_fifo                   |     0.001 |
+|                 U0                                            |     0.001 |
+|                   inst_fifo_gen                               |     0.001 |
+|                     gconvfifo.rf                              |     0.001 |
+|                       grf.rf                                  |     0.001 |
 |                         gntv_or_sync_fifo.gcx.clkx            |    <0.001 |
 |                           gsync_stage[1].rd_stg_inst          |    <0.001 |
 |                           gsync_stage[1].wr_stg_inst          |    <0.001 |
