@@ -18,7 +18,7 @@ entity FILE_INPUT_VHDL is
         SET_TEXT_START : out std_logic_vector(7 downto 0) ;
         SET_TEXT_SECOND : out std_logic_vector(7 downto 0) ;
         SET_OPTION : out integer := 0 ;
-        STR_TEXT : out string(1 to 2) := "  " ;
+        STR_TEXT : out std_logic_vector(15 downto 0) ;
         END_FAIL : buffer std_logic := '0' ;
         PARSER_OK : buffer std_logic := '0';
         NEXT_RDY : out std_logic := '0');
@@ -325,7 +325,7 @@ begin
                          SET_TEXT_SECOND <= command_array(cmd_read_no).char_second;
                          SET_OPTION <= command_array(cmd_read_no).option;
               when 17 => BYTE_TEXT <= command_array(cmd_read_no).char_first;
-              --when 19 => STR_TEXT <= command_array(cmd_read_no).char_first&command_array(cmd_read_no).char_second;
+              when 19 => STR_TEXT <= command_array(cmd_read_no).char_first&command_array(cmd_read_no).char_second;
               when others =>   null;                                                                                                                                              
            end case;
         end if;

@@ -6,8 +6,8 @@ entity STR_VHDL is
 	port(
 		CLK : in std_logic := '0';
 		TRG_ONE : in std_logic := '0';
-		TEXT_IN : in string(1 to 2) ;
-		NEZ_IN : in string(1 to 2) ;
+		TEXT_IN : in std_logic_vector(15 downto 0) ;
+		NEZ_IN : in std_logic_vector(15 downto 0) ;
 		FAIL : out std_logic := '0' ;
 		RDY_ONE : out std_logic := '0');
 end STR_VHDL;

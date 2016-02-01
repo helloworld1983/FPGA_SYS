@@ -19,59 +19,60 @@ architecture Behavioral of CONTROLLOR_VHDL is
     -- Loading command
     -----------------------------------------
 	component FILE_INPUT_VHDL 
-		port(
-		CLK : in std_logic;
-		READ_TRG : in std_logic := '0';
-		TRG : in std_logic ;
-	    CONTINUE : in std_logic;
-		RDY_IN : in std_logic ;
-		FAIL : in std_logic ;
-		TEXT_IN : in std_logic_vector(7 downto 0);
-	    TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
-		ID : out integer;
-		BYTE_TEXT : out std_logic_vector(7 downto 0) ;
-		SET_TEXT_START : out std_logic_vector(7 downto 0) ;
-	    SET_TEXT_SECOND : out std_logic_vector(7 downto 0);
-	    SET_OPTION : out integer ;
-		STR_TEXT : out string(1 to 2);
-		END_FAIL : buffer std_logic ;
-	    PARSER_OK : buffer std_logic ;
-		NEXT_RDY : out std_logic );
-	end component;
-	
-	-------------------------------------------
-	-- Loading text
-	-------------------------------------------
-	component TEXT_INPUT_VHDL 
-	   port(
-		CLK : in std_logic ;
-	    READ_TRG : in std_logic ;
-		TRG : in std_logic ;
-		RDY : in std_logic ;
-		TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
-	   RDEN : in std_logic ;
-		RUN : out std_logic := '0';
-		CHAR_OUT : out std_logic_vector(7 downto 0)) ;
-		--STR_OUT : buffer string(1 to 2));
-	end component;
+        port(
+        CLK : in std_logic;
+        READ_TRG : in std_logic := '0';
+        CONTINUE : in std_logic;
+        TRG : in std_logic ;
+        RDY_IN : in std_logic ;
+        FAIL : in std_logic ;
+        TEXT_IN : in std_logic_vector(7 downto 0);
+        TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
+        ID : out integer;
+        BYTE_TEXT : out std_logic_vector(7 downto 0) ;
+        SET_TEXT_START : out std_logic_vector(7 downto 0) ;
+        SET_TEXT_SECOND : out std_logic_vector(7 downto 0);
+        SET_OPTION : out integer ;
+        STR_TEXT : out std_logic_vector(15 downto 0);
+        END_FAIL : buffer std_logic ;
+        PARSER_OK : buffer std_logic ;
+        NEXT_RDY : out std_logic );
+    end component;
+    
+    -------------------------------------------
+    -- Loading text
+    -------------------------------------------
+    component TEXT_INPUT_VHDL 
+       port(
+        CLK : in std_logic ;
+        STR_TRG : in std_logic ;
+        TRG : in std_logic ;
+        RDY : in std_logic ;
+        TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
+        RDEN : in std_logic ;
+        RUN : out std_logic := '0';
+        CHAR_OUT : out std_logic_vector(7 downto 0);
+        STR_OUT : out std_logic_vector(15 downto 0));
+    end component;
 	
 	------------------------------------------------
-	-- Make trigger signal to each command'IP core 
-	------------------------------------------------
-	component STATE_CONTROLLOR_VHDL
-		port (
-		CLK : in std_logic;
-		RDY_IN : in std_logic ;
-		ID : in integer;
-		BYTE_TRG : out std_logic;
-		SET_TRG : out std_logic;
-		RSET_TRG : out std_logic;
-		OBYTE_TRG : out std_logic ;
-		STR_TRG : out std_logic;
-		NANY_TRG : out std_logic;
-		FAIL_TRG : out std_logic;
-		OTHERS_TRG : out std_logic);
-	end component;
+    -- Make trigger signal to each command'IP core 
+    ------------------------------------------------
+    component STATE_CONTROLLOR_VHDL
+        port (
+        CLK : in std_logic;
+        RDY_IN : in std_logic ;
+        ID : in integer;
+        BYTE_TRG : out std_logic;
+        SET_TRG : out std_logic;
+        RSET_TRG : out std_logic;
+        OBYTE_TRG : out std_logic ;
+        STR_TRG : out std_logic;
+        NANY_TRG : out std_logic;
+        FAIL_TRG : out std_logic;
+        OTHERS_TRG : out std_logic);
+    end component;
+	
 	
 	-------------------------------------------------
 	-- Command'IP core : BYTE
@@ -133,14 +134,14 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	-- Command's IP core : SRT
 	------------------------------------------------------
 	component STR_VHDL
-		port(
-		CLK : in std_logic ;
-		TRG_ONE : in std_logic ;
-		TEXT_IN : in string(1 to 2);
-		NEZ_IN : in string(1 to 2);
-		FAIL : out std_logic := '0' ;
-		RDY_ONE : out std_logic := '0');
-	end component;
+        port(
+        CLK : in std_logic ;
+        TRG_ONE : in std_logic ;
+        TEXT_IN : in std_logic_vector(15 downto 0);
+        NEZ_IN : in std_logic_vector(15 downto 0);
+        FAIL : out std_logic := '0' ;
+        RDY_ONE : out std_logic := '0');
+    end component;
 	
     -------------------------------------------------------
     -- Command's IP core : NANY
@@ -196,7 +197,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	
 	signal end_fail : std_logic := '0' ;
 	signal end_parser_ok : std_logic := '0' ;
-	signal string_text_reg, string_nez_reg : string(1 to 2) := "  ";
+	signal string_text_reg, string_nez_reg : std_logic_vector(15 downto 0);
 	signal state_next : std_logic := '0';
 	--signal clk_sig : std_logic := '0';
 	signal fin : boolean := false;
@@ -252,14 +253,14 @@ begin
 	TEXT_INPUT : TEXT_INPUT_VHDL
 	port map(
 		CLK => CLK,
-		READ_TRG => start1,
+		STR_TRG => next_rdy_array(19),
 		TRG => START,
 		RDY => next_text_rdy_reg,
 		TEXT_INPUT_STREAM => input_stream,
 		RDEN => rden,
 		RUN => run_start,
-		CHAR_OUT => text_in_reg
-		--STR_OUT => string_text_reg
+		CHAR_OUT => text_in_reg,
+		STR_OUT => string_text_reg
 		);
 
 	STATE_CONTROLLOR : STATE_CONTROLLOR_VHDL 
