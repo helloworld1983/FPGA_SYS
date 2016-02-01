@@ -116,7 +116,7 @@ architecture behave of FILE_INPUT_VHDL is
 	
 begin
   process(CLK)
-     file in_file : text is in "C:\FPGAPrj\VIVADO\VIVADO\CONTROLLOR.srcs\constrs_1\new\json.txt";
+     file in_file : text is in "C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/constrs_1/imports/VIVADO/VIVADO/CONTROLLOR.srcs/constrs_1/new/json.txt";
 	 variable l:         line;
      variable c:         character := ' ';
      variable is_string: boolean := false;

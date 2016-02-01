@@ -189,10 +189,18 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/../../vivado-essentials/xillydemo.xdc">
+      <File Path="$PSRCDIR/constrs_1/imports/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../vivado-essentials/xillydemo.xdc"/>
+          <Attr Name="ImportTime" Val="1449112087"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/constrs_1/imports/VIVADO/VIVADO/CONTROLLOR.srcs/constrs_1/new/json.txt">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../VIVADO/CONTROLLOR.srcs/constrs_1/new/json.txt"/>
+          <Attr Name="ImportTime" Val="1454326594"/>
         </FileInfo>
       </File>
       <Config>
