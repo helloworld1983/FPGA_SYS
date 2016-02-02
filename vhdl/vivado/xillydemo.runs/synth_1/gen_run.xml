@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1454326728">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1454403702">
   <File Type="RDS-DCP" Name="xillydemo.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <File Type="RDS-UTIL-PB" Name="xillydemo_utilization_synth.pb"/>
@@ -157,10 +157,18 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../vivado-essentials/xillydemo.xdc">
+    <File Path="$PSRCDIR/constrs_1/imports/VIVADO/FPGA_SYS/vivado-essentials/xillydemo.xdc">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../vivado-essentials/xillydemo.xdc"/>
+        <Attr Name="ImportTime" Val="1449112087"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/VIVADO/VIVADO/CONTROLLOR.srcs/constrs_1/new/json.txt">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../VIVADO/CONTROLLOR.srcs/constrs_1/new/json.txt"/>
+        <Attr Name="ImportTime" Val="1454326594"/>
       </FileInfo>
     </File>
     <Config>

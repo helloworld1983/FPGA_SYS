@@ -9,7 +9,8 @@ entity OBYTE_VHDL is
 		TRG_ONE : in std_logic := '0';
 		TEXT_IN : in std_logic_vector(7 downto 0);
 		NEZ_IN : in std_logic_vector(7 downto 0);
-		RDY_ONE : out std_logic := '0');
+		RDY_ONE : out std_logic := '0';
+		MATCH : out std_logic);
 end OBYTE_VHDL;
 
 architecture Behavioral of OBYTE_VHDL is
@@ -21,7 +22,7 @@ begin
 	process (CLK)
 	begin
 		if(CLK'event and CLK = '1') then
-			if (TRG_ONE = '1') then
+			if (TRG_ONE = '1' and TEXT_IN = NEZ_IN) then
 				match_reg <= '1' ;
 			else
 				match_reg <= '0' ;
@@ -29,6 +30,7 @@ begin
 		end if;
 	end process;
 
-	RDY_ONE <= match_reg ;
+	MATCH <= match_reg ;
+	RDY_ONE <= TRG_ONE;
 	
 end Behavioral;

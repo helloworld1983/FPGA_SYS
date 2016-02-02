@@ -41,9 +41,9 @@ architecture behave of FILE_INPUT_VHDL is
                                                           char_first => "00000000", char_second => "00000000",
                                                                              char_first1 => ' ', char_second1 => ' ', option => 0));
                                                                                                                                            
-   type int_alt_array is array(1 to 50) of integer;
+   type int_alt_array is array(1 to 200) of integer;
    signal alt_stack : int_alt_array := (others => 0) ;
-   type int_call_array is array(1 to 30) of integer;
+   type int_call_array is array(1 to 100) of integer;
    signal call_stack : int_call_array := (others => 0);
    
    --attribute mark_debug : string;
@@ -116,7 +116,7 @@ architecture behave of FILE_INPUT_VHDL is
 	
 begin
   process(CLK)
-     file in_file : text is in "C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/constrs_1/imports/VIVADO/VIVADO/CONTROLLOR.srcs/constrs_1/new/json.txt";
+     file in_file : text is in "C:\FPGAPrj\VIVADO\VIVADO\CONTROLLOR.srcs\constrs_1\new\json.txt";
 	 variable l:         line;
      variable c:         character := ' ';
      variable is_string: boolean := false;
@@ -259,7 +259,7 @@ begin
                                                  when "01011011" => cmd_read_no <= 58;
                                                  when "01101110" => cmd_read_no <= 76;   
                                                  when "01001111" => cmd_read_no <= 86;
-                                                 when others => if(text_in >= "00110000" and text_in <= "00111001") then
+                                                 when others => if((text_in >= "00110000" and text_in <= "00111001") or (text_in = "00101101")) then
                                                                    cmd_read_no <= 11;
                                                                 else 
                                                                     cmd_read_no <= 8;
@@ -283,7 +283,8 @@ begin
                                                   case text_in is
                                                       when "00101110" => cmd_read_no <= 16;   
                                                       when "00000100" => cmd_read_no <= 8;
-                                                      when others => cmd_read_no <= 15; 
+                                                      --when "00101100" => cmd_read_no <= 8;
+                                                      when others =>  cmd_read_no <= 15; 
                                                   end case;
                                               elsif(cmd_read_no = 101) then
                                                    case text_in is
@@ -292,6 +293,15 @@ begin
                                                        when others => cmd_read_no <= 102;
                                                    end case;
                                                end if;         
+                        -- when 13 => if(call_stack(1) /= 0) then
+                                                              --parser_ok_sig <= true;
+                                                          --else
+                                                              --cmd_read_no <= call_stack(call_top-1);
+                                                              --call_stack(call_top-1) <= 0;
+                                                             -- call_top <= call_top - 1;
+                                                         -- end if;
+  
+  
                                                                                     
                         when 15 => if(call_stack(1) = 0) then 
                                        parser_ok_sig <= true;

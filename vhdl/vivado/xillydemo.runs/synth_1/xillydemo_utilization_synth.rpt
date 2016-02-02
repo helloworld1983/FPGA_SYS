@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date         : Mon Feb 01 20:42:46 2016
+| Date         : Tue Feb 02 18:07:27 2016
 | Host         : maicuong running 64-bit major release  (build 9200)
 | Command      : report_utilization -file xillydemo_utilization_synth.rpt -pb xillydemo_utilization_synth.pb
 | Design       : xillydemo
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 6136 |     0 |     17600 | 34.86 |
-|   LUT as Logic             | 5784 |     0 |     17600 | 32.86 |
+| Slice LUTs*                | 7172 |     0 |     17600 | 40.75 |
+|   LUT as Logic             | 6820 |     0 |     17600 | 38.75 |
 |   LUT as Memory            |  352 |     0 |      6000 |  5.87 |
 |     LUT as Distributed RAM |  276 |     0 |           |       |
 |     LUT as Shift Register  |   76 |     0 |           |       |
-| Slice Registers            | 5508 |    23 |     35200 | 15.65 |
-|   Register as Flip Flop    | 5508 |    23 |     35200 | 15.65 |
+| Slice Registers            | 7058 |    23 |     35200 | 20.05 |
+|   Register as Flip Flop    | 7058 |    23 |     35200 | 20.05 |
 |   Register as Latch        |    0 |     0 |     35200 |  0.00 |
-| F7 Muxes                   |   87 |     0 |      8800 |  0.99 |
-| F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
+| F7 Muxes                   |  143 |     0 |      8800 |  1.63 |
+| F8 Muxes                   |    1 |     0 |      4400 |  0.02 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 18    |          Yes |           - |        Reset |
-| 259   |          Yes |         Set |            - |
-| 5231  |          Yes |       Reset |            - |
+| 262   |          Yes |         Set |            - |
+| 6778  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,18 +151,18 @@ Table of Contents
 +------------+------+----------------------+
 |  Ref Name  | Used |  Functional Category |
 +------------+------+----------------------+
-| FDRE       | 5231 |         Flop & Latch |
-| LUT6       | 1891 |                  LUT |
-| LUT3       | 1126 |                  LUT |
-| LUT5       |  973 |                  LUT |
-| LUT4       |  934 |                  LUT |
-| LUT1       |  771 |                  LUT |
-| LUT2       |  641 |                  LUT |
-| CARRY4     |  358 |           CarryLogic |
-| FDSE       |  259 |         Flop & Latch |
+| FDRE       | 6778 |         Flop & Latch |
+| LUT6       | 2680 |                  LUT |
+| LUT3       | 1286 |                  LUT |
+| LUT5       | 1076 |                  LUT |
+| LUT4       | 1018 |                  LUT |
+| LUT1       |  804 |                  LUT |
+| LUT2       |  651 |                  LUT |
+| CARRY4     |  364 |           CarryLogic |
+| FDSE       |  262 |         Flop & Latch |
 | RAMD64E    |  176 |   Distributed Memory |
+| MUXF7      |  143 |                MuxFx |
 | BIBUF      |  130 |                   IO |
-| MUXF7      |   87 |                MuxFx |
 | RAMD32     |   84 |   Distributed Memory |
 | RAMS32     |   64 |   Distributed Memory |
 | IBUF       |   63 |                   IO |
@@ -177,6 +177,7 @@ Table of Contents
 | BUFG       |    2 |                Clock |
 | PS7        |    1 | Specialized Resource |
 | PLLE2_ADV  |    1 |                Clock |
+| MUXF8      |    1 |                MuxFx |
 | MMCME2_ADV |    1 |                Clock |
 | BUFR       |    1 |                Clock |
 | BUFIO      |    1 |                Clock |

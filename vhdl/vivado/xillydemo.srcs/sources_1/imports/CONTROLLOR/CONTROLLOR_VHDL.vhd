@@ -122,13 +122,14 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	-- Command's IP core : OBYTE
 	-----------------------------------------------------
 	component OBYTE_VHDL
-		port(
-		CLK : in std_logic ;
-		TRG_ONE : in std_logic ;
-		TEXT_IN : in std_logic_vector(7 downto 0) ;
-		NEZ_IN : in std_logic_vector(7 downto 0);
-		RDY_ONE : out std_logic := '0');
-	end component;
+        port(
+        CLK : in std_logic ;
+        TRG_ONE : in std_logic ;
+        TEXT_IN : in std_logic_vector(7 downto 0) ;
+        NEZ_IN : in std_logic_vector(7 downto 0);
+        RDY_ONE : out std_logic := '0';
+        MATCH : out std_logic);
+    end component;
 	
 	------------------------------------------------------
 	-- Command's IP core : SRT
@@ -205,6 +206,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	
 	signal run_start : std_logic := '0';
 	
+	signal obyte_match : std_logic := '0';
 	
 	--attribute mark_debug : string;
     --attribute mark_debug of end_parser_ok: signal is "true";
@@ -223,7 +225,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 begin
 	next_rdy <= (next_rdy_function(next_rdy_array));
 	fail_reg <= next_rdy_function(fail_reg_array) ;
-	next_text_rdy_reg <= next_rdy_array(1) or next_rdy_array(3) or continue_sig;
+	next_text_rdy_reg <= next_rdy_array(1) or next_rdy_array(3) or continue_sig or obyte_match;
 	state_next <= nosignal_rdy;
 	PARSER_OK <= end_parser_ok;
 	--PARSER_OK <= start2;
@@ -307,11 +309,12 @@ begin
 		RDY_ONE => next_rdy_array(14));
 		
 	OBYTE : OBYTE_VHDL port map (
-		CLK => CLK,
-		TRG_ONE => trg_reg_array(17),
-		TEXT_IN => text_in_reg,
-		NEZ_IN => byte_text_reg,
-		RDY_ONE => next_rdy_array(17));
+            CLK => CLK,
+            TRG_ONE => trg_reg_array(17),
+            TEXT_IN => text_in_reg,
+            NEZ_IN => byte_text_reg,
+            RDY_ONE => next_rdy_array(17),
+            MATCH => obyte_match);
 		
    STR : STR_VHDL port map (
 		CLK => CLK,
