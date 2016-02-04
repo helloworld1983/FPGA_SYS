@@ -12,7 +12,7 @@ source xillydemo.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado-ip'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2015.3/data/ip'.
-add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 264.316 ; gain = 76.219
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 264.781 ; gain = 77.465
 Command: synth_design -top xillydemo -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -20,7 +20,7 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 WARNING: [Synth 8-992] S_AXI_GP0_ACLK_temp is already implicitly declared earlier [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2701]
 WARNING: [Synth 8-992] S_AXI_GP1_ACLK_temp is already implicitly declared earlier [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:2702]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 350.102 ; gain = 179.242
+Starting RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 349.453 ; gain = 178.133
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'xillydemo' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:36]
 INFO: [Synth 8-3491] module 'xillybus' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillybus.v:3' bound to instance 'xillybus_ins' of component 'xillybus' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:328]
@@ -1232,42 +1232,42 @@ INFO: [Synth 8-637] synthesizing blackbox instance 'fifo_32' of component 'fifo_
 INFO: [Synth 8-637] synthesizing blackbox instance 'fifo_8' of component 'fifo_8x2048' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:526]
 INFO: [Synth 8-3491] module 'CONTROLLOR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:5' bound to instance 'controllor' of component 'CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:539]
 INFO: [Synth 8-638] synthesizing module 'CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:14]
-INFO: [Synth 8-3491] module 'FILE_INPUT_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd:6' bound to instance 'FILE_INPUT' of component 'FILE_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:235]
+INFO: [Synth 8-3491] module 'FILE_INPUT_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd:6' bound to instance 'FILE_INPUT' of component 'FILE_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:237]
 INFO: [Synth 8-638] synthesizing module 'FILE_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd:27]
 PARSER ERROR
 PARSER OK
 INFO: [Synth 8-256] done synthesizing module 'FILE_INPUT_VHDL' (59#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/FILE_INPUT_VHDL.vhd:27]
-INFO: [Synth 8-3491] module 'TEXT_INPUT_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:10' bound to instance 'TEXT_INPUT' of component 'TEXT_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:255]
+INFO: [Synth 8-3491] module 'TEXT_INPUT_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:10' bound to instance 'TEXT_INPUT' of component 'TEXT_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:257]
 INFO: [Synth 8-638] synthesizing module 'TEXT_INPUT_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:23]
 INFO: [Synth 8-3491] module 'MEMORY_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/new/MEMORY_VHDL.vhd:6' bound to instance 'MEMORY' of component 'MEMORY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:75]
 INFO: [Synth 8-638] synthesizing module 'MEMORY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/new/MEMORY_VHDL.vhd:18]
 INFO: [Synth 8-256] done synthesizing module 'MEMORY_VHDL' (60#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/new/MEMORY_VHDL.vhd:18]
 INFO: [Synth 8-256] done synthesizing module 'TEXT_INPUT_VHDL' (61#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/TEXT_INPUT_VHDL.vhd:23]
-INFO: [Synth 8-3491] module 'STATE_CONTROLLOR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:5' bound to instance 'STATE_CONTROLLOR' of component 'STATE_CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:268]
+INFO: [Synth 8-3491] module 'STATE_CONTROLLOR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:5' bound to instance 'STATE_CONTROLLOR' of component 'STATE_CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:270]
 INFO: [Synth 8-638] synthesizing module 'STATE_CONTROLLOR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'STATE_CONTROLLOR_VHDL' (62#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STATE_CONTROLLOR_VHDL.vhd:20]
-INFO: [Synth 8-3491] module 'BYTE_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:6' bound to instance 'BYTE' of component 'BYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:282]
+INFO: [Synth 8-3491] module 'BYTE_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:6' bound to instance 'BYTE' of component 'BYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:284]
 INFO: [Synth 8-638] synthesizing module 'BYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:16]
 INFO: [Synth 8-256] done synthesizing module 'BYTE_VHDL' (63#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/BYTE_VHDL.vhd:16]
-INFO: [Synth 8-3491] module 'SET_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:6' bound to instance 'SET' of component 'SET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:291]
+INFO: [Synth 8-3491] module 'SET_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:6' bound to instance 'SET' of component 'SET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:293]
 INFO: [Synth 8-638] synthesizing module 'SET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:18]
 INFO: [Synth 8-256] done synthesizing module 'SET_VHDL' (64#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/SET_VHDL.vhd:18]
-INFO: [Synth 8-3491] module 'RSET_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:6' bound to instance 'RSET' of component 'RSET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:301]
+INFO: [Synth 8-3491] module 'RSET_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:6' bound to instance 'RSET' of component 'RSET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:303]
 INFO: [Synth 8-638] synthesizing module 'RSET_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:18]
 INFO: [Synth 8-256] done synthesizing module 'RSET_VHDL' (65#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/RSET_VHDL.vhd:18]
-INFO: [Synth 8-3491] module 'OBYTE_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:6' bound to instance 'OBYTE' of component 'OBYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:311]
+INFO: [Synth 8-3491] module 'OBYTE_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:6' bound to instance 'OBYTE' of component 'OBYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:313]
 INFO: [Synth 8-638] synthesizing module 'OBYTE_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:16]
 INFO: [Synth 8-256] done synthesizing module 'OBYTE_VHDL' (66#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/OBYTE_VHDL.vhd:16]
-INFO: [Synth 8-3491] module 'STR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:5' bound to instance 'STR' of component 'STR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:319]
+INFO: [Synth 8-3491] module 'STR_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:5' bound to instance 'STR' of component 'STR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:321]
 INFO: [Synth 8-638] synthesizing module 'STR_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'STR_VHDL' (67#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/STR_VHDL.vhd:15]
-INFO: [Synth 8-3491] module 'NANY_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:5' bound to instance 'NANY' of component 'NANY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:327]
+INFO: [Synth 8-3491] module 'NANY_VHDL' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:5' bound to instance 'NANY' of component 'NANY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:329]
 INFO: [Synth 8-638] synthesizing module 'NANY_VHDL' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'NANY_VHDL' (68#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/NANY_VHDL.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'CONTROLLOR_VHDL' (69#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/sources_1/imports/CONTROLLOR/CONTROLLOR_VHDL.vhd:14]
 INFO: [Synth 8-3491] module 'i2s_audio' declared at 'C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/i2s_audio.v:2' bound to instance 'audio_ins' of component 'i2s_audio' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:555]
 INFO: [Synth 8-638] synthesizing module 'i2s_audio' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/i2s_audio.v:2]
-INFO: [Synth 8-638] synthesizing module 'fifo_32x512' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/realtime/fifo_32x512_stub.vhdl:19]
+INFO: [Synth 8-638] synthesizing module 'fifo_32x512' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/realtime/fifo_32x512_stub.vhdl:19]
 INFO: [Synth 8-638] synthesizing module 'PLLE2_ADV' [C:/Xilinx/Vivado/2015.3/scripts/rt/data/unisim_comp.v:32700]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
 	Parameter CLKFBOUT_MULT bound to: 36 - type: integer 
@@ -1317,14 +1317,14 @@ INFO: [Synth 8-638] synthesizing module 'smbus' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl
 	Parameter st_stop0 bound to: 9 - type: integer 
 	Parameter st_stop1 bound to: 10 - type: integer 
 	Parameter st_stop2 bound to: 11 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'fifo_8x2048' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/realtime/fifo_8x2048_stub.vhdl:19]
+INFO: [Synth 8-638] synthesizing module 'fifo_8x2048' [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/realtime/fifo_8x2048_stub.vhdl:19]
 INFO: [Synth 8-256] done synthesizing module 'smbus' (72#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/smbus.v:1]
 WARNING: [Synth 8-3848] Net PS_SRSTB in module/entity xillydemo does not have driver. [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:307]
 WARNING: [Synth 8-3848] Net PS_CLK in module/entity xillydemo does not have driver. [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:305]
 WARNING: [Synth 8-3848] Net PS_PORB in module/entity xillydemo does not have driver. [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:306]
 INFO: [Synth 8-256] done synthesizing module 'xillydemo' (73#1) [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:36]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:23 ; elapsed = 00:01:29 . Memory (MB): peak = 543.418 ; gain = 372.559
+Finished RTL Elaboration : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 543.723 ; gain = 372.402
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1337,7 +1337,7 @@ WARNING: [Synth 8-3295] tying undriven pin xillybus_ins:PS_SRSTB to constant 0 [
 WARNING: [Synth 8-3295] tying undriven pin xillybus_ins:PS_CLK to constant 0 [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:328]
 WARNING: [Synth 8-3295] tying undriven pin xillybus_ins:PS_PORB to constant 0 [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/src/xillydemo.vhd:328]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 543.418 ; gain = 372.559
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:32 ; elapsed = 00:01:36 . Memory (MB): peak = 543.723 ; gain = 372.402
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -1346,16 +1346,16 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_2/fifo_32x512_in_context.xdc] for cell 'fifo_32'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_2/fifo_32x512_in_context.xdc] for cell 'fifo_32'
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/playback_fifo'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/playback_fifo'
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/record_fifo'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/record_fifo'
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'fifo_8'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'fifo_8'
-Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'smbus_ins/fifo'
-Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-7416-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'smbus_ins/fifo'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_2/fifo_32x512_in_context.xdc] for cell 'fifo_32'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_2/fifo_32x512_in_context.xdc] for cell 'fifo_32'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/playback_fifo'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/playback_fifo'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/record_fifo'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_2/fifo_32x512_in_context.xdc] for cell 'audio_ins/record_fifo'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'fifo_8'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'fifo_8'
+Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'smbus_ins/fifo'
+Finished Parsing XDC File [C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.runs/synth_1/.Xil/Vivado-5480-/dcp_3/fifo_8x2048_in_context.xdc] for cell 'smbus_ins/fifo'
 Parsing XDC File [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc] for cell 'xillybus_ins/system_i/vivado_system_i/processing_system7_0/inst'
 INFO: [Netlist 29-160] Cannot set property 'iostandard', because the property does not exist for objects of type 'pin'. [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_processing_system7_0_0/vivado_system_processing_system7_0_0.xdc:30]
 Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
@@ -1587,16 +1587,16 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   FDR => FDRE: 12 instances
   SRL16 => SRL16E: 1 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 806.344 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 806.484 ; gain = 0.113
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:57 ; elapsed = 00:02:04 . Memory (MB): peak = 807.188 ; gain = 636.328
+Finished Constraint Validation : Time (s): cpu = 00:02:06 ; elapsed = 00:02:12 . Memory (MB): peak = 807.203 ; gain = 635.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:57 ; elapsed = 00:02:04 . Memory (MB): peak = 807.188 ; gain = 636.328
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:06 ; elapsed = 00:02:12 . Memory (MB): peak = 807.203 ; gain = 635.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -1613,7 +1613,7 @@ Applied set_property DONT_TOUCH = true for xillybus_ins/system_i/vivado_system_i
 Applied set_property DONT_TOUCH = true for xillybus_ins/system_i/vivado_system_i/xillyvga_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for xillybus_ins/system_i/vivado_system_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:57 ; elapsed = 00:02:04 . Memory (MB): peak = 807.188 ; gain = 636.328
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:06 ; elapsed = 00:02:12 . Memory (MB): peak = 807.203 ; gain = 635.883
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "address_offset" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-4471] merging register 'gen_axilite.s_axi_wready_i_reg' into 'gen_axilite.s_axi_awready_i_reg' [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/axi_crossbar_v2_1_7/hdl/verilog/axi_crossbar_v2_1_decerr_slave.v:136]
@@ -1839,7 +1839,7 @@ INFO: [Synth 8-5546] ROM "cmd_read_no" won't be mapped to RAM because it is too 
 INFO: [Synth 8-5546] ROM "call_stack[1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "out_num" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "count_text_stream" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "n" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "PARSER_OK" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "start" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fifo_wr_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "write_when_done" won't be mapped to RAM because it is too sparse
@@ -1870,23 +1870,22 @@ INFO: [Synth 8-3971] The signal RAM_reg was recognized as a true dual port RAM t
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'smbus'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:20 ; elapsed = 00:02:32 . Memory (MB): peak = 807.188 ; gain = 636.328
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:29 ; elapsed = 00:02:40 . Memory (MB): peak = 807.203 ; gain = 635.883
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+---------------------+------------+----------+
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
-|1     |FILE_INPUT_VHDL__GB0 |           1|     36564|
-|2     |FILE_INPUT_VHDL__GB1 |           1|     10249|
-|3     |FILE_INPUT_VHDL__GB2 |           1|      7150|
-|4     |FILE_INPUT_VHDL__GB3 |           1|      4834|
-|5     |FILE_INPUT_VHDL__GB4 |           1|      6134|
-|6     |FILE_INPUT_VHDL__GB5 |           1|     20624|
-|7     |FILE_INPUT_VHDL__GB6 |           1|     34959|
-|8     |FILE_INPUT_VHDL__GB7 |           1|     43653|
-|9     |CONTROLLOR_VHDL__GC0 |           1|      1861|
-|10    |xillydemo__GC0       |           1|      5353|
+|1     |FILE_INPUT_VHDL__GB0 |           1|     38364|
+|2     |FILE_INPUT_VHDL__GB1 |           1|      6142|
+|3     |FILE_INPUT_VHDL__GB2 |           1|      7046|
+|4     |FILE_INPUT_VHDL__GB3 |           1|     16548|
+|5     |FILE_INPUT_VHDL__GB4 |           1|     17676|
+|6     |FILE_INPUT_VHDL__GB5 |           1|     34959|
+|7     |FILE_INPUT_VHDL__GB6 |           1|     43653|
+|8     |CONTROLLOR_VHDL__GC0 |           1|      1867|
+|9     |xillydemo__GC0       |           1|      5353|
 +------+---------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1925,7 +1924,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 7     
 	                3 Bit    Registers := 5     
 	                2 Bit    Registers := 13    
-	                1 Bit    Registers := 110   
+	                1 Bit    Registers := 112   
 +---RAMs : 
 	               4K Bit         RAMs := 1     
 	              256 Bit         RAMs := 5     
@@ -1952,9 +1951,9 @@ Detailed RTL Component Info :
 	  10 Input      8 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 3     
 	  12 Input      8 Bit        Muxes := 1     
-	   4 Input      7 Bit        Muxes := 1     
-	   8 Input      7 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 3     
+	   8 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 2     
 	  11 Input      6 Bit        Muxes := 1     
 	 125 Input      6 Bit        Muxes := 1     
@@ -2015,9 +2014,9 @@ Detailed RTL Component Info :
 	   2 Input     20 Bit        Muxes := 2     
 	  42 Input      8 Bit        Muxes := 1     
 	  10 Input      8 Bit        Muxes := 1     
-	   4 Input      7 Bit        Muxes := 1     
-	   8 Input      7 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 3     
+	   8 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	  11 Input      6 Bit        Muxes := 1     
 	 125 Input      6 Bit        Muxes := 1     
@@ -2085,7 +2084,7 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     31 Bit       Adders := 1     
 +---Registers : 
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 3     
 Module xlnx_axi_wrshim_unwrap__1 
@@ -2427,7 +2426,7 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:02:26 ; elapsed = 00:02:37 . Memory (MB): peak = 807.188 ; gain = 636.328
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:02:34 ; elapsed = 00:02:45 . Memory (MB): peak = 807.203 ; gain = 635.883
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -2440,27 +2439,27 @@ INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b
 INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg' and it is trimmed from '36' to '35' bits. [c:/FPGAPrj/VIVADO/FPGA_SYS/vivado-essentials/vivado_system/ip/vivado_system_xbar_0/axi_register_slice_v2_1_6/hdl/verilog/axi_register_slice_v2_1_axic_register_slice.v:121]
 INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-5545' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5546] ROM "call_stack[1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fail_sig" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:02:55 ; elapsed = 00:03:25 . Memory (MB): peak = 807.188 ; gain = 636.328
+Finished Cross Boundary Optimization : Time (s): cpu = 00:03:04 ; elapsed = 00:03:34 . Memory (MB): peak = 807.203 ; gain = 635.883
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:02:55 ; elapsed = 00:03:25 . Memory (MB): peak = 807.188 ; gain = 636.328
+Finished Parallel Reinference  : Time (s): cpu = 00:03:04 ; elapsed = 00:03:34 . Memory (MB): peak = 807.203 ; gain = 635.883
 
 Report RTL Partitions: 
 +------+---------------------+------------+----------+
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
-|1     |FILE_INPUT_VHDL__GB0 |           1|     30732|
-|2     |FILE_INPUT_VHDL__GB1 |           1|      5068|
-|3     |FILE_INPUT_VHDL__GB2 |           1|      3252|
-|4     |FILE_INPUT_VHDL__GB3 |           1|      2616|
-|5     |FILE_INPUT_VHDL__GB4 |           1|      3368|
-|6     |FILE_INPUT_VHDL__GB5 |           1|     17634|
-|7     |FILE_INPUT_VHDL__GB6 |           1|     34959|
-|8     |FILE_INPUT_VHDL__GB7 |           1|     41437|
-|9     |CONTROLLOR_VHDL__GC0 |           1|      1521|
-|10    |xillydemo__GC0       |           1|      5509|
+|1     |FILE_INPUT_VHDL__GB0 |           1|     30258|
+|2     |FILE_INPUT_VHDL__GB1 |           1|      3032|
+|3     |FILE_INPUT_VHDL__GB2 |           1|      3998|
+|4     |FILE_INPUT_VHDL__GB3 |           1|     12013|
+|5     |FILE_INPUT_VHDL__GB4 |           1|     13590|
+|6     |FILE_INPUT_VHDL__GB5 |           1|     34959|
+|7     |FILE_INPUT_VHDL__GB6 |           1|     41437|
+|8     |CONTROLLOR_VHDL__GC0 |           1|      1527|
+|9     |xillydemo__GC0       |           1|      5509|
 +------+---------------------+------------+----------+
 INFO: [Synth 8-3971] The signal TEXT_INPUT/MEMORY/RAM_reg was recognized as a true dual port RAM template.
 INFO: [Synth 8-4652] Swapped enable and write-enable on 2 RAM instances of RAM TEXT_INPUT/MEMORY/RAM_reg to conserve power
@@ -2489,230 +2488,131 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (controllori_8/\STATE_CONTROLLOR/next_accept_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (controllori_8/\NANY/fail_reg_reg )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[103][next_cmd][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[101][next_cmd][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[94][next_cmd][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[89][next_cmd][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[106][next_cmd][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[66][next_cmd][16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[9][next_cmd][16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[2][next_cmd][16] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][6] ' (FDSE) to '\command_array_reg[57][id][0] '
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (controllori_7/\STATE_CONTROLLOR/next_accept_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (controllori_7/\NANY/fail_reg_reg )
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][1] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][1] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][1] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][1] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][1] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][1] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][1] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][1] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][0] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][0] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][0] ' (FDSE) to '\command_array_reg[103][next_cmd][0] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][0] ' (FDSE) to '\command_array_reg[103][next_cmd][2] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][0] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][0] ' (FDSE) to '\command_array_reg[103][next_cmd][2] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][0] ' (FDSE) to '\command_array_reg[103][next_cmd][2] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][0] ' (FDSE) to '\command_array_reg[103][next_cmd][2] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][2] ' (FDSE) to '\command_array_reg[103][next_cmd][2] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][2] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][2] ' (FDSE) to '\command_array_reg[103][next_cmd][2] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][2] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][2] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][2] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][2] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][2] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][3] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][3] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][3] ' (FDRE) to '\command_array_reg[103][next_cmd][3] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][3] ' (FDRE) to '\command_array_reg[103][next_cmd][4] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][3] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][3] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][3] ' (FDRE) to '\command_array_reg[103][next_cmd][4] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][3] ' (FDRE) to '\command_array_reg[103][next_cmd][4] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][4] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][4] ' (FDRE) to '\command_array_reg[103][next_cmd][4] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][4] ' (FDRE) to '\command_array_reg[103][next_cmd][4] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][4] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][4] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][4] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][4] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][4] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][5] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][5] ' (FDSE) to '\command_array_reg[103][next_cmd][5] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][5] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][5] ' (FDSE) to '\command_array_reg[103][next_cmd][6] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][5] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][5] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][5] ' (FDSE) to '\command_array_reg[103][next_cmd][6] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][5] ' (FDSE) to '\command_array_reg[103][next_cmd][6] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][6] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][6] ' (FDSE) to '\command_array_reg[103][next_cmd][6] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][6] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][6] ' (FDSE) to '\command_array_reg[94][next_cmd][6] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][6] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
 INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][6] ' (FDSE) to '\command_array_reg[57][id][0] '
 INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][6] ' (FDSE) to '\command_array_reg[57][id][0] '
 INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[118][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[115][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[107][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[104][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[100][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[90][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[89][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[88][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[93][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[65][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[62][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[60][save][6] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[118][save][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[115][save][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[107][save][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[104][save][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[100][save][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[88][save][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[61][save][5] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[118][save][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[115][save][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[90][save][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[89][save][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[93][save][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[61][save][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[20][save][4] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[107][save][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[104][save][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[100][save][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[90][save][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[89][save][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[93][save][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[61][save][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[20][save][3] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[118][save][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[115][save][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[107][save][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[100][save][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[90][save][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[93][save][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[61][save][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[60][save][2] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[118][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[107][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[104][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[100][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[90][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[89][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[93][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[65][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[62][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[61][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[20][save][1] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[118][save][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[104][save][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[100][save][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[90][save][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[62][save][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[66][id][0] ' (FDSE) to '\command_array_reg[57][id][0] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[57][id][0] ' (FDSE) to '\command_array_reg[57][id][1] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[18][id][0] ' (FDSE) to '\command_array_reg[57][id][1] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[11][id][0] ' (FDSE) to '\command_array_reg[57][id][1] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[8][id][0] ' (FDSE) to '\command_array_reg[57][id][1] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[5][id][0] ' (FDSE) to '\command_array_reg[57][id][1] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[2][id][0] ' (FDSE) to '\command_array_reg[57][id][1] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[66][id][1] ' (FDSE) to '\command_array_reg[57][id][1] '
-INFO: [Synth 8-3886] merging instance '\command_array_reg[57][id][1] ' (FDSE) to '\command_array_reg[57][id][4] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][7] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][7] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][7] ' (FDRE) to '\command_array_reg[103][next_cmd][7] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][7] ' (FDRE) to '\command_array_reg[103][next_cmd][8] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][7] ' (FDRE) to '\command_array_reg[103][next_cmd][8] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][7] ' (FDRE) to '\command_array_reg[103][next_cmd][8] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][7] ' (FDRE) to '\command_array_reg[103][next_cmd][8] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][7] ' (FDRE) to '\command_array_reg[103][next_cmd][8] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][8] ' (FDRE) to '\command_array_reg[103][next_cmd][8] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][8] ' (FDRE) to '\command_array_reg[103][next_cmd][8] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][8] ' (FDRE) to '\command_array_reg[103][next_cmd][8] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][8] ' (FDRE) to '\command_array_reg[103][next_cmd][9] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][8] ' (FDRE) to '\command_array_reg[103][next_cmd][9] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][8] ' (FDRE) to '\command_array_reg[103][next_cmd][9] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][8] ' (FDRE) to '\command_array_reg[103][next_cmd][9] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][8] ' (FDRE) to '\command_array_reg[103][next_cmd][9] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][9] ' (FDRE) to '\command_array_reg[103][next_cmd][9] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][9] ' (FDRE) to '\command_array_reg[103][next_cmd][9] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][9] ' (FDRE) to '\command_array_reg[103][next_cmd][9] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][9] ' (FDRE) to '\command_array_reg[103][next_cmd][10] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][9] ' (FDRE) to '\command_array_reg[103][next_cmd][10] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][9] ' (FDRE) to '\command_array_reg[103][next_cmd][10] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][9] ' (FDRE) to '\command_array_reg[103][next_cmd][10] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][9] ' (FDRE) to '\command_array_reg[103][next_cmd][10] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][10] ' (FDRE) to '\command_array_reg[103][next_cmd][10] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][10] ' (FDRE) to '\command_array_reg[103][next_cmd][10] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][10] ' (FDRE) to '\command_array_reg[103][next_cmd][10] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][10] ' (FDRE) to '\command_array_reg[103][next_cmd][11] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][10] ' (FDRE) to '\command_array_reg[103][next_cmd][11] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][10] ' (FDRE) to '\command_array_reg[103][next_cmd][11] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][10] ' (FDRE) to '\command_array_reg[103][next_cmd][11] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][10] ' (FDRE) to '\command_array_reg[103][next_cmd][11] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][11] ' (FDRE) to '\command_array_reg[103][next_cmd][11] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][11] ' (FDRE) to '\command_array_reg[103][next_cmd][11] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][11] ' (FDRE) to '\command_array_reg[103][next_cmd][11] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][11] ' (FDRE) to '\command_array_reg[103][next_cmd][12] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[101][next_cmd][11] ' (FDRE) to '\command_array_reg[103][next_cmd][12] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[94][next_cmd][11] ' (FDRE) to '\command_array_reg[103][next_cmd][12] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[89][next_cmd][11] ' (FDRE) to '\command_array_reg[103][next_cmd][12] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[106][next_cmd][11] ' (FDRE) to '\command_array_reg[103][next_cmd][12] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[66][next_cmd][12] ' (FDRE) to '\command_array_reg[103][next_cmd][12] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[9][next_cmd][12] ' (FDRE) to '\command_array_reg[103][next_cmd][12] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[2][next_cmd][12] ' (FDRE) to '\command_array_reg[103][next_cmd][12] '
+INFO: [Synth 8-3886] merging instance '\command_array_reg[103][next_cmd][12] ' (FDRE) to '\command_array_reg[103][next_cmd][13] '
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[1][id][31] )
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\command_array_reg[27][char_first][7] )
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:03:51 ; elapsed = 00:04:23 . Memory (MB): peak = 807.188 ; gain = 636.328
+Finished Area Optimization : Time (s): cpu = 00:03:54 ; elapsed = 00:04:25 . Memory (MB): peak = 807.203 ; gain = 635.883
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:03:51 ; elapsed = 00:04:23 . Memory (MB): peak = 807.188 ; gain = 636.328
+Finished Parallel Area Optimization  : Time (s): cpu = 00:03:54 ; elapsed = 00:04:25 . Memory (MB): peak = 807.203 ; gain = 635.883
 
 Report RTL Partitions: 
 +------+---------------------+------------+----------+
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
-|1     |FILE_INPUT_VHDL__GB0 |           1|     22012|
-|2     |FILE_INPUT_VHDL__GB1 |           1|       498|
-|3     |FILE_INPUT_VHDL__GB2 |           1|       180|
-|4     |FILE_INPUT_VHDL__GB3 |           1|       349|
-|5     |FILE_INPUT_VHDL__GB4 |           1|       231|
-|6     |FILE_INPUT_VHDL__GB5 |           1|       820|
-|7     |FILE_INPUT_VHDL__GB6 |           1|        28|
-|8     |FILE_INPUT_VHDL__GB7 |           1|       104|
-|9     |CONTROLLOR_VHDL__GC0 |           1|       684|
-|10    |xillydemo__GC0       |           1|      4431|
+|1     |FILE_INPUT_VHDL__GB0 |           1|     22049|
+|2     |FILE_INPUT_VHDL__GB1 |           1|       363|
+|3     |FILE_INPUT_VHDL__GB2 |           1|       586|
+|4     |FILE_INPUT_VHDL__GB3 |           1|       430|
+|5     |FILE_INPUT_VHDL__GB4 |           1|      1090|
+|6     |FILE_INPUT_VHDL__GB5 |           1|        28|
+|7     |FILE_INPUT_VHDL__GB6 |           1|       104|
+|8     |CONTROLLOR_VHDL__GC0 |           1|       689|
+|9     |xillydemo__GC0       |           1|      4431|
 +------+---------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -2721,26 +2621,122 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:07 ; elapsed = 00:04:40 . Memory (MB): peak = 902.500 ; gain = 731.641
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:04:10 ; elapsed = 00:04:42 . Memory (MB): peak = 898.309 ; gain = 726.988
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[191][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[190][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[189][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[188][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[187][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[186][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[185][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[184][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[183][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[182][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[181][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[180][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[179][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[178][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[177][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[176][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[175][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[174][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[173][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[172][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[171][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[170][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[169][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[168][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[167][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[166][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[165][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[164][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[163][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[162][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[161][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[160][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[159][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[158][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[157][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[156][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[155][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[154][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[153][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[152][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[151][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[150][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[149][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[148][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[147][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[146][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[145][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[144][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[143][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[142][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[141][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[140][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[139][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[138][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[137][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[136][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[135][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[134][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[133][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[132][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[131][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[130][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[129][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[128][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[200][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[199][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[198][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[197][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[196][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[195][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[194][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[193][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[192][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[127][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[126][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[125][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[124][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[123][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[122][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[121][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[120][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[119][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[118][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[117][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[116][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[115][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[114][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[113][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[112][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[111][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[110][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[109][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[108][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[107][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[106][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FILE_INPUTi_0/\alt_stack_reg[105][7] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:04:34 ; elapsed = 00:05:07 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Timing Optimization : Time (s): cpu = 00:04:44 ; elapsed = 00:05:16 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
-Finished Parallel Timing Optimization  : Time (s): cpu = 00:04:34 ; elapsed = 00:05:07 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Parallel Timing Optimization  : Time (s): cpu = 00:04:44 ; elapsed = 00:05:16 . Memory (MB): peak = 1004.609 ; gain = 833.289
 
 Report RTL Partitions: 
 +------+---------------------+------------+----------+
 |      |RTL Partition        |Replication |Instances |
 +------+---------------------+------------+----------+
-|1     |FILE_INPUT_VHDL__GB1 |           1|       448|
-|2     |FILE_INPUT_VHDL__GB3 |           1|       333|
-|3     |FILE_INPUT_VHDL__GB4 |           1|       231|
-|4     |FILE_INPUT_VHDL__GB6 |           1|         2|
-|5     |FILE_INPUT_VHDL__GB7 |           1|        41|
-|6     |xillydemo__GC0       |           1|      4431|
-|7     |xillydemo_GT0        |           1|      8126|
+|1     |FILE_INPUT_VHDL__GB1 |           1|       325|
+|2     |FILE_INPUT_VHDL__GB4 |           1|       910|
+|3     |FILE_INPUT_VHDL__GB5 |           1|         2|
+|4     |FILE_INPUT_VHDL__GB6 |           1|        41|
+|5     |xillydemo__GC0       |           1|      4431|
+|6     |xillydemo_GT0        |           1|      7724|
 +------+---------------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:04:34 ; elapsed = 00:05:07 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:04:44 ; elapsed = 00:05:16 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
@@ -2777,7 +2773,7 @@ INFO: [Synth 8-3332] Sequential element (\U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/G
 INFO: [Synth 8-4480] The timing for the instance \controllor/TEXT_INPUT/MEMORY/RAM_reg_1  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \controllor/TEXT_INPUT/MEMORY/RAM_reg_2  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:04:49 ; elapsed = 00:05:22 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Technology Mapping : Time (s): cpu = 00:04:59 ; elapsed = 00:05:31 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2829,7 +2825,7 @@ INFO: [Synth 8-4163] Replicating register \audio_ins/audio_bclk_reg_reg  to hand
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:04:52 ; elapsed = 00:05:25 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished IO Insertion : Time (s): cpu = 00:05:02 ; elapsed = 00:05:35 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -2842,7 +2838,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:04:52 ; elapsed = 00:05:25 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Renaming Generated Instances : Time (s): cpu = 00:05:02 ; elapsed = 00:05:35 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2854,25 +2850,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:53 ; elapsed = 00:05:27 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:05:03 ; elapsed = 00:05:36 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:04:53 ; elapsed = 00:05:27 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Renaming Generated Ports : Time (s): cpu = 00:05:04 ; elapsed = 00:05:36 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:04:54 ; elapsed = 00:05:27 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Handling Custom Attributes : Time (s): cpu = 00:05:04 ; elapsed = 00:05:37 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:04:54 ; elapsed = 00:05:27 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Renaming Generated Nets : Time (s): cpu = 00:05:04 ; elapsed = 00:05:37 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2921,14 +2917,14 @@ Report Cell Usage:
 |9     |BIBUF              |   130|
 |10    |BUFG               |     1|
 |11    |CARRY4             |   127|
-|12    |LUT1               |   447|
-|13    |LUT2               |   188|
-|14    |LUT3               |   544|
-|15    |LUT4               |   403|
-|16    |LUT5               |   494|
-|17    |LUT6               |  1528|
-|18    |MUXF7              |    98|
-|19    |MUXF8              |     1|
+|12    |LUT1               |   414|
+|13    |LUT2               |   222|
+|14    |LUT3               |   441|
+|15    |LUT4               |   361|
+|16    |LUT5               |   466|
+|17    |LUT6               |  1602|
+|18    |MUXF7              |    87|
+|19    |MUXF8              |     2|
 |20    |PLLE2_ADV          |     1|
 |21    |PS7                |     1|
 |22    |RAM32X1S           |    40|
@@ -2938,8 +2934,8 @@ Report Cell Usage:
 |26    |SRLC32E            |    47|
 |27    |FDCE               |    18|
 |28    |FDR                |     8|
-|29    |FDRE               |  3281|
-|30    |FDSE               |    77|
+|29    |FDRE               |  3283|
+|30    |FDSE               |    81|
 |31    |IBUF               |     6|
 |32    |IOBUF              |    57|
 |33    |OBUF               |    34|
@@ -2950,21 +2946,21 @@ Report Instance Areas:
 +------+-------------------------------------------------------+--------------------------------------------------------------+------+
 |      |Instance                                               |Module                                                        |Cells |
 +------+-------------------------------------------------------+--------------------------------------------------------------+------+
-|1     |top                                                    |                                                              |  8342|
+|1     |top                                                    |                                                              |  8240|
 |2     |  audio_ins                                            |i2s_audio                                                     |   162|
-|3     |  controllor                                           |CONTROLLOR_VHDL                                               |  5206|
+|3     |  controllor                                           |CONTROLLOR_VHDL                                               |  5082|
 |4     |    BYTE                                               |BYTE_VHDL                                                     |     4|
-|5     |    FILE_INPUT                                         |FILE_INPUT_VHDL                                               |  4608|
+|5     |    FILE_INPUT                                         |FILE_INPUT_VHDL                                               |  4394|
 |6     |    NANY                                               |NANY_VHDL                                                     |     1|
 |7     |    OBYTE                                              |OBYTE_VHDL                                                    |     1|
 |8     |    RSET                                               |RSET_VHDL                                                     |     2|
 |9     |    SET                                                |SET_VHDL                                                      |    35|
-|10    |    STATE_CONTROLLOR                                   |STATE_CONTROLLOR_VHDL                                         |    25|
-|11    |    STR                                                |STR_VHDL                                                      |    46|
-|12    |    TEXT_INPUT                                         |TEXT_INPUT_VHDL                                               |   376|
-|13    |      MEMORY                                           |MEMORY_VHDL                                                   |    85|
+|10    |    STATE_CONTROLLOR                                   |STATE_CONTROLLOR_VHDL                                         |    26|
+|11    |    STR                                                |STR_VHDL                                                      |   111|
+|12    |    TEXT_INPUT                                         |TEXT_INPUT_VHDL                                               |   397|
+|13    |      MEMORY                                           |MEMORY_VHDL                                                   |   106|
 |14    |  smbus_ins                                            |smbus                                                         |   125|
-|15    |  xillybus_ins                                         |xillybus                                                      |  2627|
+|15    |  xillybus_ins                                         |xillybus                                                      |  2649|
 |16    |    system_i                                           |system                                                        |  2261|
 |17    |      vivado_system_i                                  |vivado_system                                                 |  2260|
 |18    |        processing_system7_0                           |vivado_system_processing_system7_0_0                          |   282|
@@ -3020,11 +3016,11 @@ Report Instance Areas:
 |68    |        xlconcat_0                                     |vivado_system_xlconcat_0_0                                    |     0|
 +------+-------------------------------------------------------+--------------------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:04:54 ; elapsed = 00:05:27 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Finished Writing Synthesis Report : Time (s): cpu = 00:05:04 ; elapsed = 00:05:37 . Memory (MB): peak = 1004.609 ; gain = 833.289
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:03:02 ; elapsed = 00:04:44 . Memory (MB): peak = 1018.336 ; gain = 485.363
-Synthesis Optimization Complete : Time (s): cpu = 00:04:54 ; elapsed = 00:05:28 . Memory (MB): peak = 1018.336 ; gain = 847.477
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:04 ; elapsed = 00:04:52 . Memory (MB): peak = 1004.609 ; gain = 471.953
+Synthesis Optimization Complete : Time (s): cpu = 00:05:04 ; elapsed = 00:05:38 . Memory (MB): peak = 1004.609 ; gain = 833.289
 INFO: [Project 1-571] Translating synthesized netlist
 Reading core file 'C:/FPGAPrj/VIVADO/xillinux-eval-zybo-1.3c/cores/xillybus_core.ngc' for (cell view 'xillybus_core', library 'work')
 Parsing EDIF File [./.ngc2edfcache/xillybus_core_ngc_6acb8b29.edif]
@@ -3061,6 +3057,6 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 870 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:04:58 ; elapsed = 00:05:28 . Memory (MB): peak = 1018.336 ; gain = 754.020
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.156 . Memory (MB): peak = 1018.336 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 02 18:07:27 2016...
+synth_design: Time (s): cpu = 00:05:08 ; elapsed = 00:05:39 . Memory (MB): peak = 1004.609 ; gain = 739.828
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.156 . Memory (MB): peak = 1004.609 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 04 17:38:30 2016...
