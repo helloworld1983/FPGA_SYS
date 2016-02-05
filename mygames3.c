@@ -17,14 +17,13 @@ int main(int argc, char *argv[]) {
   int fd, rc;
   unsigned char buf[128];
 
-  fd = open("/dev/xillybus_write_8", O_WRONLY);
-  fd_r = open("/dev/xillybus_read_8", O_RDONLY);
 
+  fd = open("/dev/xillybus_write_8", O_WRONLY);
+fd_r = open("/dev/xillybus_read_8", O_RDONLY);
 if (argc!=2) {
     fprintf(stderr, "Usage: %s devfile\n", argv[0]);
     exit(1);
   }
-
   freopen(argv[1],"r",stdin);
 
   config_console(); // Configure standard input not to wait for CR
@@ -40,7 +39,7 @@ if (argc!=2) {
   while (1) {
 
     // Read from standard input = file descriptor 0
-     rc = read(0, buf, sizeof(buf));
+     rc = read(0,buf, sizeof(buf));
 
     if ((rc < 0) && (errno == EINTR))
       continue;
@@ -51,8 +50,7 @@ if (argc!=2) {
     }
 
     if (rc == 0) {
-     // fprintf(stderr, "Reached read EOF.\n");
-        printf("\n");
+      fprintf(stderr, "PARSE ERROR.\n");
       exit(0);
     }
 
@@ -192,16 +190,13 @@ void config_console() {
 void allwrite_r(int fd, unsigned char *buf, int len) {
   int sent = 0;
   int rc;
-  int PARSE_OK = 0;
 
   while (sent < len) {
-   // rc = write(fd, buf + sent, len - sent);
-    if(*(buf+sent) == 'a') {
+ //   rc = write(fd, buf + sent, len - sent);
+            if(*(buf+sent) == 'a') {
         printf("PARSE SUCCESS.\n");
-        PARSE_OK = 1;
         exit(0);
         }
-
     if ((rc < 0) && (errno == EINTR))
       continue;
 
@@ -215,12 +210,6 @@ void allwrite_r(int fd, unsigned char *buf, int len) {
       exit(1);
     }
 
-    sent += 1;
+    sent += rc;
   }
-
-  if(PARSE_OK == 0){
-        printf("PARSE ERROR.\n");
-        exit(0);
-        }
-
 }

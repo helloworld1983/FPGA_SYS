@@ -208,8 +208,6 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	
 	signal obyte_match : std_logic := '0';
 	
-	signal success_send : boolean := false;
-	
 	--attribute mark_debug : string;
     --attribute mark_debug of end_parser_ok: signal is "true";
 	--attribute mark_debug of end_fail : signal is "true";
@@ -229,7 +227,7 @@ begin
 	fail_reg <= next_rdy_function(fail_reg_array) ;
 	next_text_rdy_reg <= next_rdy_array(1) or next_rdy_array(3) or continue_sig or obyte_match;
 	state_next <= nosignal_rdy;
-	--PARSER_OK <= end_parser_ok;
+	PARSER_OK <= end_parser_ok;
 	--PARSER_OK <= start2;
 	PARSER_ERROR <= end_fail;
 	--clk_sig <= CLK;
@@ -393,20 +391,16 @@ begin
         --end if;
     --end process;
     
-    process(CLK)
-    begin
-        if(CLK'event and CLK = '1') then
-            if(input_stream = "01000000") then
-               parser_ok <= '0' ;
-               success_send <= false;
-            elsif(end_parser_ok = '1' and not success_send) then
-                parser_ok <= '1';
-                success_send <= true;
-            else
-                parser_ok <= '0';
-            end if;
-        end if;
-    end process;
+    --process(CLK)
+    --begin
+        --if(CLK'event and CLK = '1') then
+            --if(input_stream = "01000000") then
+               --parser_ok <= '0' ;
+            --elsif(end_parser_ok = '1') then
+                --parser_ok <= '1';
+            --end if;
+        --end if;
+    --end process;
     
     process(CLK)
         variable n : std_logic := '0';

@@ -77,10 +77,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="hdl/vivado_system.hwdef"/>
-        <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="hw_handoff/vivado_system_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="hw_handoff/vivado_system.hwh"/>
-        <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="vivado_system_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="hdl/vivado_system.vhd"/>
         <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="ip/vivado_system_auto_pc_0/vivado_system_auto_pc_0.xci"/>
         <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="ip/vivado_system_xbar_0/vivado_system_xbar_0.xci"/>
@@ -91,6 +87,10 @@
         <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="ip/vivado_system_xillyvga_0_0/vivado_system_xillyvga_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="ip/vivado_system_xillybus_lite_0_0/vivado_system_xillybus_lite_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="ip/vivado_system_xillybus_ip_0_0/vivado_system_xillybus_ip_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="hdl/vivado_system.hwdef"/>
+        <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="hw_handoff/vivado_system_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="hw_handoff/vivado_system.hwh"/>
+        <CompFileExtendedInfo CompFileName="vivado_system.bd" FileRelPathName="vivado_system_ooc.xdc"/>
       </File>
       <File Path="$PPRDIR/../../vivado-essentials/fifo_32x512/fifo_32x512.upgrade_log"/>
       <File Path="$PPRDIR/../../vivado-essentials/fifo_8x2048/fifo_8x2048.upgrade_log"/>
