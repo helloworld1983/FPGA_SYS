@@ -1,14 +1,16 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use STD.textio.all;
+use ieee.std_logic_arith.all;
 
 entity CONTROLLOR_VHDL is
 	port (
 	CLK : in std_logic := '0';
 	INPUT_STREAM : in std_logic_vector(7 downto 0);
 	RDEN : in std_logic;
-	PARSER_OK : out std_logic := '0';
-	PARSER_ERROR : out std_logic := '0');
+	TIME_COUNT : out std_logic_vector(31 downto 0);
+	PARSER_OK : buffer std_logic := '0';
+	PARSER_ERROR : buffer std_logic := '0');
 end CONTROLLOR_VHDL;
 
 architecture Behavioral of CONTROLLOR_VHDL is
@@ -210,6 +212,10 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	
 	signal obyte_match : std_logic := '0';
 	
+	signal time_count_sig : integer := 0;
+	signal time_count_accept : boolean := false;
+	signal change_sig : boolean := false;
+	
 	--attribute mark_debug : string;
     --attribute mark_debug of end_parser_ok: signal is "true";
 	--attribute mark_debug of end_fail : signal is "true";
@@ -393,16 +399,33 @@ begin
         --end if;
     --end process;
     
-    --process(CLK)
-    --begin
-        --if(CLK'event and CLK = '1') then
-            --if(input_stream = "01000000") then
-               --parser_ok <= '0' ;
-            --elsif(end_parser_ok = '1') then
-                --parser_ok <= '1';
-            --end if;
-        --end if;
-    --end process;
+    process(CLK)
+    begin
+        if(CLK'event and CLK = '1') then
+            if(input_stream = "01000000") then
+               time_count_accept <= false;
+               change_sig <= false;
+            elsif(rden = '1' and not change_sig) then
+               time_count_accept <= true;
+               change_sig <= true;
+            elsif(parser_ok = '1' or parser_error = '1') then 
+               time_count_accept <= false;
+            end if;
+        end if;
+    end process;
+    
+    TIME_COUNT <= CONV_std_logic_vector(time_count_sig,32);
+    
+    process(CLK)
+    begin
+        if(CLK'event and CLK = '1') then
+            if(input_stream = "01000000") then
+               time_count_sig <= 0;
+            elsif(time_count_accept) then
+               time_count_sig <= time_count_sig + 1;
+            end if;
+        end if;
+    end process;
     
     process(CLK)
     begin

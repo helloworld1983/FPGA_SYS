@@ -203,8 +203,9 @@ architecture sample_arch of xillydemo is
 	CLK : in std_logic := '0';
     INPUT_STREAM : in std_logic_vector(7 downto 0);
     RDEN : in std_logic;
-    PARSER_OK : out std_logic := '0';
-    PARSER_ERROR : out std_logic := '0');
+    TIME_COUNT : out std_logic_vector(31 downto 0);
+    PARSER_OK : buffer std_logic := '0';
+    PARSER_ERROR : buffer std_logic := '0');
   end component;
  
   
@@ -253,11 +254,14 @@ architecture sample_arch of xillydemo is
   signal user_r_read_8_data :  std_logic_vector(7 DOWNTO 0);
   ------------------------------------------------------------
   signal user_r_read_8_data_test :  std_logic_vector(7 DOWNTO 0);
+  signal user_r_read_32_data_test :  std_logic_vector(31 DOWNTO 0);
   signal parser_ok : std_logic;
   signal a : character := 'a';
   signal b : character := 'b';
   signal user_w_write_8_data_test : std_logic_vector(7 downto 0);
+  signal user_w_write_32_data_test : std_logic_vector(31 downto 0);
   signal user_w_write_8_wren_test : std_logic;
+  signal user_w_write_32_wren_test : std_logic;
   signal parser_error : std_logic;
   signal sent_accept : boolean := false;
   ------------------------------------------------------------  
@@ -359,7 +363,7 @@ begin
       -- FPGA to CPU signals:
       user_r_read_32_rden => user_r_read_32_rden,
       user_r_read_32_empty => user_r_read_32_empty,
-      user_r_read_32_data => user_r_read_32_data,
+      user_r_read_32_data => user_r_read_32_data_test, ---------------
       user_r_read_32_eof => user_r_read_32_eof,
       user_r_read_32_open => user_r_read_32_open,
 
@@ -521,8 +525,8 @@ begin
     port map(
       clk        => bus_clk,
       srst       => reset_32,
-      din        => user_w_write_32_data,
-      wr_en      => user_w_write_32_wren,
+      din        => user_w_write_32_data_test,
+      wr_en      => user_w_write_32_wren_test,
       rd_en      => user_r_read_32_rden,
       dout       => user_r_read_32_data,
       full       => user_w_write_32_full,
@@ -553,6 +557,7 @@ begin
     CLK => bus_clk,
     INPUT_STREAM => user_w_write_8_data,
     RDEN => user_w_write_8_wren,
+    TIME_COUNT => user_w_write_32_data_test,
     PARSER_OK => parser_ok,
     PARSER_ERROR => parser_error
     );
@@ -561,11 +566,17 @@ begin
    --user_r_read_8_data_test <= std_logic_vector(to_unsigned(natural(character'pos(a)),8)) when (user_r_read_8_data = "00000001")  else 
                              -- std_logic_vector(to_unsigned(natural(character'pos(b)),8)) when (user_r_read_8_data = "00000010") else "00000000";
    user_r_read_8_data_test <= user_r_read_8_data when sent_accept else "00000000";
+   user_r_read_32_data_test <= user_r_read_32_data when sent_accept else (others => '0');
    
    user_w_write_8_data_test <= std_logic_vector(to_unsigned(natural(character'pos(a)),8)) when (parser_ok = '1') else
                                 std_logic_vector(to_unsigned(natural(character'pos(b)),8)) when (parser_error = '1') 
                                else user_w_write_8_data;
+   --user_w_write_32_data_test <= std_logic_vector(to_unsigned(natural(character'pos(a)),32)) when (parser_ok = '1') else
+     --                                                       std_logic_vector(to_unsigned(natural(character'pos(b)),32)) when (parser_error = '1') 
+       --                                                    else user_w_write_32_data;
+                                                           
    user_w_write_8_wren_test <= '1' when (parser_ok = '1' or parser_error = '1') else user_w_write_8_wren;
+   user_w_write_32_wren_test <= '1' when (parser_ok = '1' or parser_error = '1') else user_w_write_32_wren;
    
    process(bus_clk)
    begin
