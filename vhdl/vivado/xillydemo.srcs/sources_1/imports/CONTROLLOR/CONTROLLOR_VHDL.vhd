@@ -7,13 +7,13 @@ entity CONTROLLOR_VHDL is
 	CLK : in std_logic := '0';
 	INPUT_STREAM : in std_logic_vector(7 downto 0);
 	RDEN : in std_logic;
-	PARSER_OK : out std_logic := '0');
-	--PARSER_ERROR : out std_logic := '0');
+	PARSER_OK : out std_logic := '0';
+	PARSER_ERROR : out std_logic := '0');
 end CONTROLLOR_VHDL;
 
 architecture Behavioral of CONTROLLOR_VHDL is
 
-    signal parser_error : std_logic;
+    --signal parser_error : std_logic;
 
     -----------------------------------------
     -- Loading command
@@ -177,6 +177,8 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	signal next_text_rdy_reg : std_logic := '0' ;	
 	signal start,start1,start2 : std_logic := '0' ;
 	
+	signal success_send : boolean := false;
+	
 	--Test
     --signal text_input_stream : std_logic_vector(7 downto 0);
     --signal count_text_stream : integer := 0;
@@ -227,9 +229,9 @@ begin
 	fail_reg <= next_rdy_function(fail_reg_array) ;
 	next_text_rdy_reg <= next_rdy_array(1) or next_rdy_array(3) or continue_sig or obyte_match;
 	state_next <= nosignal_rdy;
-	PARSER_OK <= end_parser_ok;
+	--PARSER_OK <= end_parser_ok;
 	--PARSER_OK <= start2;
-	PARSER_ERROR <= end_fail;
+	--PARSER_ERROR <= end_fail;
 	--clk_sig <= CLK;
 
 	FILE_INPUT : FILE_INPUT_VHDL
@@ -401,6 +403,26 @@ begin
             --end if;
         --end if;
     --end process;
+    
+    process(CLK)
+    begin
+        if(CLK'event and CLK = '0') then
+            if(input_stream = "01000000") then
+               parser_ok <= '0' ;
+               success_send <= false;
+               parser_error <= '0';
+            elsif(end_parser_ok = '1' and not success_send) then
+                parser_ok <= '1';
+                success_send <= true;
+            elsif(end_fail = '1' and not success_send) then
+                parser_error <= '1';
+                success_send <= true;
+            else
+                parser_ok <= '0';
+                parser_error <= '0';
+            end if;
+        end if;
+    end process;
     
     process(CLK)
         variable n : std_logic := '0';

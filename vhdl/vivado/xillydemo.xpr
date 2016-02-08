@@ -250,6 +250,24 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_generator_v13_0_0/hdl/fifo_generator_v13_0_vhsyn_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="synth/fifo_8x2048.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_generator_v13_0_0/hdl/fifo_generator_v13_0.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048/fifo_8x2048.xdc"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="blk_mem_gen_v8_3_0/hdl/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_generator_v13_0_0/hdl/fifo_generator_v13_0_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048_stub.v"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048.veo"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_generator_v13_0_0/simulation/fifo_generator_vhdl_beh.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="doc/fifo_generator_v13_0_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="sim/fifo_8x2048.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048.vho"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="blk_mem_gen_v8_3_0/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_8x2048.xci" FileRelPathName="fifo_8x2048.xml"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="fifo_8x2048"/>
