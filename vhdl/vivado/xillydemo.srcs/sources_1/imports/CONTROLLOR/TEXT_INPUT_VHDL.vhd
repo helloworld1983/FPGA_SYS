@@ -33,12 +33,12 @@ architecture Behavioral of TEXT_INPUT_VHDL is
          DOUT2 : out std_logic_vector(7 downto 0);
          WR : in std_logic;
          DOEN : in std_logic;
-         ADDR_IN_WR : in std_logic_vector(8 downto 0);
-		 ADDR_IN_RD1 : in std_logic_vector(8 downto 0);
-		 ADDR_IN_RD2 : in std_logic_vector(8 downto 0));
+         ADDR_IN_WR : in std_logic_vector(15 downto 0);
+		 ADDR_IN_RD1 : in std_logic_vector(15 downto 0);
+		 ADDR_IN_RD2 : in std_logic_vector(15 downto 0));
 	end component;
 	
-	signal addr_in_rd1,addr_in_rd2, addr_in_wr : std_logic_vector(8 downto 0);
+	signal addr_in_rd1,addr_in_rd2, addr_in_wr : std_logic_vector(15 downto 0);
 	signal out_num:         natural := 0;
 	
 	
@@ -60,11 +60,17 @@ begin
             if(text_input_stream = "01000000") then
                 out_num <= 0;
             elsif(STR_TRG = '1') then
-                if(out_num >= 0 and out_num < (count_text_stream+1)) then
-                out_num <= out_num + 2;
+                if(out_num = 2047) then
+                    out_num <= 0;
+                else
+                --if(out_num >= 0 and out_num < (count_text_stream+1)) then
+                    out_num <= out_num + 2;
                 end if;                
             elsif ((TRG = '1' or RDY = '1')) then
-                if(out_num >= 0 and out_num < (count_text_stream+1)) then
+                if(out_num = 2047) then
+                    out_num <= 0;
+                else
+                --if(out_num >= 0 and out_num < (count_text_stream+1)) then
                     out_num <= out_num + 1;
                 end if;
             end if;
@@ -124,15 +130,15 @@ begin
 	process(CLK)
 	begin
 		if(CLK'event and CLK = '0') then
-				addr_in_rd1 <= CONV_std_logic_vector(out_num,9);
-				addr_in_rd2 <= CONV_std_logic_vector((out_num+1),9);
+				addr_in_rd1 <= CONV_std_logic_vector(out_num,16);
+				addr_in_rd2 <= CONV_std_logic_vector((out_num+1),16);
 		end if;
 	end process;
 	
 	process(CLK)
 	begin
 		if(CLK'event and CLK = '0') then
-			addr_in_wr <= CONV_std_logic_vector((count_text_stream+1),9);
+			addr_in_wr <= CONV_std_logic_vector((count_text_stream+1),16);
 		end if;
 	end process;
 	
@@ -142,7 +148,11 @@ begin
 		  if(text_input_stream = "01000000") then
 		      count_text_stream <= 0;
 		  elsif(RDEN = '1'and text_input_stream /= "00100000" and text_input_stream /= "00001010") then
+		      if(count_text_stream = 2047) then
+		         count_text_stream <= 0;
+		      else 
 			  count_text_stream <= count_text_stream + 1;
+			  end if;
 		  end if;
 		end if;
 	end process;

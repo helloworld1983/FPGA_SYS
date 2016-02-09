@@ -10,15 +10,15 @@ entity MEMORY_VHDL is
            DOUT2 : out std_logic_vector(7 downto 0);
            WR : in std_logic;
            DOEN : in std_logic;
-           ADDR_IN_WR : in std_logic_vector(8 downto 0);
-		   ADDR_IN_RD1 : in std_logic_vector(8 downto 0);
-		   ADDR_IN_RD2 : in std_logic_vector(8 downto 0));
+           ADDR_IN_WR : in std_logic_vector(15 downto 0);
+		   ADDR_IN_RD1 : in std_logic_vector(15 downto 0);
+		   ADDR_IN_RD2 : in std_logic_vector(15 downto 0));
 end MEMORY_VHDL;
 
 architecture RTL of MEMORY_VHDL is
-  type ram_type is array (511 downto 0) of std_logic_vector (7 downto 0); 
+  type ram_type is array (2047 downto 0) of std_logic_vector (7 downto 0); 
     signal RAM : ram_type; 
-    signal ADDR_REG1,ADDR_REG2 : std_logic_vector(8 downto 0); 
+    signal ADDR_REG1,ADDR_REG2 : std_logic_vector(15 downto 0); 
 begin
   process(CLK) begin
     if (CLK'event and CLK = '1') then

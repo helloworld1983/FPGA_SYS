@@ -414,7 +414,7 @@ begin
         end if;
     end process;
     
-    TIME_COUNT <= CONV_std_logic_vector(time_count_sig,32);
+    TIME_COUNT <= CONV_std_logic_vector(time_count_sig,32) when (parser_ok = '1') else (others => '0');
     
     process(CLK)
     begin
