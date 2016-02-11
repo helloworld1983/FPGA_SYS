@@ -61,6 +61,8 @@ begin
                 out_num <= 0;
             elsif(STR_TRG = '1') then
                 if(out_num = 2047) then
+                    out_num <= 1;
+                elsif(out_num = 2046) then
                     out_num <= 0;
                 else
                 --if(out_num >= 0 and out_num < (count_text_stream+1)) then
@@ -131,7 +133,11 @@ begin
 	begin
 		if(CLK'event and CLK = '0') then
 				addr_in_rd1 <= CONV_std_logic_vector(out_num,16);
+				if(out_num = 2047) then
+				addr_in_rd2 <= (others => '0');
+				else
 				addr_in_rd2 <= CONV_std_logic_vector((out_num+1),16);
+				end if;
 		end if;
 	end process;
 	
@@ -148,7 +154,7 @@ begin
 		  if(text_input_stream = "01000000") then
 		      count_text_stream <= 0;
 		  elsif(RDEN = '1'and text_input_stream /= "00100000" and text_input_stream /= "00001010") then
-		      if(count_text_stream = 2047) then
+		      if(count_text_stream = 2046) then
 		         count_text_stream <= 0;
 		      else 
 			  count_text_stream <= count_text_stream + 1;

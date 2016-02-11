@@ -41,9 +41,9 @@ architecture behave of FILE_INPUT_VHDL is
                                                           char_first => "00000000", char_second => "00000000",
                                                                              char_first1 => ' ', char_second1 => ' ', option => 0));
                                                                                                                                            
-   type int_alt_array is array(1 to 200) of integer;
+   type int_alt_array is array(1 to 300) of integer;
    signal alt_stack : int_alt_array := (others => 0) ;
-   type int_call_array is array(1 to 100) of integer;
+   type int_call_array is array(1 to 300) of integer;
    signal call_stack : int_call_array := (others => 0);
    
    --attribute mark_debug : string;
@@ -116,7 +116,7 @@ architecture behave of FILE_INPUT_VHDL is
 	
 begin
   process(CLK)
-     file in_file : text is in "C:\FPGAPrj\VIVADO\VIVADO\CONTROLLOR.srcs\constrs_1\new\json.txt";
+     file in_file : text is in "C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/constrs_1/imports/VIVADO/VIVADO/CONTROLLOR.srcs/constrs_1/new\json.txt";
 	 variable l:         line;
      variable c:         character := ' ';
      variable is_string: boolean := false;
@@ -125,7 +125,7 @@ begin
 	 
   begin 
 	if(CLK'event and CLK = '1') then
-	   if(TRG = '1') then
+	   if(READ_TRG = '1') then
 	   --Loading command from text file
 	       while not endfile(in_file) loop
 		      readline(in_file, l);
@@ -181,53 +181,7 @@ begin
 	   end if;
 	  end if;
 	end process;
-    
-    -- Make trigger signal to STATE_CONTROLLOR           
-    process(CLK)
-    begin
-       if(CLK'event and CLK = '1') then
-         if(text_input_stream = "01000000") then
-            next_accept <= false;
-            rdy_array <= (others => '0');
-         else
-          if(TRG = '1' or RDY_IN = '1' or FAIL = '1') then
-            next_accept <= true ;
-          end if;
-          if (next_accept and (not fail_sig) and (not parser_ok_sig)) then
-             rdy_array <= (others => '0');
-             rdy_array( command_array(cmd_read_no).id) <= '1';
-             next_accept <= false;
-           else
-             rdy_array <= (others => '0');
-           end if;
-          end if;
-        end if;
-     end process;
-    
-    -- Command ALT
-    process(CLK)
-    begin
-       if(CLK'event and CLK = '1') then
-         if(text_input_stream = "01000000") then
-            fail_sig <= false;
-            alt_top <= 1;
-            alt_stack <= (others => 0);
-         else
-           if (FAIL = '1') then 
-                    if(alt_stack(1) = 0) then 
-                        fail_sig <= true;
-                    else                                                        
-                        alt_stack(alt_top-1) <= 0;
-                        alt_top <= alt_top - 1;
-                    end if;
-           elsif ((RDY_IN = '1' or TRG = '1') and  command_array(cmd_read_no).id = 10 ) then    
-            alt_stack(alt_top) <= command_array(cmd_read_no).save;
-            alt_top <= alt_top + 1;
-           end if;
-         end if;
-     end if;
-   end process;
-     
+      
      -- Next command 
      process(CLK) 
      begin
@@ -237,11 +191,21 @@ begin
               call_top <= 1;
               parser_ok_sig <= false;
               call_stack <= (others => 0);
+              fail_sig <= false;
+              alt_top <= 1;
+              alt_stack <= (others => 0);
            else
                
-           if (FAIL = '1' and alt_stack(1) /= 0) then                                                        
-                  cmd_read_no <= alt_stack(alt_top-1);
+           if (FAIL = '1') then
+               if(alt_stack(1) = 0) then 
+                  fail_sig <= true;
+               else
+                  cmd_read_no <= alt_stack(alt_top-1);                                                        
+                  alt_stack(alt_top-1) <= 0;
+                  alt_top <= alt_top - 1;
+              end if;
            elsif (RDY_IN = '1' or TRG = '1' ) then
+           
               case command_array(cmd_read_no).id is
                    when 9 =>  call_stack(call_top) <= command_array(cmd_read_no).save;
                               if(command_array(cmd_read_no).next_cmd /= 0) then
@@ -249,7 +213,14 @@ begin
                               else
                                 cmd_read_no <= cmd_read_no + 1;
                               end if;
-                              call_top <= call_top + 1;                                                                     
+                              call_top <= call_top + 1; 
+                    when 10 =>alt_stack(alt_top) <= command_array(cmd_read_no).save;
+                              alt_top <= alt_top + 1;
+                              if(command_array(cmd_read_no).next_cmd /= 0) then
+                                cmd_read_no <= command_array(cmd_read_no).next_cmd;
+                              else
+                                cmd_read_no <= cmd_read_no + 1;
+                              end if;                                                                   
                     when 12 => if(cmd_read_no = 7) then
                                             case text_in is
                                                  when "01110100" => cmd_read_no <= 81; --t
@@ -258,7 +229,7 @@ begin
                                                  when "00100010" => cmd_read_no <= 9;
                                                  when "01011011" => cmd_read_no <= 58;
                                                  when "01101110" => cmd_read_no <= 76;   
-                                                 when "01001111" => cmd_read_no <= 86;
+                                                 when "01001111" => cmd_read_no <= 45;
                                                  when others => if((text_in >= "00110000" and text_in <= "00111001") or (text_in = "00101101")) then
                                                                    cmd_read_no <= 11;
                                                                 else 
@@ -289,20 +260,11 @@ begin
                                               elsif(cmd_read_no = 101) then
                                                    case text_in is
                                                        when "00100010" => cmd_read_no <= 8;
-                                                       when "00101111" => cmd_read_no <= 104;
+                                                       when "01011100" => cmd_read_no <= 104;
                                                        when others => cmd_read_no <= 102;
                                                    end case;
                                                end if;         
-                        -- when 13 => if(call_stack(1) /= 0) then
-                                                              --parser_ok_sig <= true;
-                                                          --else
-                                                              --cmd_read_no <= call_stack(call_top-1);
-                                                              --call_stack(call_top-1) <= 0;
-                                                             -- call_top <= call_top - 1;
-                                                         -- end if;
-  
-  
-                                                                                    
+                                                             
                         when 15 => if(call_stack(1) = 0) then 
                                        parser_ok_sig <= true;
                                    else
@@ -316,7 +278,8 @@ begin
                                    else
                                         cmd_read_no <= cmd_read_no + 1;
                                    end if;   
-                  end case;                                                       
+                  end case; 
+                                                    
             end if;
           end if;
          end if;
@@ -341,36 +304,23 @@ begin
         end if;
     end process;
     
-    
     process(CLK)
     begin
         if(CLK'event and CLK='1') then
-            continue_sig <= CONTINUE;
+            if(not fail_sig and not parser_ok_sig) then
+            NEXT_RDY <= (TRG or RDY_IN or FAIL or CONTINUE);
+            else
+            NEXT_RDY <= '0';
+            end if;
         end if;
     end process;
         
           
     ID <= command_array(cmd_read_no).id;
-    NEXT_RDY <= next_rdy_function(rdy_array) or continue_sig;
+    --NEXT_RDY <= next_rdy_function(rdy_array) or continue_sig;
+    --NEXT_RDY <= TRG or RDY_IN or FAIL or 
     PARSER_OK <= '1' when parser_ok_sig else '0';
     END_FAIL <= '1' when fail_sig else '0';
   
-  -- Parser result            
-  process(CLK)
-     variable buf_out : LINE ;
-     variable end_sig : boolean := true;
-  begin
-     if(CLK'event and CLK = '0') then  
-        if(fail_sig and end_sig) then
-             write(buf_out,string'("PARSER ERROR"));
-             writeline(output,buf_out);
-             end_sig := false;
-     elsif(parser_ok_sig and end_sig) then
-             write(buf_out,string'("PARSER OK"));
-             writeline(output,buf_out);
-             end_sig := false;
-     end if;     
-  end if;
-end process;
 
 end behave;

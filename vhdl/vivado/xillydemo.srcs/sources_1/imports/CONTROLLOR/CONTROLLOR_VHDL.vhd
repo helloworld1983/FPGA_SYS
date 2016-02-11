@@ -243,7 +243,7 @@ begin
 	FILE_INPUT : FILE_INPUT_VHDL
 	port map(	
 	    CLK => CLK,
-	    READ_TRG => start1,
+	    READ_TRG => run_start,
 	    TRG => START,
 	    CONTINUE => continue_sig,
 		RDY_IN => next_rdy,
@@ -339,65 +339,6 @@ begin
 		FAIL => fail_reg_array(16),
 		RDY_ONE => next_rdy_array(16));
 
-	--process(CLK)
-	--begin
-	   --if(CLK'event and CLK = '0') then	       
-	       --if(count_start < 8) then
-	       --count_start <= count_start + 1;
-	       --end if;
-	       
-	       --if(count_start = 2) then
-	           --start1 <= '1';
-	       --elsif(count_start = 4) then
-	          --- start <= '1' ;
-	       --elsif(count_start = 6) then
-	           --start2 <= '1';
-	       --else
-	           --start1 <= '0';	       
-	           --start <= '0';
-	       --end if;
-           
-		--end if;
-	--end process;
-	
-	--process(CLK)
-    --begin
-        --if(CLK'event and CLK = '1') then
-            --if(count_text_stream >= 1 and count_text_stream <= 8) then
-                --if(not fin) then
-                --text_input_stream <= txt_sample(count_text_stream);
-                --end if;
-                --count_text_stream <= count_text_stream + 1;
-            --else
-                --text_input_stream <= "UUUUUUUU";
-            --end if;
-            
-            --if(count_text_stream = 9) then
-                --count_text_stream <= 1;
-                --fin <= true;
-            --end if;
-        --end if;
-    --end process;
-    
-    --process(CLK)
-    --begin
-        --if(CLK'event and CLK = '0') then
-            --if(count_text_stream <= 8) then
-                --count_text_stream <= count_text_stream + 1;
-            --end if;
-        --end if;
-    --end process;
-	 
-    --process(CLK)
-    --begin
-        --if(CLK'event and CLK = '0') then
-            --if(count_text_stream <= 8) then
-                --rden <= '1';
-				--else 
-					--rden <= '0';
-            --end if;
-        --end if;
-    --end process;
     
     process(CLK)
     begin

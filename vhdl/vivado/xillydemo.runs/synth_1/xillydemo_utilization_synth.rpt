@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date         : Tue Feb 09 19:05:37 2016
+| Date         : Thu Feb 11 17:14:30 2016
 | Host         : maicuong running 64-bit major release  (build 9200)
 | Command      : report_utilization -file xillydemo_utilization_synth.rpt -pb xillydemo_utilization_synth.pb
 | Design       : xillydemo
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 7230 |     0 |     17600 | 41.08 |
-|   LUT as Logic             | 6878 |     0 |     17600 | 39.08 |
+| Slice LUTs*                | 9003 |     0 |     17600 | 51.15 |
+|   LUT as Logic             | 8651 |     0 |     17600 | 49.15 |
 |   LUT as Memory            |  352 |     0 |      6000 |  5.87 |
 |     LUT as Distributed RAM |  276 |     0 |           |       |
 |     LUT as Shift Register  |   76 |     0 |           |       |
-| Slice Registers            | 7106 |    23 |     35200 | 20.19 |
-|   Register as Flip Flop    | 7106 |    23 |     35200 | 20.19 |
+| Slice Registers            | 9177 |    23 |     35200 | 26.07 |
+|   Register as Flip Flop    | 9177 |    23 |     35200 | 26.07 |
 |   Register as Latch        |    0 |     0 |     35200 |  0.00 |
-| F7 Muxes                   |  132 |     0 |      8800 |  1.50 |
-| F8 Muxes                   |    2 |     0 |      4400 |  0.05 |
+| F7 Muxes                   |  158 |     0 |      8800 |  1.80 |
+| F8 Muxes                   |    3 |     0 |      4400 |  0.07 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 18    |          Yes |           - |        Reset |
-| 266   |          Yes |         Set |            - |
-| 6822  |          Yes |       Reset |            - |
+| 259   |          Yes |         Set |            - |
+| 8900  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,17 +151,17 @@ Table of Contents
 +------------+------+----------------------+
 |  Ref Name  | Used |  Functional Category |
 +------------+------+----------------------+
-| FDRE       | 6822 |         Flop & Latch |
-| LUT6       | 2753 |                  LUT |
-| LUT3       | 1198 |                  LUT |
-| LUT5       | 1047 |                  LUT |
-| LUT4       |  950 |                  LUT |
-| LUT1       |  792 |                  LUT |
-| LUT2       |  756 |                  LUT |
-| CARRY4     |  369 |           CarryLogic |
-| FDSE       |  266 |         Flop & Latch |
+| FDRE       | 8900 |         Flop & Latch |
+| LUT6       | 4120 |                  LUT |
+| LUT3       | 1280 |                  LUT |
+| LUT5       | 1203 |                  LUT |
+| LUT4       | 1114 |                  LUT |
+| LUT2       |  843 |                  LUT |
+| LUT1       |  823 |                  LUT |
+| CARRY4     |  372 |           CarryLogic |
+| FDSE       |  259 |         Flop & Latch |
 | RAMD64E    |  176 |   Distributed Memory |
-| MUXF7      |  132 |                MuxFx |
+| MUXF7      |  158 |                MuxFx |
 | BIBUF      |  130 |                   IO |
 | RAMD32     |   84 |   Distributed Memory |
 | RAMS32     |   64 |   Distributed Memory |
@@ -174,7 +174,7 @@ Table of Contents
 | OSERDESE2  |    8 |                   IO |
 | RAMB18E1   |    5 |         Block Memory |
 | OBUFDS     |    4 |                   IO |
-| MUXF8      |    2 |                MuxFx |
+| MUXF8      |    3 |                MuxFx |
 | BUFG       |    2 |                Clock |
 | PS7        |    1 | Specialized Resource |
 | PLLE2_ADV  |    1 |                Clock |

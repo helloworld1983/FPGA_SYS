@@ -15,11 +15,11 @@ void config_console();
 int main(int argc, char *argv[]) {
   int fd_r, rc_r;
   int fd, rc;
-  unsigned char buf[128];
+  unsigned char buf[65536];
 
 
   fd = open("/dev/xillybus_write_8", O_WRONLY);
-fd_r = open("/dev/xillybus_read_8", O_RDONLY);
+fd_r = open("/dev/xillybus_read_32", O_RDONLY);
 if (argc!=2) {
     fprintf(stderr, "Usage: %s devfile\n", argv[0]);
     exit(1);
@@ -31,7 +31,7 @@ if (argc!=2) {
 
 ///
 
-  unsigned char buf_r[128];
+  unsigned char buf_r[65536];
 
 ///
 
@@ -71,10 +71,10 @@ if (argc!=2) {
       exit(1);
     }
 
-    if (rc_r == 0) {
+  /*  if (rc_r == 0) {
       fprintf(stderr, "Reached read EOF.\n");
       exit(0);
-    }
+    }*/
 
     // Write all data to standard output = file descriptor 1
     // rc contains the number of bytes that were read.
@@ -192,11 +192,20 @@ void allwrite_r(int fd, unsigned char *buf, int len) {
   int rc;
 
   while (sent < len) {
- //   rc = write(fd, buf + sent, len - sent);
-            if(*(buf+sent) == 'a') {
+   // rc = write(fd, buf + sent,len-sent );
+   // if(*(buf+sent) != 0) {
+    printf("%d\n",*(buf+sent));
+   // }
+
+           /* if(*(buf+sent) == 'a') {
         printf("PARSE SUCCESS.\n");
         exit(0);
         }
+
+        if(*(buf+sent) == 'b'){
+        printf("PARSER ERROR.\n");
+        exit(0);
+        }*/
     if ((rc < 0) && (errno == EINTR))
       continue;
 
@@ -210,6 +219,6 @@ void allwrite_r(int fd, unsigned char *buf, int len) {
       exit(1);
     }
 
-    sent += rc;
+    sent += 1;
   }
 }
