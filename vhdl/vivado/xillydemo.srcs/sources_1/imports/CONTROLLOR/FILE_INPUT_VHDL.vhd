@@ -113,10 +113,11 @@ architecture behave of FILE_INPUT_VHDL is
 	signal alt_top : natural := 1;
 	
 	signal continue_sig : std_logic := '0';
+	signal next_sig : std_logic := '0';
 	
 begin
   process(CLK)
-     file in_file : text is in "C:/FPGAPrj/VIVADO/FPGA_SYS/vhdl/vivado/xillydemo.srcs/constrs_1/imports/VIVADO/VIVADO/CONTROLLOR.srcs/constrs_1/new\json.txt";
+     file in_file : text is in "C:\FPGAPrj\VIVADO\VIVADO\CONTROLLOR.srcs\constrs_1\new\json.txt";
 	 variable l:         line;
      variable c:         character := ' ';
      variable is_string: boolean := false;
@@ -181,7 +182,43 @@ begin
 	   end if;
 	  end if;
 	end process;
-      
+	
+     
+     
+    -- NEXT_RDY <= rdy_array(1) or rdy_array(3) or rdy_array(4) or rdy_array(5) or rdy_array(13) or rdy_array(14) or rdy_array(16) or rdy_array(17) or rdy_array(19) or continue_sig;
+     
+    process(CLK)
+    begin
+        if(CLK'event and CLK='1') then
+            if(not fail_sig and not parser_ok_sig) then
+            NEXT_RDY <= (TRG or RDY_IN or FAIL or CONTINUE or next_sig);
+            else
+            NEXT_RDY <= '0';
+            end if;
+        end if;
+    end process;
+     
+     process(CLK)
+     begin
+        if(CLK'event and CLK = '1') then
+            continue_sig <= CONTINUE;
+        end if;
+     end process;
+     
+     --next_sig <= rdy_array(9) or rdy_array(10) or rdy_array(11) or rdy_array(12) or rdy_array(15) or rdy_array(18);
+     
+     process(CLK)
+     begin
+        if(CLK'event and CLK = '0') then
+            --if((rdy_array(9) or rdy_array(10) or rdy_array(11) or rdy_array(12) or rdy_array(15) or rdy_array(18))='1') then
+            if(command_array(cmd_read_no).id = 9 or command_array(cmd_read_no).id = 10 or command_array(cmd_read_no).id = 11 or command_array(cmd_read_no).id = 12 or command_array(cmd_read_no).id = 15 or command_array(cmd_read_no).id = 18) then
+                next_sig <= '1' ;
+            else
+                next_sig <= '0';
+            end if;
+        end if;
+     end process;
+        
      -- Next command 
      process(CLK) 
      begin
@@ -197,6 +234,7 @@ begin
            else
                
            if (FAIL = '1') then
+               --ID <= command_array(cmd_read_no).id;
                if(alt_stack(1) = 0) then 
                   fail_sig <= true;
                else
@@ -205,7 +243,7 @@ begin
                   alt_top <= alt_top - 1;
               end if;
            elsif (RDY_IN = '1' or TRG = '1' ) then
-           
+              --ID <= command_array(cmd_read_no).id;
               case command_array(cmd_read_no).id is
                    when 9 =>  call_stack(call_top) <= command_array(cmd_read_no).save;
                               if(command_array(cmd_read_no).next_cmd /= 0) then
@@ -229,7 +267,7 @@ begin
                                                  when "00100010" => cmd_read_no <= 9;
                                                  when "01011011" => cmd_read_no <= 58;
                                                  when "01101110" => cmd_read_no <= 76;   
-                                                 when "01001111" => cmd_read_no <= 45;
+                                                 when "01001111" => cmd_read_no <= 86;
                                                  when others => if((text_in >= "00110000" and text_in <= "00111001") or (text_in = "00101101")) then
                                                                    cmd_read_no <= 11;
                                                                 else 
@@ -260,7 +298,7 @@ begin
                                               elsif(cmd_read_no = 101) then
                                                    case text_in is
                                                        when "00100010" => cmd_read_no <= 8;
-                                                       when "01011100" => cmd_read_no <= 104;
+                                                       when "00101111" => cmd_read_no <= 104;
                                                        when others => cmd_read_no <= 102;
                                                    end case;
                                                end if;         
@@ -304,20 +342,11 @@ begin
         end if;
     end process;
     
-    process(CLK)
-    begin
-        if(CLK'event and CLK='1') then
-            if(not fail_sig and not parser_ok_sig) then
-            NEXT_RDY <= (TRG or RDY_IN or FAIL or CONTINUE);
-            else
-            NEXT_RDY <= '0';
-            end if;
-        end if;
-    end process;
+
         
           
     ID <= command_array(cmd_read_no).id;
-    --NEXT_RDY <= next_rdy_function(rdy_array) or continue_sig;
+    --NEXT_RDY <=  or continue_sig;
     --NEXT_RDY <= TRG or RDY_IN or FAIL or 
     PARSER_OK <= '1' when parser_ok_sig else '0';
     END_FAIL <= '1' when fail_sig else '0';
