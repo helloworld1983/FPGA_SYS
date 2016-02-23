@@ -23,6 +23,7 @@ entity FILE_INPUT_VHDL is
         END_FAIL : buffer std_logic := '0' ;
         PARSER_OK : buffer std_logic := '0';
         NEXT_IMP : out std_logic;
+        Rset_ctn : out std_logic;
         Byte_trg : out std_logic;
         Set_trg : out std_logic;
         Rset_trg : out std_logic;
@@ -220,6 +221,8 @@ begin
         end if;
      end process;
      
+     Rset_ctn <= CONTINUE;
+     
      --next_sig <= rdy_array(9) or rdy_array(10) or rdy_array(11) or rdy_array(12) or rdy_array(15) or rdy_array(18);
      
      process(CLK)
@@ -271,7 +274,7 @@ begin
         
         Byte_trg <= rdy_array(1);
         Set_trg <= rdy_array(3);
-        Rset_trg <= rdy_array(14);
+        Rset_trg <= rdy_array(14) or CONTINUE_sig;
         Obyte_trg <= rdy_array(17);
         Str_trg <= rdy_array(19);
         Nany_trg <= rdy_array(16);

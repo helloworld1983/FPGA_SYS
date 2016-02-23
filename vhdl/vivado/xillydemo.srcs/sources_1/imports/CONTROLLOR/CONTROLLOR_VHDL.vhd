@@ -75,7 +75,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
         ID : in integer;
         --BYTE_TRG : out std_logic;
         --SET_TRG : out std_logic;
-        RSET_TRG : out std_logic;
+        --RSET_TRG : out std_logic;
         --OBYTE_TRG : out std_logic ;
         --STR_TRG : out std_logic;
         --NANY_TRG : out std_logic;
@@ -250,35 +250,35 @@ begin
 	--PARSER_ERROR <= end_fail;
 	--clk_sig <= CLK;
 
-	FILE_INPUT : FILE_INPUT_VHDL
-	port map(	
-	    CLK => CLK,
-	    READ_TRG => run_start,
-	    TRG => START,
-	    CONTINUE => continue_sig,
-		RDY_IN => next_rdy,
-		FAIL => fail_reg,
-		ID => id_reg,
-		TEXT_IN => text_in_reg,
-	    TEXT_INPUT_STREAM => INPUT_STREAM,
-	    IMP => imp,
-		BYTE_TEXT => byte_text_reg,
-		SET_TEXT_START => set_text_start_sig,
-	    SET_TEXT_SECOND => set_text_end_sig,
-	    SET_OPTION => set_option_sig,
-		STR_TEXT => string_nez_reg,
-		END_FAIL => end_fail,
-		PARSER_OK => end_parser_ok,
-		BYTE_TRG => trg_reg_array(1) ,
+		FILE_INPUT : FILE_INPUT_VHDL
+    port map(    
+        CLK => CLK,
+        READ_TRG => run_start,
+        TRG => START,
+        CONTINUE => continue_sig,
+        RDY_IN => next_rdy,
+        FAIL => fail_reg,
+        ID => id_reg,
+        TEXT_IN => text_in_reg,
+        TEXT_INPUT_STREAM => INPUT_STREAM,
+        IMP => imp,
+        BYTE_TEXT => byte_text_reg,
+        SET_TEXT_START => set_text_start_sig,
+        SET_TEXT_SECOND => set_text_end_sig,
+        SET_OPTION => set_option_sig,
+        STR_TEXT => string_nez_reg,
+        END_FAIL => end_fail,
+        PARSER_OK => end_parser_ok,
+        BYTE_TRG => trg_reg_array(1) ,
         SET_TRG => trg_reg_array(3),
-        RSET_TRG => rset_trg_sig,
+        RSET_TRG => trg_reg_array(14),
         OBYTE_TRG => trg_reg_array(17),
         STR_TRG => trg_reg_array(19),
         NANY_TRG => trg_reg_array(16),
-		NEXT_IMP => imp,
-		NEXT_RDY => nosignal_rdy);
-		
-		trg_reg_array(14) <= rset_trg_sig or rset_ctn_sig;
+        NEXT_IMP => imp,
+        NEXT_RDY => nosignal_rdy);
+        
+        --trg_reg_array(14) <= rset_trg_sig or rset_ctn_sig;
 
 	TEXT_INPUT : TEXT_INPUT_VHDL
 	port map(
@@ -298,7 +298,7 @@ begin
 		CLK => CLK ,
 		ID => id_reg ,
 		RDY_IN => state_next ,
-		RSET_TRG => rset_ctn_sig,
+		--RSET_TRG => rset_ctn_sig,
 		FAIL_TRG => fail_reg_array(13),
 		OTHERS_TRG => next_rdy_array(0));
 
