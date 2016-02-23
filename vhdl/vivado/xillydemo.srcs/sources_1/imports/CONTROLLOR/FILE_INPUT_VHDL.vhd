@@ -12,6 +12,7 @@ entity FILE_INPUT_VHDL is
         RDY_IN : in std_logic := '0';
         FAIL : in std_logic := '0' ;
 	    TEXT_IN : in std_logic_vector(7 downto 0);
+	    IMP : in std_logic;
 	    TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
         ID : out integer := 0;
         BYTE_TEXT : out std_logic_vector(7 downto 0) ;
@@ -21,6 +22,13 @@ entity FILE_INPUT_VHDL is
         STR_TEXT : out std_logic_vector(15 downto 0) ;
         END_FAIL : buffer std_logic := '0' ;
         PARSER_OK : buffer std_logic := '0';
+        NEXT_IMP : out std_logic;
+        Byte_trg : out std_logic;
+        Set_trg : out std_logic;
+        Rset_trg : out std_logic;
+        Obyte_trg : out std_logic;
+        Str_trg : out std_logic;
+        Nany_trg : out std_logic;
         NEXT_RDY : out std_logic := '0');
 end FILE_INPUT_VHDL;
 
@@ -45,6 +53,13 @@ architecture behave of FILE_INPUT_VHDL is
    signal alt_stack : int_alt_array := (others => 0) ;
    type int_call_array is array(1 to 300) of integer;
    signal call_stack : int_call_array := (others => 0);
+   
+   component reg_pos_et_d_ff
+   	port(clk, D, lat, rst : in std_logic;
+           Q : out std_logic);
+    end component;
+    
+    signal next_run : std_logic := '0';
    
    --attribute mark_debug : string;
    --attribute mark_debug of id : signal is "true";
@@ -191,7 +206,7 @@ begin
     begin
         if(CLK'event and CLK='1') then
             if(not fail_sig and not parser_ok_sig) then
-            NEXT_RDY <= (TRG or RDY_IN or FAIL or CONTINUE or next_sig);
+            NEXT_RDY <= (TRG or RDY_IN or FAIL or continue);
             else
             NEXT_RDY <= '0';
             end if;
@@ -209,7 +224,7 @@ begin
      
      process(CLK)
      begin
-        if(CLK'event and CLK = '0') then
+        if(CLK'event and CLK = '1') then
             --if((rdy_array(9) or rdy_array(10) or rdy_array(11) or rdy_array(12) or rdy_array(15) or rdy_array(18))='1') then
             if(command_array(cmd_read_no).id = 9 or command_array(cmd_read_no).id = 10 or command_array(cmd_read_no).id = 11 or command_array(cmd_read_no).id = 12 or command_array(cmd_read_no).id = 15 or command_array(cmd_read_no).id = 18) then
                 next_sig <= '1' ;
@@ -218,6 +233,48 @@ begin
             end if;
         end if;
      end process;
+     
+     --reg : reg_pos_et_d_ff port map (clk, next_sig, '1', '0', next_run);
+     
+     process(CLK)
+     begin
+        if(CLK'event and CLK = '1') then
+            if(next_sig = '1') then
+                next_run <= '1';
+             else
+                next_run <= '0';
+            end if;
+         end if;
+     end process;
+     
+     -- Make trigger signal to STATE_CONTROLLOR           
+     process(CLK)
+     begin
+        if(CLK'event and CLK = '1') then
+          if(text_input_stream = "01000000") then
+             next_accept <= false;
+             rdy_array <= (others => '0');
+          else
+           if(TRG = '1' or RDY_IN = '1' or FAIL = '1') then
+             next_accept <= true ;
+           end if;
+           if (next_accept and (not fail_sig) and (not parser_ok_sig)) then
+              rdy_array <= (others => '0');
+              rdy_array( command_array(cmd_read_no).id) <= '1';
+              next_accept <= false;
+            else
+              rdy_array <= (others => '0');
+            end if;
+           end if;
+         end if;
+      end process;
+        
+        Byte_trg <= rdy_array(1);
+        Set_trg <= rdy_array(3);
+        Rset_trg <= rdy_array(14);
+        Obyte_trg <= rdy_array(17);
+        Str_trg <= rdy_array(19);
+        Nany_trg <= rdy_array(16);
         
      -- Next command 
      process(CLK) 
@@ -242,7 +299,7 @@ begin
                   alt_stack(alt_top-1) <= 0;
                   alt_top <= alt_top - 1;
               end if;
-           elsif (RDY_IN = '1' or TRG = '1' ) then
+           elsif (RDY_IN = '1' or TRG = '1') then
               --ID <= command_array(cmd_read_no).id;
               case command_array(cmd_read_no).id is
                    when 9 =>  call_stack(call_top) <= command_array(cmd_read_no).save;
