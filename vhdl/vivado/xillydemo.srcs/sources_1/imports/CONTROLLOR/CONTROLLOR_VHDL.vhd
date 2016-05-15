@@ -7,8 +7,9 @@ entity CONTROLLOR_VHDL is
 	port (
 	CLK : in std_logic := '0';
 	INPUT_STREAM : in std_logic_vector(7 downto 0);
-	RDEN : in std_logic;
+	WREN : in std_logic;
 	TIME_COUNT : out std_logic_vector(31 downto 0);
+	RDEN : out std_logic;
 	PARSER_OK : buffer std_logic := '0';
 	PARSER_ERROR : buffer std_logic := '0');
 end CONTROLLOR_VHDL;
@@ -21,33 +22,25 @@ architecture Behavioral of CONTROLLOR_VHDL is
     -- Loading command
     -----------------------------------------
 	component FILE_INPUT_VHDL 
-            port(
-            CLK : in std_logic;
-            READ_TRG : in std_logic := '0';
-            CONTINUE : in std_logic;
-            TRG : in std_logic ;
-            RDY_IN : in std_logic ;
-            FAIL : in std_logic ;
-            TEXT_IN : in std_logic_vector(7 downto 0);
-            TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
-            IMP : in std_logic;
-            ID : out integer;
-            BYTE_TEXT : out std_logic_vector(7 downto 0) ;
-            SET_TEXT_START : out std_logic_vector(7 downto 0) ;
-            SET_TEXT_SECOND : out std_logic_vector(7 downto 0);
-            SET_OPTION : out integer ;
-            STR_TEXT : out std_logic_vector(15 downto 0);
-            END_FAIL : buffer std_logic ;
-            PARSER_OK : buffer std_logic ;
-            NEXT_IMP : out std_logic;
-            Byte_trg : out std_logic;
-            Set_trg : out std_logic;
-            Rset_trg : out std_logic;
-            Obyte_trg : out std_logic;
-            Str_trg : out std_logic;
-            Nany_trg : out std_logic;
-            NEXT_RDY : out std_logic );
-        end component;
+        port(
+        CLK : in std_logic;
+        READ_TRG : in std_logic := '0';
+        CONTINUE : in std_logic;
+        TRG : in std_logic ;
+        RDY_IN : in std_logic ;
+        FAIL : in std_logic ;
+        TEXT_IN : in std_logic_vector(7 downto 0);
+        TEXT_INPUT_STREAM : in std_logic_vector(7 downto 0);
+        ID : out integer;
+        BYTE_TEXT : out std_logic_vector(7 downto 0) ;
+        SET_TEXT_START : out std_logic_vector(7 downto 0) ;
+        SET_TEXT_SECOND : out std_logic_vector(7 downto 0);
+        SET_OPTION : out integer ;
+        STR_TEXT : out std_logic_vector(15 downto 0);
+        END_FAIL : buffer std_logic ;
+        PARSER_OK : buffer std_logic ;
+        NEXT_RDY : out std_logic );
+    end component;
     
     -------------------------------------------
     -- Loading text
@@ -68,17 +61,17 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	------------------------------------------------
     -- Make trigger signal to each command'IP core 
     ------------------------------------------------
-	component STATE_CONTROLLOR_VHDL
+    component STATE_CONTROLLOR_VHDL
         port (
         CLK : in std_logic;
         RDY_IN : in std_logic ;
         ID : in integer;
-        --BYTE_TRG : out std_logic;
-        --SET_TRG : out std_logic;
-        --RSET_TRG : out std_logic;
-        --OBYTE_TRG : out std_logic ;
-        --STR_TRG : out std_logic;
-        --NANY_TRG : out std_logic;
+        BYTE_TRG : out std_logic;
+        SET_TRG : out std_logic;
+        RSET_TRG : out std_logic;
+        OBYTE_TRG : out std_logic ;
+        STR_TRG : out std_logic;
+        NANY_TRG : out std_logic;
         FAIL_TRG : out std_logic;
         OTHERS_TRG : out std_logic);
     end component;
@@ -189,6 +182,8 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	
 	signal success_send : boolean := false;
 	
+	signal next_text : std_logic := '0';
+	
 	--Test
     --signal text_input_stream : std_logic_vector(7 downto 0);
     --signal count_text_stream : integer := 0;
@@ -236,9 +231,7 @@ architecture Behavioral of CONTROLLOR_VHDL is
 	--attribute mark_debug of id_reg : signal is "true";
 	--attribute mark_debug of CLK_sig : signal is "true";
 	--attribute mark_debug of start : signal is "true";	
-    --attribute mark_debug of start1 : signal is "true";
-    
-    signal rset_trg_sig, rset_ctn_sig, imp : std_logic := '1';	
+    --attribute mark_debug of start1 : signal is "true";	
 
 begin
 	next_rdy <= (next_rdy_function(next_rdy_array));
@@ -250,55 +243,53 @@ begin
 	--PARSER_ERROR <= end_fail;
 	--clk_sig <= CLK;
 
-		FILE_INPUT : FILE_INPUT_VHDL
-    port map(    
-        CLK => CLK,
-        READ_TRG => run_start,
-        TRG => START,
-        CONTINUE => continue_sig,
-        RDY_IN => next_rdy,
-        FAIL => fail_reg,
-        ID => id_reg,
-        TEXT_IN => text_in_reg,
-        TEXT_INPUT_STREAM => INPUT_STREAM,
-        IMP => imp,
-        BYTE_TEXT => byte_text_reg,
-        SET_TEXT_START => set_text_start_sig,
-        SET_TEXT_SECOND => set_text_end_sig,
-        SET_OPTION => set_option_sig,
-        STR_TEXT => string_nez_reg,
-        END_FAIL => end_fail,
-        PARSER_OK => end_parser_ok,
-        BYTE_TRG => trg_reg_array(1) ,
-        SET_TRG => trg_reg_array(3),
-        RSET_TRG => trg_reg_array(14),
-        OBYTE_TRG => trg_reg_array(17),
-        STR_TRG => trg_reg_array(19),
-        NANY_TRG => trg_reg_array(16),
-        NEXT_IMP => imp,
-        NEXT_RDY => nosignal_rdy);
-        
-        --trg_reg_array(14) <= rset_trg_sig or rset_ctn_sig;
+	FILE_INPUT : FILE_INPUT_VHDL
+	port map(	
+	    CLK => CLK,
+	    READ_TRG => run_start,
+	    TRG => START,
+	    CONTINUE => continue_sig,
+		RDY_IN => next_rdy,
+		FAIL => fail_reg,
+		ID => id_reg,
+		TEXT_IN => text_in_reg,
+	    TEXT_INPUT_STREAM => INPUT_STREAM,
+		BYTE_TEXT => byte_text_reg,
+		SET_TEXT_START => set_text_start_sig,
+	    SET_TEXT_SECOND => set_text_end_sig,
+	    SET_OPTION => set_option_sig,
+		STR_TEXT => string_nez_reg,
+		END_FAIL => end_fail,
+		PARSER_OK => end_parser_ok,
+		NEXT_RDY => nosignal_rdy);
 
-	TEXT_INPUT : TEXT_INPUT_VHDL
-	port map(
-		CLK => CLK,
-		STR_TRG => next_rdy_array(19),
-		TRG => START,
-		RDY => next_text_rdy_reg,
-		TEXT_INPUT_STREAM => input_stream,
-		RDEN => rden,
-		RUN => run_start,
-		CHAR_OUT => text_in_reg,
-		STR_OUT => string_text_reg
-		);
+	--TEXT_INPUT : TEXT_INPUT_VHDL
+	--port map(
+		--CLK => CLK,
+		--STR_TRG => next_rdy_array(19),
+		--TRG => START,
+		--RDY => next_text_rdy_reg,
+		--TEXT_INPUT_STREAM => input_stream,
+		--RDEN => rden,
+		--RUN => run_start,
+		--CHAR_OUT => text_in_reg,
+		--STR_OUT => string_text_reg
+		--);
+    
+    RDEN <= START or next_text_rdy_reg;
+    text_in_reg <= INPUT_STREAM;
 
 	STATE_CONTROLLOR : STATE_CONTROLLOR_VHDL 
 	port map (
 		CLK => CLK ,
 		ID => id_reg ,
 		RDY_IN => state_next ,
-		--RSET_TRG => rset_ctn_sig,
+		BYTE_TRG => trg_reg_array(1) ,
+		SET_TRG => trg_reg_array(3),
+		RSET_TRG => trg_reg_array(14),
+		OBYTE_TRG => trg_reg_array(17),
+		STR_TRG => trg_reg_array(19),
+		NANY_TRG => trg_reg_array(16),
 		FAIL_TRG => fail_reg_array(13),
 		OTHERS_TRG => next_rdy_array(0));
 
@@ -361,7 +352,7 @@ begin
             if(input_stream = "01000000") then
                time_count_accept <= false;
                change_sig <= false;
-            elsif(rden = '1' and not change_sig) then
+            elsif(wren = '1' and not change_sig) then
                time_count_accept <= true;
                change_sig <= true;
             elsif(parser_ok = '1' or parser_error = '1') then 

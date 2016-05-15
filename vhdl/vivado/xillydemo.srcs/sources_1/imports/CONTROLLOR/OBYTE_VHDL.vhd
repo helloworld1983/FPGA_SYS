@@ -19,18 +19,18 @@ architecture Behavioral of OBYTE_VHDL is
 
 begin
 	
-	--process (TRG_ONE)
-	--begin
-		--if(CLK'event and CLK = '1') then
-			--if (TRG_ONE = '1' and TEXT_IN = NEZ_IN) then
-				--match_reg <= '1' ;
-			--else
-				--match_reg <= '0' ;
-			--end if;
-		--end if;
-	--end process;
+	process (CLK)
+	begin
+		if(CLK'event and CLK = '1') then
+			if (TRG_ONE = '1' and TEXT_IN = NEZ_IN) then
+				match_reg <= '1' ;
+			else
+				match_reg <= '0' ;
+			end if;
+		end if;
+	end process;
 
-	MATCH <= '1' when (NEZ_IN = TEXT_IN and TRG_ONE = '1') else '0' ;
+	MATCH <= match_reg ;
 	RDY_ONE <= TRG_ONE;
 	
 end Behavioral;
